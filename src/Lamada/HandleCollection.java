@@ -44,8 +44,7 @@ public class HandleCollection {
         invoices.add(new Invoice("Chair"));
         invoices.add(new Invoice("Chair"));
 
-        List<Invoice> sortedInv  = invoices.stream().filter(
-                (Invoice inv) -> inv.getName().equals("Chair")).sorted(
+        List<Invoice> sortedInv  = invoices.stream().sorted(
                         (o1,o2)->o1.getName().compareTo(o2.getName()))
                 .collect(Collectors.toList());
         System.out.println("" + sortedInv);
