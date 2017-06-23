@@ -25,6 +25,12 @@ public class LamadaRemove {
         Collections.sort(list);
         System.out.println(list);
         
+        
+                
+                
+                
+        
+                
         //list.removeIf(filter)
         
         
