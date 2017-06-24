@@ -7,8 +7,9 @@ package Lamada;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  *
@@ -32,6 +33,40 @@ class Invoice {
     }
 }
 
+class DoSomething implements Consumer<Invoice>{
+
+    @Override
+    public void accept(Invoice t) {
+        if(t.getName().equals("Chair")){
+            System.out.println(t);
+        }
+    }
+}
+
+class DoPredicate implements Predicate<Invoice>{
+
+    @Override
+    public boolean test(Invoice t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Predicate<Invoice> and(Predicate<? super Invoice> other) {
+        return Predicate.super.and(other); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Predicate<Invoice> negate() {
+        return Predicate.super.negate(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Predicate<Invoice> or(Predicate<? super Invoice> other) {
+        return Predicate.super.or(other); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+}
+
 public class HandleCollection {
 
     public static void main(String[] args) {
@@ -44,10 +79,16 @@ public class HandleCollection {
         invoices.add(new Invoice("Chair"));
         invoices.add(new Invoice("Chair"));
 
-        List<Invoice> sortedInv  = invoices.stream().sorted(
-                        (o1,o2)->o1.getName().compareTo(o2.getName()))
+        List<Invoice> sortedInv = invoices.stream()
+                .sorted((o1, o2) -> o1.getName().compareTo(o2.getName()))
                 .collect(Collectors.toList());
         System.out.println("" + sortedInv);
 
+        invoices.stream().forEach((Invoice inv) -> System.out.println("" + inv));
+        Boolean b = invoices.stream().allMatch(inv -> inv.getName().equals("Chair"));
+        System.out.println("b= " + b);
+        invoices.stream().filter(inv->inv.getName().equals("Chair")).collect(Collectors.toList());
+        invoices.removeIf(inv->inv.getName().equals("Chair"));
+        System.out.println(invoices);
     }
 }
