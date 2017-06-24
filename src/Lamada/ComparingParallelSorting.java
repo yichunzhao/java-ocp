@@ -36,17 +36,14 @@ public class ComparingParallelSorting {
         Collections.sort(nums);
         Long end = System.currentTimeMillis();
         System.out.println("time to sort: " + (end - start));
-        
+
         Long start1 = System.currentTimeMillis();
         List nums1 = genNum();
         Stream<Integer> sorted = nums1.parallelStream().sorted();
         Long end1 = System.currentTimeMillis();
         List<Integer> nums2 = sorted.collect(Collectors.toList());
-        
-        System.out.println("time to sort: " + (end1 - start1));
-        
-        
-        
+
+        System.out.println("time for parallel sorting: " + (end1 - start1));
         
 
     }
