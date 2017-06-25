@@ -6,7 +6,6 @@
 package Lamada;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ import java.util.List;
  * @author YNZ
  */
 public class LamadaRemove {
-    
+
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("aa");
@@ -22,19 +21,9 @@ public class LamadaRemove {
         list.add("aa");
         list.add("cc");
         list.add("ddd");
-        Collections.sort(list);
         System.out.println(list);
-        
-        
-                
-                
-                
-        
-                
-        //list.removeIf(filter)
-        
-        
-        
+
+        list.removeIf((e) -> e.equals("aa"));
+        System.out.println(list);
     }
-    
 }
