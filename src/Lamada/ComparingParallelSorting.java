@@ -44,8 +44,6 @@ public class ComparingParallelSorting {
         List<Integer> nums2 = sorted.collect(Collectors.toList());
 
         System.out.println("time for parallel sorting: " + (end1 - start1));
-        
-
     }
 
 }
