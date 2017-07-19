@@ -25,7 +25,6 @@ public class JavaTime {
 
         System.out.println("" + (date.compareTo(dateAgain) == 0));
 
-
     }
 
 }
