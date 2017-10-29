@@ -50,7 +50,7 @@ public class ExtendingGenricClass {
 
     public static void main(String[] args) {
         //parameterised type, actuall type is Book 
-        Parcel<Book> parcel = new BookParcel<>();
+        Parcel<Book> parcel = new BookParcel();
         parcel.setCoponent(new Book());
         Book book = parcel.getCoponent();
         boolean yes = book instanceof Book;
