@@ -1,7 +1,7 @@
 /*
    Using a stack to reverse a string. 
- * push() to the head
- * 
+  stack is represented by a Deque, implemented by a linkedList
+ * push() insert element on the head, pop() remove element from the head. 
  * add() to the tail. 
  */
 package Collection;
@@ -16,17 +16,14 @@ import java.util.LinkedList;
 public class ImplementingStack {
 
     public static void main(String[] args) {
-        
         String str = "I love Java.";
-        
+
         //Deque implemented by a LinkedList. 
         Deque<Character> stack = new LinkedList<>();
-        str.chars().mapToObj(i->(char)i).forEach(c->stack.push(c));
-        
-        
+        str.chars().mapToObj(i -> (char) i).forEach(c -> stack.push(c));
+
         stack.stream().forEach(System.out::print);
         System.out.println("");
-        
     }
 
 }
