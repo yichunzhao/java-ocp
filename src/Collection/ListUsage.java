@@ -1,0 +1,149 @@
+/*
+ * LinkedList and ArrayDeque both implement Deque interface
+ * 
+ * 
+ */
+package Collection;
+
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.Queue;
+import java.util.TreeSet;
+
+/**
+ *
+ * @author YNZ
+ */
+public class ListUsage {
+
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>(10);
+        list.add(1);
+        list.add(4);
+        list.add(1);
+        list.add(4);
+        list.add(7);
+        list.add(9);
+        list.add(19);
+        list.add(29);
+
+        //list allow duplicated elements. the first occurrence will be obtained. 
+        System.out.println("" + list.indexOf(4));
+
+        //insertion in the list; o(n)
+        list.add(0, 1000);
+        System.out.println("" + list);
+        //what retain mean?
+
+        List<Integer> listCopy = new ArrayList<>(list);
+
+        Set<Integer> needed = new HashSet<>();
+        needed.add(1);
+        needed.add(9);
+        needed.add(19);
+        listCopy.retainAll(needed);
+        System.out.println("what left" + listCopy);
+
+        //remove()
+        listCopy = new ArrayList<>(list);
+        System.out.println("" + listCopy);
+        listCopy.remove(4);
+        System.out.println("what left" + listCopy);
+        //what direction to count for the first occurence
+        //search from the left to right, or another way around.
+        //lets do a new test
+
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(2);
+        list1.add(3);
+        list1.add(5);
+        list1.add(3);
+        list1.add(5);
+        list1.add(13);
+        list1.add(15);
+        list1.add(25);
+
+        System.out.println("what have in list1: " + list1);
+        list1.remove(Integer.valueOf(5));
+        System.out.println("what left in list1: " + list1);
+        //first occrence happends from the left to right. 
+
+        System.out.println(" before remove all: " + list1);
+        List<Integer> notNeeded = new ArrayList<>();
+        notNeeded.add(2);
+        notNeeded.add(3);
+        list1.removeAll(notNeeded);
+        System.out.println(" after  remove all: " + list1);
+
+        //removeAll will remove all occurence of specified instances. 
+        //dupliated elements will be removed
+        //then how about using remove? can remove remove duplicated elements? 
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(2);
+        list2.add(3);
+        list2.add(5);
+        list2.add(3);
+        list2.add(5);
+        list2.add(13);
+        list2.add(15);
+        list2.add(25);
+
+        System.out.println(" Before remove : " + list2);
+        list2.remove(Integer.valueOf(5));
+        System.out.println(" After  remove : " + list2);
+        //only the first occrence beign removed
+
+        //a deque is a double-ended Q; it can be used to represent
+        //a Q or a stack. 
+        Deque<Integer> q = new LinkedList<>(); //generic tyep inference. 
+        Deque<Integer> stack = new LinkedList<>();
+
+        q.offer(1);
+        q.offer(100);
+        q.offer(300);
+
+        //fifo, Q
+        System.out.println("query on the head: " + q.peek());
+
+        //lifo, stack
+        stack.push(23);
+        stack.push(45);
+        stack.push(99);
+
+        System.out.println("Query the head : " + stack.peek());
+        System.out.println("Peek just a query : " + stack);
+        System.out.println("Poll query and remove : " + stack.poll());
+        System.out.println("Peek just a query : " + stack);
+        Integer removed = stack.pop();
+        System.out.println("removed: " + removed);
+
+        System.out.println("Pop = Poll First  : " + stack);
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(23);
+        queue.add(32);
+        queue.add(32);
+        queue.add(40);
+
+        Integer head = queue.poll();  //query and remove
+        System.out.println("head : " + head);
+        System.out.println("what left in the queue: " + queue);
+
+        //tree set stores comparable instances, or transfer a comparator
+        Set<Integer> treeSet = new TreeSet<>();
+        treeSet.add(1);
+        treeSet.add(4);
+        treeSet.add(10);
+        treeSet.add(34);
+        treeSet.add(81);
+        treeSet.add(94);
+        
+        System.out.println("treeSet: "+ treeSet);
+
+    }
+
+}
