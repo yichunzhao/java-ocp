@@ -6,6 +6,8 @@
 package Collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -19,6 +21,10 @@ import java.util.TreeSet;
  * @author YNZ
  */
 public class ListUsage {
+
+    private enum Directions {
+        EAST, SOUTH, WEST, NORTH,
+    }
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>(10);
@@ -141,9 +147,71 @@ public class ListUsage {
         treeSet.add(34);
         treeSet.add(81);
         treeSet.add(94);
-        
-        System.out.println("treeSet: "+ treeSet);
 
+        System.out.println("treeSet: " + treeSet);
+
+        //how about enum? it implements Comparable interface
+        Set<Directions> ds = new TreeSet<>();
+        ds.add(Directions.WEST);
+        ds.add(Directions.SOUTH);
+        ds.add(Directions.NORTH);
+        ds.add(Directions.EAST);
+        System.out.println("how treeset will sort enum? : " + ds);
+        //wow, they are sorted again by their natural orders as declaring 
+        //the enum. 
+
+        //list methods
+        // add, remove, query, iterator, mis
+        List<Integer> listX = new ArrayList<>();
+        System.out.println("list: " + list);
+        listX.addAll(list);
+        listX.add(1000);
+        System.out.println("listZ : " + listX);
+
+        //query on object or index
+        int ix = listX.indexOf(Integer.valueOf("10"));
+        System.out.println("ix= " + ix);
+        Integer x = listX.get(2);
+        ix = listX.lastIndexOf(Integer.valueOf(1000));
+        System.out.println("1000 last occurence ix : " + ix);
+        
+        List<Integer> subListX = listX.subList(1, 4);
+        System.out.println("subListX : " + subListX);
+        
+        System.out.println("contains 1000 : " +  listX.contains(Integer.valueOf(1000)) );
+                
+        
+        
+
+        //remove by object and index
+        listX.remove(Integer.valueOf(1000));
+        System.out.println("after removal : " + listX);
+        
+        //firstOccurent is removed
+        listX.add(0, Integer.valueOf(1000));
+        System.out.println("after inserting at ix=0 : " + listX);
+        
+        //now we try to remove all 1000
+        
+        boolean done = listX.removeAll(Arrays.asList(1000));
+        System.out.println("removed all 1000 from listX? " + done);
+        System.out.println("lets see listX now: " + listX);
+        
+        //so when you want to remove all duplicated instances from the list, you
+        //need to use removeAll(Collection specified)
+        
+        //list is an interface, it implements  both Collection and Iterable. 
+        //set is an interface, it implements both Collection and Iterable.
+        //Deque is an interface, it implments Queue interface, which implements collection and iterable
+        
+        Queue<Integer> que = new LinkedList<>(listX);
+        System.out.println("Queue is a Collection?  " + (que instanceof Collection));
+        System.out.println("Queue is a Collection?  " + (que instanceof Iterable));
+        System.out.println("what que have ? " + que);
+        
+        
+        
+        
     }
 
 }
