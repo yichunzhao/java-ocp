@@ -5,6 +5,7 @@
  */
 package Collection;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -174,44 +175,72 @@ public class ListUsage {
         Integer x = listX.get(2);
         ix = listX.lastIndexOf(Integer.valueOf(1000));
         System.out.println("1000 last occurence ix : " + ix);
-        
+
         List<Integer> subListX = listX.subList(1, 4);
         System.out.println("subListX : " + subListX);
-        
-        System.out.println("contains 1000 : " +  listX.contains(Integer.valueOf(1000)) );
-                
-        
-        
+
+        System.out.println("contains 1000 : " + listX.contains(Integer.valueOf(1000)));
 
         //remove by object and index
         listX.remove(Integer.valueOf(1000));
         System.out.println("after removal : " + listX);
-        
+
         //firstOccurent is removed
         listX.add(0, Integer.valueOf(1000));
         System.out.println("after inserting at ix=0 : " + listX);
-        
+
         //now we try to remove all 1000
-        
         boolean done = listX.removeAll(Arrays.asList(1000));
         System.out.println("removed all 1000 from listX? " + done);
         System.out.println("lets see listX now: " + listX);
-        
+
         //so when you want to remove all duplicated instances from the list, you
         //need to use removeAll(Collection specified)
-        
         //list is an interface, it implements  both Collection and Iterable. 
         //set is an interface, it implements both Collection and Iterable.
         //Deque is an interface, it implments Queue interface, which implements collection and iterable
-        
         Queue<Integer> que = new LinkedList<>(listX);
+        Queue<Integer> aryQ = new ArrayDeque<>(listX);
+        Deque<Integer> dq = new LinkedList<>(listX);
         System.out.println("Queue is a Collection?  " + (que instanceof Collection));
         System.out.println("Queue is a Collection?  " + (que instanceof Iterable));
         System.out.println("what que have ? " + que);
+        //add(E) or offer(E) at the tail
+        //push(E) at the head
+        //query: element(), peek() on the head
+        //query and remove: poll()
+        //remove: remove the element
+
+        System.out.println("query a Q head : " + que.peek());
+        System.out.println("query a Q head : " + que.element());
+
+        que.offer(Integer.valueOf(250));
+        que.add(Integer.valueOf(38));
+        System.out.println("what que have ? " + que);
+        System.out.println("query a Q head : " + que.element());
+
+        //Queue are implemented by Both LinkedList and arrayDeque. 
+        que.add(null);
+        //aryQ.add(null);
+        System.out.println("what que have ? " + que);
+
+        //Deque
+        System.out.println("what deque have ? " + dq);
+
+        dq.push(Integer.valueOf(38));
+        dq.offer(Integer.valueOf(250));
+        System.out.println("push head offer tail what deque have ? " + dq);
+        System.out.println("query head on deque: " + dq.peek());
+        System.out.println("push head offer tail what deque have ? " + dq);
         
+        dq.remove();
+        dq.poll();
         
+        Integer[] aa = new Integer[listX.size()];
+        listX.toArray(aa);
+        System.out.println("List to array : " + Arrays.toString(aa));
         
-        
+
     }
 
 }
