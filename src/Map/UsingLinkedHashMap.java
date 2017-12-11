@@ -29,6 +29,8 @@ public class UsingLinkedHashMap {
         System.out.println("map " + map.toString());
         
         
+        
+        
         Map<String,Integer> hashMap = new HashMap<>(map);
         System.out.println("linkend map -> hashmap : " + hashMap);
         
