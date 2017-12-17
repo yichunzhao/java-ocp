@@ -1,6 +1,6 @@
 /*
- * Using Deque to implement stack:   push pop
- * 
+ * Using Deque to implement a stack:   push pop
+ * Using Deque to implemnt a Queue: offer poll
  * 
  */
 package Collection;
@@ -46,6 +46,18 @@ public class LinkedListStack {
         stack.push(new Person("mom"));
 
         System.out.println("last first: " + stack.pop().toString());
+        
+        
+        Deque<Person> queue = new LinkedList<>();
+        queue.add(new Person("Alpha")); //1
+        queue.add(new Person("Niels")); //2
+        queue.add(new Person("Yang"));  //3
+
+        System.out.println("first first: " + queue.poll().toString());
+        
+        System.out.println("first first: " + queue.peek().toString());
+        System.out.println("first first: " + queue.peek().toString());
+                
 
     }
 
