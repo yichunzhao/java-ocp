@@ -24,6 +24,7 @@ public class ImplementingStack {
 
         stack.stream().forEach(System.out::print);
         System.out.println("");
+        
     }
 
 }
