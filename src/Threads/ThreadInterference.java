@@ -11,6 +11,12 @@ package Threads;
  */
 class Book {
 
+    public static final int SEQNUM;
+
+    static {
+        SEQNUM = 12345;
+    }
+
     private String title;
     private int numSold = 0;
 
@@ -76,14 +82,14 @@ public class ThreadInterference {
 
         Book book = new Book("Java Generics and Collections");
 
-            OnlineBuy buy1 = new OnlineBuy(book);
-            buy1.start();  // +1
-            OnlineBuy buy2 = new OnlineBuy(book);
-            buy2.start();   // +2
-            OnlineReturn onlineReturn1 = new OnlineReturn(book);
+        OnlineBuy buy1 = new OnlineBuy(book);
+        buy1.start();  // +1
+        OnlineBuy buy2 = new OnlineBuy(book);
+        buy2.start();   // +2
+        OnlineReturn onlineReturn1 = new OnlineReturn(book);
 
-            onlineReturn1.start(); // -1 
-            System.out.println("num of sold: " + book.getNumSold());
+        onlineReturn1.start(); // -1 
+        System.out.println("num of sold: " + book.getNumSold());
 
     }
 

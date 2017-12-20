@@ -1,5 +1,5 @@
 /*
- * how to create a immutable 
+ * a final varaible can be only assinged once; otherwise it will cause compilation error. 
  * 
  * 
  */
@@ -16,14 +16,44 @@ import java.util.Locale;
  */
 final class BirthDate {
 
-    private final Date birth;
+    private final Date birth; //birth is a object reference varaible. it should be constant. 
 
-    public BirthDate(Date birth) { //final fild can be init. only once
+    public BirthDate(Date birth) { //a final variable can be init. only once. 
         this.birth = birth;
     }
 
     public Date getBirth() {
-        return (Date) birth.clone();
+        return (Date) birth.clone(); // return a copy of object, thus in avoidance of modification 
+    }
+
+    public void modfiyAge() {
+        birth.setTime(1111190000); // final variable cannot be re-assigned, but its existing object can be modified. 
+
+    }
+
+}
+
+final class Client {
+
+    private final String name;
+    private final Integer age;
+
+    public Client(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
 }
@@ -48,6 +78,22 @@ public class ImmutableProtection {
 
         BirthDate bd = new BirthDate(thirdBirth);
         System.out.println("Birth date: " + bd.getBirth());
+
+        bd.getBirth().setMonth(12);
+        System.out.println("birth date again: " + bd.getBirth());
+
+        Client c = new Client("Yichun", 50);
+        System.out.println("client name: " + c.getName());
+
+        c.getAge();
+
+        System.out.println("after modification: " + c.getName());
+        
+        BirthDate bDate = new BirthDate(birth);
+        System.out.println("b Date : " + bDate.getBirth());
+        
+        bDate.modfiyAge();
+        System.out.println("modify b Date: " + bDate.getBirth());
 
     }
 
