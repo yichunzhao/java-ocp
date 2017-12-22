@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * a shared var. produced by onlinekøb thread, and consumed by onlinequery. 
+ * how to make the var. consistently shared. 
+ * When newSales happens, it notify its consumer. 
+ * when data is produced and ready, notify the consumer. 
  */
 package Threads;
 
@@ -11,7 +12,7 @@ package Threads;
  */
 class Laptop {
 
-    private int soldNum = 0;
+    private int soldNum = 0; //shared variable produced by OnlineKøb and Consumed by OnlineQuery
 
     public void newSale() {
         soldNum++;
@@ -33,9 +34,19 @@ class OnlineKøb extends Thread {
 
     @Override
     public void run() {
-        laptop.newSale();
-    }
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            System.out.println("interrupted exception: " + ex);
+        }
+
+        laptop.newSale();
+
+        synchronized (laptop) {
+            laptop.notify();
+        }
+    }
 }
 
 class OnlineQuery extends Thread {
@@ -48,23 +59,30 @@ class OnlineQuery extends Thread {
 
     @Override
     public void run() {
-        System.out.println("number sold: " + this.laptop.getSoldNum()
-        );
+
+        synchronized (laptop) { //achieving lock to call object method. 
+            try {
+                this.laptop.wait();
+            } catch (InterruptedException ex) {
+                System.out.println("" + ex.getMessage());
+            }
+        }
+
+        System.out.println("number sold: " + this.laptop.getSoldNum());
     }
 }
 
 public class InconsistentMemory {
-    
+
     public static void main(String[] args) {
         Laptop laptop = new Laptop();
-        
+
         Thread køb = new OnlineKøb(laptop);
         Thread query = new OnlineQuery(laptop);
-        
-        
+
         query.start();
         køb.start();
-        
+
     }
 
 }
