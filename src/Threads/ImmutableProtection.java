@@ -19,7 +19,7 @@ final class BirthDate {
     private final Date birth; //birth is a object reference varaible. it should be constant. 
 
     public BirthDate(Date birth) { //a final variable can be init. only once. 
-        this.birth = birth;
+        this.birth = (Date)birth.clone();
     }
 
     public Date getBirth() {
