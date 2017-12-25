@@ -1,8 +1,8 @@
 /*
- * a shared var. produced by onlinekøb thread, and consumed by onlinequery. 
+ * A shared var. produced by onlinekøb thread, and consumed by onlinequery. 
  * how to make the var. consistently shared. 
- * When newSales happens, it notify its consumer. 
- * when data is produced and ready, notify the consumer. 
+ * Consumer wait until object notify its consumer. 
+ * 
  */
 package Threads;
 
@@ -41,9 +41,10 @@ class OnlineKøb extends Thread {
             System.out.println("interrupted exception: " + ex);
         }
 
-        laptop.newSale();
-
         synchronized (laptop) {
+            laptop.newSale();
+            
+            //notify() waiting threads
             laptop.notify();
         }
     }
@@ -60,8 +61,12 @@ class OnlineQuery extends Thread {
     @Override
     public void run() {
 
-        synchronized (laptop) { //achieving lock to call object method. 
+        //firstly, requiring the lock on this object, then it is able to call
+        //its methods. 
+        synchronized (laptop) {
             try {
+                //wait() making current thread wait(), untill notify(); current 
+                //thread release lock on this object. 
                 this.laptop.wait();
             } catch (InterruptedException ex) {
                 System.out.println("" + ex.getMessage());
