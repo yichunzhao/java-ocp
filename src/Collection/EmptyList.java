@@ -3,26 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Date;
+package Collection;
 
-import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author YNZ
  */
+public class EmptyList {
 
-public class SqlDate {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-
-        Date today = new Date(System.currentTimeMillis());
-        System.out.println("" + today);
-        
-        
+        List<String> list = new ArrayList<>();
+        System.out.println("list is empty: " + list.isEmpty());
     }
 
 }

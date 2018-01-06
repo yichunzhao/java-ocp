@@ -6,6 +6,7 @@
 package Date;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -24,6 +25,13 @@ public class JavaTime {
         System.out.println("" + dateAgain);
 
         System.out.println("" + (date.compareTo(dateAgain) == 0));
+        
+        Date myDate = new Date();
+        System.out.println("myDate: " + myDate);
+        
+        
+        
+        
 
     }
 
