@@ -5,19 +5,21 @@
  */
 package Collection;
 
-import static java.util.stream.Collectors.toList;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
  *
  * @author YNZ
  */
-public class CollectionMap {
-
+public class UsingTreeSetSort {
+    
     public static void main(String[] args) {
-        Stream<Integer> numbers = Stream.of(1, 22, 33, 64);
-        System.out.println("the rest: " + numbers.filter(n -> !n.equals(22)).collect(toList()));
-
+         Set<String> set = Stream.of("Apple", "Cake", "Ball").collect(Collectors.toCollection(TreeSet::new));
+         
+         System.out.println("" + set);
     }
-
+    
 }

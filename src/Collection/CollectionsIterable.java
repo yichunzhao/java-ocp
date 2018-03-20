@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import static java.util.stream.Collectors.toList;
+import java.util.stream.Stream;
 
 /**
  *
@@ -32,9 +34,39 @@ public class CollectionsIterable {
         while (it.hasNext()) {
             System.out.println("" + it.next());
         }
+        System.out.println("list hashcode: " + list.hashCode());
 
-        //Java 8  (1 line)
-        list.stream().forEach(System.out::println);
+        //lamda expression: a formal method method
+        //predict functional interace: receive a single type return boolean
+        boolean clist = list.removeIf(x -> x.compareTo(BigDecimal.valueOf(20)) > 0);
+        System.out.println("clist : " + clist);
+        System.out.println("list: " + list);
+
+        List<BigDecimal> extra = Stream.of(BigDecimal.valueOf(100), BigDecimal.valueOf(200)).collect(toList());
+        System.out.println("list hashcode: " + list.hashCode());
+        list.addAll(extra);
+        System.out.println("list + extra: " + list);
+        System.out.println("list hashcode: " + list.hashCode());
+        System.out.println("extra hashcode: " + extra.hashCode());
+
+        list.replaceAll(x -> x.negate()); // unary operator interface; receive and return the same type
+        System.out.println("list after operator replace all : " + list);
+
+        System.out.println("count list :" + list.stream().count());
+        System.out.println("list distinct " + list.stream().distinct().collect(toList()));
+        list.add(BigDecimal.ONE);
+        System.out.println("list distinct " + list.stream().distinct().collect(toList()));
+
+        System.out.println("list filtering : " + list.stream().filter(x -> x.compareTo(BigDecimal.valueOf(-10)) > 0).collect(toList()));
+        System.out.println("current list " + list);
+        list.add(BigDecimal.valueOf(1000));
+        list.add(BigDecimal.valueOf(1000));
+        System.out.println("current list " + list);
+        
+        System.out.println("first index " + list.indexOf(BigDecimal.valueOf(1000))); //content equal
+        System.out.println("last index " + list.lastIndexOf(BigDecimal.valueOf(1000)));//conent equal
+        
+
     }
 
 }
