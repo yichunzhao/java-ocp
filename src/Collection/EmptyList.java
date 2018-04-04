@@ -17,6 +17,8 @@ public class EmptyList {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         System.out.println("list is empty: " + list.isEmpty());
+        
+        
     }
 
 }

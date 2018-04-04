@@ -5,6 +5,7 @@
  */
 package Collection;
 
+import java.util.List;
 import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
@@ -17,6 +18,18 @@ public class CollectionMap {
     public static void main(String[] args) {
         Stream<Integer> numbers = Stream.of(1, 22, 33, 64);
         System.out.println("the rest: " + numbers.filter(n -> !n.equals(22)).collect(toList()));
+
+        Stream<Integer> nums = Stream.of(1, 22, 33, 64);
+        Boolean matchedAll = nums.allMatch(x -> x > 0);
+        System.out.println("matched all : " + matchedAll);
+
+        List<Integer> numList = Stream.of(1, 22, 33, 64).collect(toList());
+        matchedAll = numList.stream().allMatch(x -> x < 0);
+        System.out.println("matched all less than zero: " + matchedAll);
+
+        if (numList.removeIf(x -> x == 22)) {
+            System.out.println("" + numList);
+        }
 
     }
 
