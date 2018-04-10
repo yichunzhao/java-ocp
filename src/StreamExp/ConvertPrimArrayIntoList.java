@@ -3,7 +3,7 @@
  * How to convert a primitive array into a ArrayList
  * 
  */
-package Stream;
+package StreamExp;
 
 import java.util.ArrayList;
 import java.util.List;
