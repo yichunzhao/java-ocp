@@ -13,16 +13,16 @@ import java.util.regex.Pattern;
  * @author YNZ
  */
 public class OptionalContainer {
-
+    
     public static void main(String[] args) {
-
+        
         String love = "I love you";
         Optional<String> op = Pattern.compile("[\\s]").splitAsStream(love).findFirst();
+        System.out.println(op.orElse("Unkonwn"));
         op.ifPresent(System.out::println);
         
         System.out.println(op.orElse("nothing in optional"));
         
-
     }
-
+    
 }

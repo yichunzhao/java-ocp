@@ -10,19 +10,25 @@ package FunctionalInterface;
  * @author YNZ
  */
 public class User {
-    
-    private String name;
 
-    public User(String name) {
+    private String name;
+    private int age;
+
+    public User(String name, int age) {
         this.name = name;
+        this.age = age;
     }
 
-    public String getName() {
+    public String name() {
         return name;
     }
-    
+
+    public int age() {
+        return this.age;
+    }
+
     @Override
-    public String toString(){
+    public String toString() {
         return this.name;
     }
 }

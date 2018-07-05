@@ -14,5 +14,5 @@ import java.util.List;
 @FunctionalInterface
 public interface Criteria<T> {
 
-    List<T> meetCriteria(List<T> users);
+    List<T> meetCriteria(List<T> items);
 }
