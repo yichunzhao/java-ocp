@@ -5,7 +5,6 @@
  */
 package Threads;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -20,8 +19,8 @@ final class BirthDay{
         this.birth = birth;
     }
     
-    public LocalDateTime getBirthDateTime() throws CloneNotSupportedException{
-        return (LocalDateTime)birth.clone();
+    public Date getBirthDateTime() throws CloneNotSupportedException{
+        return (Date)birth.clone();
     }
 }
 
