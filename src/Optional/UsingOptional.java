@@ -5,17 +5,27 @@
  */
 package Optional;
 
-import java.util.regex.Pattern;
+import java.util.Optional;
 
 /**
  *
  * @author YNZ
  */
 public class UsingOptional {
+
     public static void main(String[] args) {
+
+        Optional<String> firstName = Optional.empty();
         
-        String anyStr = "Java Generics and Collections";
-        Pattern.compile("[\\s]").splitAsStream(anyStr).findFirst();
+        firstName = Optional.of("Yichun");
         
+        Optional.ofNullable(args);
+        //consumer interface f(x) -> nothing
+        firstName.ifPresent(x -> System.out.println("" + x));
+        //supplier function, f()-> y
+        //
+        firstName.orElseThrow(IllegalStateException::new);
+        firstName.orElseThrow(()->new IllegalAccessError("ddddd"));
+
     }
 }
