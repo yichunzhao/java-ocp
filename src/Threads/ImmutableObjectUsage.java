@@ -25,5 +25,7 @@ final class BirthDay{
 }
 
 public class ImmutableObjectUsage {
+    BirthDay bd = new BirthDay(new Date(System.currentTimeMillis()));
+    
     
 }
