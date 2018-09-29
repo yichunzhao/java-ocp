@@ -18,9 +18,11 @@ public class UsingFlatMap {
     public static void main(String[] args) {
         String[][] data = {{"a", "b"}, {"c", "d"}, {"e", "f"}};
         System.out.println("" + data.length);
-
-        //how to stream array
-        System.out.println("Elements number? " + Arrays.stream(data).count());
+        
+        System.out.println("count of data : " + Stream.of(data).count());
+        
+        
+        System.out.println("count of flatmap" + Stream.of(data).flatMap(Stream::of).count());
 
         //it contains 3 elements.
         System.out.println("Elements number? " + Arrays.stream(data).flatMap(Arrays::stream).count());
