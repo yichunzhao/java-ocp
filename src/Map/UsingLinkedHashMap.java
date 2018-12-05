@@ -27,9 +27,7 @@ public class UsingLinkedHashMap {
         map.put("now", 50);
         
         System.out.println("map " + map.toString());
-        
-        
-        
+
         
         Map<String,Integer> hashMap = new HashMap<>(map);
         System.out.println("linkend map -> hashmap : " + hashMap);
@@ -38,7 +36,6 @@ public class UsingLinkedHashMap {
         System.out.println("what left: " + setMap);
         
         System.out.println("First element: " + map.entrySet().stream().findFirst());
-                
 
     }
 

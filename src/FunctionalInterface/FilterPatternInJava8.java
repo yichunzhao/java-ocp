@@ -6,11 +6,11 @@
 package FunctionalInterface;
 
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
 /**
- *
  * @author YNZ
  */
 public class FilterPatternInJava8 {
@@ -33,8 +33,8 @@ public class FilterPatternInJava8 {
         List<User> filtered = users;
         filtered = criteriaByAge_32.meetCriteria(filtered);
         filtered = criteriaByAge_30.meetCriteria(filtered);
-        
-        
+
+
         System.out.println("after filtering : " + filtered);
 
     }

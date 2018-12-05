@@ -3,22 +3,35 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Collection/SoringCollection.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/ImmutableProtection.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Optional/FlatMapEtc.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/ImmutableObjectUsage.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Map/UsingFlatMap.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Collection/ImplementingStack.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/StreamCollectingResult/Accessibility.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/SynchronizedBlock.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/ThreadInterference.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Optional/OptionalContainer.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/test/StreamCollectingResult/AccessibilityTest.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/DateAndLocale/JavaTime.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Local/LocaleDateJava8.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/filter/FilteringSomething.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/ThreadIsRunable.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Collection/MergeTwoList.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/oters/SwitchUseCases.java</file>
-            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Collection/SoringCollection.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/VolatileDataProetction.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Map/MapStringToInteger.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/filter/FlatMapAndFiltering.java</file>
-            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Optional/FlatMapEtc.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/FunctionalInterface/CalculatingFunction.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/DateAndLocale/SqlDate.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/TimeLine/UsingInstantTimeAPI.java</file>
-            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Collection/ImplementingStack.java</file>
-            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/StreamCollectingResult/Accessibility.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Concurrency/ConcurrentHashMapVsHashmap.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Lamada/PrintOneToNWithoutLoop.java</file>
-            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Optional/OptionalContainer.java</file>
-            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/test/StreamCollectingResult/AccessibilityTest.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/InconsistentMemory.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Map/HashMapUniqueKey.java</file>
             <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Optional/UsingOptional.java</file>
+            <file>file:/C:/Users/YNZ/Documents/NetBeansProjects/Java8/src/Threads/VolatileVarUsing.java</file>
         </group>
     </open-files>
 </project-private>

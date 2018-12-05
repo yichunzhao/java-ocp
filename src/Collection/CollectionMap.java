@@ -6,11 +6,11 @@
 package Collection;
 
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
 /**
- *
  * @author YNZ
  */
 public class CollectionMap {
