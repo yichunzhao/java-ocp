@@ -23,6 +23,7 @@ interface Filter<T> {
     List<T> filtering(List<T> a);
 }
 
+
 public class CalculatingFunction {
 
     public static void main(String[] args) {
