@@ -23,6 +23,8 @@ public class ImplementingStack {
         str.chars().mapToObj(i -> (char) i).forEach(c -> stack.push(c));
 
         stack.stream().forEach(System.out::print);
+
+
     }
 
 }

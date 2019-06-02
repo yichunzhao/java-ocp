@@ -14,9 +14,18 @@ public class StackImplByDeque {
         stack.push(new Person("Jerry"));
         stack.push(new Person("Freeman"));
 
+        //size = 3
+        System.out.println("size of stack: " + stack.size());
+
         //remove and return the first.
         Person p = stack.pop();
         System.out.println(p);
+
+        //Jerry
+        System.out.println("Head : " + stack.peek());
+
+        //Tom
+        System.out.println("Tail: " + stack.peekLast());
     }
 
     private static class Person {
