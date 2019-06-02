@@ -5,11 +5,8 @@
  */
 package String;
 
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Stream;
 
 /**
  *
@@ -28,7 +25,7 @@ public class ReverseString {
 
         int i, j;
         char[] reversed = new char[chars.length];
-        //for loop; var. initialisation; condition (true); var increasement
+        //for loop; var. initialisation; condition (true); var increment
         for (i = chars.length - 1, j = 0; i >= 0; i--, j++) {
             reversed[j] = chars[i];
         }
@@ -54,6 +51,11 @@ public class ReverseString {
         }
 
         System.out.println("Using a stack:  " + String.valueOf(reversed2));
+
+
+        /**
+         * method 3 in java 8
+         */
 
     }
 

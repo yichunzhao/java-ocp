@@ -28,15 +28,6 @@ public class EnumValues {
         
     }
     
-    
-private static boolean isSame(String type){
-    return type.equalsIgnoreCase(imageTypes.GIF.name());
-}    
-    
-    
-    
-    
-
 }
 
 

@@ -12,7 +12,7 @@ package oters;
 public class SwitchUseCases {
     public static void main(String[] args) {
         
-        int statusCode = 10;
+        int statusCode = 0;
         
         switch(statusCode){
             case 0: 
