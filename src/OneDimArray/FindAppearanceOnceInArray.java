@@ -11,7 +11,6 @@ import java.util.Arrays;
  * For example, given the array [2, 4, 6, 8, 10, 2, 6, 10], return 4 and 8. The order does not matter.
  */
 
-
 public class FindAppearanceOnceInArray {
 
     public static void main(String[] args) {

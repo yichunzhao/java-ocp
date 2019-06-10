@@ -11,22 +11,17 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class ConvertListToSet {
 
-    public static void main(String[] args) {
-        Stream<String> strs = Stream.of("wo", "he", "ni", "xin", "lian", "xin");
-        List<String> strList = strs.collect(Collectors.toList());
-        
-        //convert to set
-        
-        Set<String> strSet = new HashSet<>(strList);
-        
-        System.out.println("set : " + strSet);
-        
+  public static void main(String[] args) {
+    Stream<String> strs = Stream.of("wo", "he", "ni", "xin", "lian", "xin");
+    List<String> strList = strs.collect(Collectors.toList());
 
-    }
+    // convert to set
+
+    Set<String> strSet = new HashSet<>(strList);
+
+    System.out.println("set : " + strSet);
+  }
 }
