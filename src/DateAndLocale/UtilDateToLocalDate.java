@@ -7,19 +7,16 @@ package DateAndLocale;
 
 import java.util.Locale;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class UtilDateToLocalDate {
-    
-    public static void main(String[] args) {
-        
-        Locale.setDefault(new Locale("da", "DK"));
-        
-        System.out.println("get current default local in jvm:  " +Locale.getDefault().getCountry());
-        System.out.println("get current default local in jvm:  " +Locale.getDefault().getDisplayCountry());
-        Locale.getDefault();
-    }
-    
+
+  public static void main(String[] args) {
+
+    Locale.setDefault(new Locale("da", "DK"));
+
+    System.out.println("get current default local in jvm:  " + Locale.getDefault().getCountry());
+    System.out.println(
+        "get current default local in jvm:  " + Locale.getDefault().getDisplayCountry());
+    Locale.getDefault();
+  }
 }

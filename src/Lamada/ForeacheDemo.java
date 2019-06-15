@@ -7,16 +7,14 @@ package Lamada;
 
 import java.util.Arrays;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class ForeacheDemo {
 
-    public static void main(String... args) {
+  public static void main(String... args) {
 
-        Arrays.asList(24, 45, 23, 1).stream().sorted().forEach(e -> System.out.println("" + e));
-        Arrays.asList(12,7346,88,999).stream().filter((e)->e>1000).forEach(e->System.out.println(""+e));
-
-    }
+    Arrays.asList(24, 45, 23, 1).stream().sorted().forEach(e -> System.out.println("" + e));
+    Arrays.asList(12, 7346, 88, 999).stream()
+        .filter((e) -> e > 1000)
+        .forEach(e -> System.out.println("" + e));
+  }
 }

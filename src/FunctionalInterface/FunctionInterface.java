@@ -8,19 +8,14 @@ package FunctionalInterface;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class FunctionInterface {
-    
-    public static void main(String[] args) {
-        Map<String, Integer> nameMap = new HashMap<>();
-        Integer result = nameMap.computeIfAbsent("John", s-> s.length());
-        System.out.println("result : " + result);
-        nameMap.putIfAbsent("Yichun", 100 );
-        System.out.println("name map: " + nameMap);
-        
-    }
-    
+
+  public static void main(String[] args) {
+    Map<String, Integer> nameMap = new HashMap<>();
+    Integer result = nameMap.computeIfAbsent("John", s -> s.length());
+    System.out.println("result : " + result);
+    nameMap.putIfAbsent("Yichun", 100);
+    System.out.println("name map: " + nameMap);
+  }
 }

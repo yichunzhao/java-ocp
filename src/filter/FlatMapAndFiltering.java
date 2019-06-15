@@ -7,35 +7,32 @@ package filter;
 
 import java.util.Arrays;
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
-/**
- *
- * @author YNZ
- */
+import static java.util.stream.Collectors.toList;
+
+/** @author YNZ */
 public class FlatMapAndFiltering {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        String[][] strs = {{"I", "saw", "it"}, {"nothing", "was", "there"}};
-        System.out.println("" + Arrays.toString(strs));
+    String[][] strs = {{"I", "saw", "it"}, {"nothing", "was", "there"}};
+    System.out.println("" + Arrays.toString(strs));
 
-        //A pipe line of string arrays
-        Arrays.stream(strs).forEach(x -> System.out.println(Arrays.toString(x)));
+    // A pipe line of string arrays
+    Arrays.stream(strs).forEach(x -> System.out.println(Arrays.toString(x)));
 
-        //A double 
-        Stream<String[]> strAryStream = Arrays.stream(strs);
+    // A double
+    Stream<String[]> strAryStream = Arrays.stream(strs);
 
-        //
-        Stream<String> strStream = strAryStream.flatMap(Arrays::stream);
-        
-        //
-        List<String> result = strStream.filter(x -> !x.equals("was")).collect(toList());
-        System.out.println("" + result);
-        
-        //
-        Arrays.stream(strs).map(s->s.length);
+    //
+    Stream<String> strStream = strAryStream.flatMap(Arrays::stream);
 
-    }
+    //
+    List<String> result = strStream.filter(x -> !x.equals("was")).collect(toList());
+    System.out.println("" + result);
+
+    //
+    Arrays.stream(strs).map(s -> s.length);
+  }
 }

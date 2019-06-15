@@ -5,15 +5,11 @@
  */
 package String;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class StringJoin {
 
-    public static void main(String[] args) {
-        String joinedString = String.join("--", "java", "world");
-        System.out.println("joined String : " + joinedString);
-    }
-
+  public static void main(String[] args) {
+    String joinedString = String.join("--", "java", "world");
+    System.out.println("joined String : " + joinedString);
+  }
 }

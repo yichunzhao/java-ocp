@@ -5,37 +5,26 @@
  */
 package TimeLine;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.ZonedDateTime;
+import java.time.*;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class UsingInstantTimeAPI {
 
-    public static void main(String[] args) {
-        Instant start = Instant.now();
+  public static void main(String[] args) {
+    Instant start = Instant.now();
 
-        Instant end = Instant.now();
+    Instant end = Instant.now();
 
-        Duration d = Duration.between(start, end);
-        System.out.println("Duration = " + d.toString());
-        System.out.println("Duration in ms = " + d.toMillis());
+    Duration d = Duration.between(start, end);
+    System.out.println("Duration = " + d.toString());
+    System.out.println("Duration in ms = " + d.toMillis());
 
-        System.out.println("Local date now : " + LocalDate.now());
+    System.out.println("Local date now : " + LocalDate.now());
 
-        LocalDate ofDate = LocalDate.of(1965, Month.MARCH, 12);
-        System.out.println("" + ofDate);
-        
-        ZonedDateTime dateTime = ZonedDateTime.now();
-        System.out.println("" + dateTime);
-        
-        
+    LocalDate ofDate = LocalDate.of(1965, Month.MARCH, 12);
+    System.out.println("" + ofDate);
 
-    }
-
+    ZonedDateTime dateTime = ZonedDateTime.now();
+    System.out.println("" + dateTime);
+  }
 }

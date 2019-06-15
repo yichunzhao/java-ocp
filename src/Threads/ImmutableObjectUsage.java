@@ -7,25 +7,19 @@ package Threads;
 
 import java.util.Date;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
+final class BirthDay {
+  private final Date birth;
 
-final class BirthDay{
-    final private Date birth; 
+  public BirthDay(Date birth) {
+    this.birth = birth;
+  }
 
-    public BirthDay(Date birth) {
-        this.birth = birth;
-    }
-    
-    public Date getBirthDateTime() throws CloneNotSupportedException{
-        return (Date)birth.clone();
-    }
+  public Date getBirthDateTime() throws CloneNotSupportedException {
+    return (Date) birth.clone();
+  }
 }
 
 public class ImmutableObjectUsage {
-    BirthDay bd = new BirthDay(new Date(System.currentTimeMillis()));
-    
-    
+  BirthDay bd = new BirthDay(new Date(System.currentTimeMillis()));
 }

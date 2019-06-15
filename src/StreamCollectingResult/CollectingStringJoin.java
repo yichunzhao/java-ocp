@@ -8,17 +8,13 @@ package StreamCollectingResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class CollectingStringJoin {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        String one = Pattern.compile("[\\s]").splitAsStream("I love you").collect(Collectors.joining(","));
-        System.out.println("joined : " + one);
-
-    }
-
+    String one =
+        Pattern.compile("[\\s]").splitAsStream("I love you").collect(Collectors.joining(","));
+    System.out.println("joined : " + one);
+  }
 }

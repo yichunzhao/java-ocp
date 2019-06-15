@@ -5,65 +5,49 @@
  */
 package Concurrency;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.WeakHashMap;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class ConcurrentHashMapVsHashmap {
 
-    public static void main(String... args) {
-        Map<String, Integer> hasMap = new HashMap<>();
+  public static void main(String... args) {
+    Map<String, Integer> hasMap = new HashMap<>();
 
-        Map<String, Integer> weakHashMap = new WeakHashMap<>();
+    Map<String, Integer> weakHashMap = new WeakHashMap<>();
 
-        //sorted by the key natural order
-        Map<String, Integer> treeMap = new TreeMap<>();
+    // sorted by the key natural order
+    Map<String, Integer> treeMap = new TreeMap<>();
 
-        //concurrent map, repleacing hashtable
-        ConcurrentMap<String, Integer> concurrentMap = new ConcurrentHashMap<>();
+    // concurrent map, repleacing hashtable
+    ConcurrentMap<String, Integer> concurrentMap = new ConcurrentHashMap<>();
 
-        List<String> arrayList = new ArrayList<>();
-        arrayList.add("Dell");
-        arrayList.add("Dell");
+    List<String> arrayList = new ArrayList<>();
+    arrayList.add("Dell");
+    arrayList.add("Dell");
 
-        List<String> linkedList = new LinkedList<>();
-        linkedList.add("Lenovo");
-        linkedList.add("Lenovo");
+    List<String> linkedList = new LinkedList<>();
+    linkedList.add("Lenovo");
+    linkedList.add("Lenovo");
 
-        System.out.println("" + arrayList);
-        System.out.println("" + linkedList);
+    System.out.println("" + arrayList);
+    System.out.println("" + linkedList);
 
-        //keeping the insertion order
-        Map<String, Integer> linkedMap = new LinkedHashMap<>();
-        linkedMap.put("Dell", 1);
-        linkedMap.put("Dell", 2);
-        System.out.println("" + linkedMap);
+    // keeping the insertion order
+    Map<String, Integer> linkedMap = new LinkedHashMap<>();
+    linkedMap.put("Dell", 1);
+    linkedMap.put("Dell", 2);
+    System.out.println("" + linkedMap);
 
-        //hashset internally implemented by a hashmap. 
-        Set<String> hashSet = new HashSet<>();
-        hashSet.add("add");
-        hashSet.add("add");
-        hashSet.add(null);
-        System.out.println("" + hashSet);
+    // hashset internally implemented by a hashmap.
+    Set<String> hashSet = new HashSet<>();
+    hashSet.add("add");
+    hashSet.add("add");
+    hashSet.add(null);
+    System.out.println("" + hashSet);
 
-        hashSet.removeIf(x -> x == null);
-        System.out.println("" + hashSet);
-
-
-
-    }
-
+    hashSet.removeIf(x -> x == null);
+    System.out.println("" + hashSet);
+  }
 }

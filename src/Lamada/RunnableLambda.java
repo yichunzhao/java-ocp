@@ -7,21 +7,13 @@ package Lamada;
 
 import java.util.Random;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class RunnableLambda {
-    private static Random r = new Random();
+  private static Random r = new Random();
 
-    
-    public static void main(String... args) {
-        
-        Thread t = new Thread(()->System.out.println(r.nextInt(100)));
-        t.start();
-        
-        
+  public static void main(String... args) {
 
-    }
-
+    Thread t = new Thread(() -> System.out.println(r.nextInt(100)));
+    t.start();
+  }
 }

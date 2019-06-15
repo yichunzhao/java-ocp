@@ -5,26 +5,23 @@
  */
 package OneDimArray;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class ByteHelper {
 
-    public static byte[] toPrimitive(Byte[] bs) {
-        byte[] result = new byte[bs.length];
-        for (int i = 0; i < bs.length; i++) {
-            result[i] = bs[i];
-        }
-        return result;
+  public static byte[] toPrimitive(Byte[] bs) {
+    byte[] result = new byte[bs.length];
+    for (int i = 0; i < bs.length; i++) {
+      result[i] = bs[i];
+    }
+    return result;
+  }
+
+  public static Byte[] toWrapper(byte[] bs) {
+    Byte[] result = new Byte[bs.length];
+    for (int i = 0; i < bs.length; i++) {
+      result[i] = bs[i];
     }
 
-    public static Byte[] toWrapper(byte[] bs) {
-        Byte[] result = new Byte[bs.length];
-        for (int i = 0; i < bs.length; i++) {
-            result[i] = bs[i];
-        }
-
-        return result;
-    }
+    return result;
+  }
 }

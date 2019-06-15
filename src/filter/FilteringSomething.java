@@ -10,13 +10,11 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-/**
- * @author YNZ
- */
+/** @author YNZ */
 public class FilteringSomething {
 
-    public static void main(String[] args) {
-        List<Integer> numbers = Stream.of(2, 3, 7).collect(toList());
-        numbers.stream().filter(x -> x >= 3).forEach(System.out::println);
-    }
+  public static void main(String[] args) {
+    List<Integer> numbers = Stream.of(2, 3, 7).collect(toList());
+    numbers.stream().filter(x -> x >= 3).forEach(System.out::println);
+  }
 }

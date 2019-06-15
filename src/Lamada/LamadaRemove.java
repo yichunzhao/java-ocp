@@ -8,22 +8,19 @@ package Lamada;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class LamadaRemove {
 
-    public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        list.add("aa");
-        list.add("aab");
-        list.add("aa");
-        list.add("cc");
-        list.add("ddd");
-        System.out.println(list);
+  public static void main(String[] args) {
+    List<String> list = new ArrayList<>();
+    list.add("aa");
+    list.add("aab");
+    list.add("aa");
+    list.add("cc");
+    list.add("ddd");
+    System.out.println(list);
 
-        list.removeIf((e) -> e.equals("aa"));
-        System.out.println(list);
-    }
+    list.removeIf((e) -> e.equals("aa"));
+    System.out.println(list);
+  }
 }

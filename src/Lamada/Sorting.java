@@ -9,16 +9,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class Sorting {
 
-    public static void main(String[] args) {
-        List<Character> chars = Arrays.asList('a', 'W', 'x', 'B', 'C', 'k');
-        Collections.sort(chars, Character::compareTo);
-        System.out.println("sorted : " + chars);
-    }
-
+  public static void main(String[] args) {
+    List<Character> chars = Arrays.asList('a', 'W', 'x', 'B', 'C', 'k');
+    Collections.sort(chars, Character::compareTo);
+    System.out.println("sorted : " + chars);
+  }
 }

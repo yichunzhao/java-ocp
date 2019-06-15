@@ -5,43 +5,39 @@
  */
 package StreamCollectingResult;
 
-import static org.hamcrest.CoreMatchers.is;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-/**
- *
- * @author YNZ
- */
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+/** @author YNZ */
 public class AccessibilityTest {
 
-    public AccessibilityTest() {
-    }
+  public AccessibilityTest() {}
 
-    @Test
-    public void testRetrieve() throws Exception {
-        assertThat(Accessibility.retrieve(Accessibility.ANY_TIME.text()), is(Accessibility.ANY_TIME));
-    }
+  @Test
+  public void testRetrieve() throws Exception {
+    assertThat(Accessibility.retrieve(Accessibility.ANY_TIME.text()), is(Accessibility.ANY_TIME));
+  }
 
-    @Test(expected = Exception.class)
-    public void whenretrieve_emptytext_thenthrowException() throws Exception {
-        Accessibility.retrieve("");
-    }
+  @Test(expected = Exception.class)
+  public void whenretrieve_emptytext_thenthrowException() throws Exception {
+    Accessibility.retrieve("");
+  }
 
-    @Test(expected = Exception.class)
-    public void whenretrieve_null_thenthrowException() throws Exception {
-        Accessibility.retrieve(null);
-    }
+  @Test(expected = Exception.class)
+  public void whenretrieve_null_thenthrowException() throws Exception {
+    Accessibility.retrieve(null);
+  }
 
-    @Test(expected = Exception.class)
-    public void whenretrieve_othertext_thenthrowException() throws Exception {
-        Accessibility.retrieve("whatever");
-    }
+  @Test(expected = Exception.class)
+  public void whenretrieve_othertext_thenthrowException() throws Exception {
+    Accessibility.retrieve("whatever");
+  }
 
-    @Test
-    public void whenretievetext_thenitreturnAccesibility() throws Exception {
-        Accessibility actual = Accessibility.retrieve(Accessibility.FEW_TIME_WEEK.text());
-        assertThat(actual, is(Accessibility.class));
-    }
-
+  @Test
+  public void whenretievetext_thenitreturnAccesibility() throws Exception {
+    Accessibility actual = Accessibility.retrieve(Accessibility.FEW_TIME_WEEK.text());
+    assertThat(actual, is(Accessibility.class));
+  }
 }

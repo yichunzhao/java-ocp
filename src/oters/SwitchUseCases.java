@@ -5,31 +5,26 @@
  */
 package oters;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class SwitchUseCases {
-    public static void main(String[] args) {
-        
-        int statusCode = 0;
-        
-        switch(statusCode){
-            case 0: 
-            case 110: System.out.println("oters.SwitchUseCases.main()");
-            case 3210: System.out.println("3210"); 
-            default: {
-                System.out.println(" defaut ... ");
-                
-                if(true)
-                throw new IllegalStateException("sss");
-            }
-            
+  public static void main(String[] args) {
+
+    int statusCode = 0;
+
+    switch (statusCode) {
+      case 0:
+      case 110:
+        System.out.println("others.SwitchUseCases.main()");
+      case 3210:
+        System.out.println("3210");
+      default:
+        {
+          System.out.println(" default ... ");
+
+          if (true) throw new IllegalStateException("sss");
         }
-        
-        System.out.println("dddd");
-        
-        
-        
     }
+
+    System.out.println("dddd");
+  }
 }

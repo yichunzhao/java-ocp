@@ -6,32 +6,30 @@ import java.util.stream.IntStream;
 
 public class TooManyStaticVariable {
 
-    private static class Person{
-        private String name;
+  private static List<Person> list = new ArrayList<>();
 
-        public Person(String name) {
-            this.name = name;
-        }
+  private static void populateValuesInList() {
+    IntStream.rangeClosed(0, 1000).forEach(i -> list.add(new Person("Tomy")));
+  }
 
-        public String getName() {
-            return name;
-        }
+  public static void main(String[] args) {
+    TooManyStaticVariable.populateValuesInList();
+    System.out.println("size: " + list.size());
+  }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+  private static class Person {
+    private String name;
+
+    public Person(String name) {
+      this.name = name;
     }
 
-    private static List<Person> list = new ArrayList<>();
-
-    private static void populateValuesInList() {
-        IntStream.rangeClosed(0
-                , 1000).forEach(i -> list.add(new Person("Tomy")));
+    public String getName() {
+      return name;
     }
 
-    public static void main(String[] args) {
-        TooManyStaticVariable.populateValuesInList();
-        System.out.println("size: " + list.size());
-
+    public void setName(String name) {
+      this.name = name;
     }
+  }
 }

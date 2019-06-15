@@ -6,38 +6,32 @@
 package Collection;
 
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 import java.util.stream.Stream;
 
-/**
- *
- * @author YNZ
- */
+import static java.util.stream.Collectors.toList;
 
-class Apple{
-    private double weight;
+/** @author YNZ */
+class Apple {
+  private double weight;
 
-    public Apple(double weight) {
-        this.weight = weight;
-    }
+  public Apple(double weight) {
+    this.weight = weight;
+  }
 
-    public double getWeight() {
-        return weight;
-    }
+  public double getWeight() {
+    return weight;
+  }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-    
+  public void setWeight(double weight) {
+    this.weight = weight;
+  }
 }
 
 public class SoringCollection {
-    
-    public static void main(String[] args) {
-        
-        List<Apple> apples = Stream.of(new Apple(12.3D), new Apple(23.0D), new Apple(34.9D)).collect(toList());
-        
-        
-    }
-    
+
+  public static void main(String[] args) {
+
+    List<Apple> apples =
+        Stream.of(new Apple(12.3D), new Apple(23.0D), new Apple(34.9D)).collect(toList());
+  }
 }

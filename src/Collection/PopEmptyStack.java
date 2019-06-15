@@ -5,13 +5,12 @@ import java.util.Deque;
 
 public class PopEmptyStack {
 
-    //what happen as pop from an empty stack?
-    public static void main(String[] args) {
+  // what happen as pop from an empty stack?
+  public static void main(String[] args) {
 
-        Deque<Integer> stack = new ArrayDeque<>();
+    Deque<Integer> stack = new ArrayDeque<>();
 
-        Integer result = stack.pop();
-        System.out.println(result); //throw NoSuchElementException.
-    }
-
+    Integer result = stack.pop();
+    System.out.println(result); // throw NoSuchElementException.
+  }
 }

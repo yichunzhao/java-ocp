@@ -10,18 +10,13 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 public class CollectingToMap {
-    
-    public static void main(String[] args) {
-        Stream<String> words = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa");
-        Map<String, Integer> wordMap = words.collect(Collectors.toMap(w -> w, String::length));
-        
-        System.out.println("" + wordMap.get("Java"));
-        
-    }
-    
+
+  public static void main(String[] args) {
+    Stream<String> words = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa");
+    Map<String, Integer> wordMap = words.collect(Collectors.toMap(w -> w, String::length));
+
+    System.out.println("" + wordMap.get("Java"));
+  }
 }

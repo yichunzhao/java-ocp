@@ -5,19 +5,15 @@
  */
 package String;
 
-
 import java.util.Optional;
 
-/**
- * @author YNZ
- */
+/** @author YNZ */
 public class NotNull {
 
-    public static void main(String[] args) {
-        String str = null;
+  public static void main(String[] args) {
+    String str = null;
 
-        String safe = Optional.ofNullable(str).orElseThrow(() -> new IllegalArgumentException());
-        System.out.println(safe);
-    }
-
+    String safe = Optional.ofNullable(str).orElseThrow(() -> new IllegalArgumentException());
+    System.out.println(safe);
+  }
 }

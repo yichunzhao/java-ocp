@@ -7,12 +7,9 @@ package FunctionalInterface;
 
 import java.util.List;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 @FunctionalInterface
 public interface Criteria<T> {
 
-    List<T> meetCriteria(List<T> items);
+  List<T> meetCriteria(List<T> items);
 }

@@ -5,92 +5,84 @@
  */
 package Threads;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
 class Book {
 
-    public static final int SEQNUM;
+  public static final int SEQNUM;
 
-    static {
-        SEQNUM = 12345;
-    }
+  static {
+    SEQNUM = 12345;
+  }
 
-    private String title;
-    private int numSold = 0;
+  private String title;
+  private int numSold = 0;
 
-    public Book(String title) {
-        this.title = title;
-    }
+  public Book(String title) {
+    this.title = title;
+  }
 
-    synchronized public void newSale() {
-        numSold++;
-    }
+  public synchronized void newSale() {
+    numSold++;
+  }
 
-    synchronized public void returnBook() {
-        numSold--;
-    }
+  public synchronized void returnBook() {
+    numSold--;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public int getNumSold() {
-        return numSold;
-    }
-
+  public int getNumSold() {
+    return numSold;
+  }
 }
 
 class OnlineBuy extends Thread {
 
-    private Book book;
+  private Book book;
 
-    public OnlineBuy(Book book) {
-        this.book = book;
-    }
+  public OnlineBuy(Book book) {
+    this.book = book;
+  }
 
-    @Override
-    public void run() {
-        this.book.newSale();
-    }
-
+  @Override
+  public void run() {
+    this.book.newSale();
+  }
 }
 
 class OnlineReturn extends Thread {
 
-    private Book book;
+  private Book book;
 
-    public OnlineReturn(Book book) {
-        this.book = book;
-    }
+  public OnlineReturn(Book book) {
+    this.book = book;
+  }
 
-    @Override
-    public void run() {
-        this.book.returnBook();
-
-    }
+  @Override
+  public void run() {
+    this.book.returnBook();
+  }
 }
 
 public class ThreadInterference {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Book book = new Book("Java Generics and Collections");
+    Book book = new Book("Java Generics and Collections");
 
-        OnlineBuy buy1 = new OnlineBuy(book);
-        buy1.start();  // +1
-        OnlineBuy buy2 = new OnlineBuy(book);
-        buy2.start();   // +2
-        OnlineReturn onlineReturn1 = new OnlineReturn(book);
+    OnlineBuy buy1 = new OnlineBuy(book);
+    buy1.start(); // +1
+    OnlineBuy buy2 = new OnlineBuy(book);
+    buy2.start(); // +2
+    OnlineReturn onlineReturn1 = new OnlineReturn(book);
 
-        onlineReturn1.start(); // -1 
-        System.out.println("num of sold: " + book.getNumSold());
-
-    }
-
+    onlineReturn1.start(); // -1
+    System.out.println("num of sold: " + book.getNumSold());
+  }
 }

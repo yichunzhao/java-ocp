@@ -1,28 +1,17 @@
 /*
  * Object: wait(), notify()
- * 
- * 
+ *
+ *
  */
 package Threads;
 
-/**
- *
- * @author YNZ
- */
+/** @author YNZ */
+class Friend extends Thread {
 
+  private String name;
+  private boolean arrived;
 
-class Friend extends Thread{
-    
-    private String name;
-    private boolean arrived;
-
-    public Friend() {
-    }
-    
+  public Friend() {}
 }
 
-
-        
-public class ExampleObjectNotify {
-    
-}
+public class ExampleObjectNotify {}
