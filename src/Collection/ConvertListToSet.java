@@ -19,8 +19,9 @@ public class ConvertListToSet {
     List<String> strList = strs.collect(Collectors.toList());
 
     // convert to set
-
     Set<String> strSet = new HashSet<>(strList);
+
+
 
     System.out.println("set : " + strSet);
   }
