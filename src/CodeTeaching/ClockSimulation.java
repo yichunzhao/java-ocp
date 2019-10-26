@@ -19,11 +19,13 @@ class Clock {
   }
 
   private void setHour() {
+    this.hour++;
     if (this.hour >= 24) {
       this.hour = 0;
+
     }
 
-    this.hour++;
+
   }
 
   public int getMin() {
@@ -31,11 +33,12 @@ class Clock {
   }
 
   private void setMin() {
+    this.min++;
     if (this.min == 60) {
       this.min = 0;
       this.setHour();
+
     }
-    this.min++;
   }
 
   public int getSec() {
@@ -43,11 +46,12 @@ class Clock {
   }
 
   public void setSec() {
+    this.sec++;
     if (this.sec == 60) {
       this.sec = 0;
       this.setMin();
+
     }
-    this.sec++;
   }
 }
 
@@ -55,10 +59,11 @@ public class ClockSimulation {
   public static void main(String[] args) {
     Clock clock = new Clock(0, 0, 0);
 
-    for (int i = 0; i < 62; i++) {
+    for (int i = 0; i < 3600; i++) {
       clock.setSec();
     }
 
-    System.out.println("hour: "+ clock.getHour() + " min: " + clock.getMin() + " sec: " + clock.getSec());
+    System.out.println(
+        "hour: " + clock.getHour() + " min: " + clock.getMin() + " sec: " + clock.getSec());
   }
 }
