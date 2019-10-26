@@ -8,6 +8,8 @@ package DateAndLocale;
 import java.sql.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 /** @author YNZ */
 public class SqlDate {
@@ -24,6 +26,15 @@ public class SqlDate {
     System.out.println("uDate: " + df.format(uDate));
 
     System.out.println("sDate: " + convert(uDate));
+
+    Date.valueOf(LocalDate.now());
+
+    ZonedDateTime.now().toInstant();
+
+
+
+
+
   }
 
   public static java.sql.Date convert(java.util.Date uDate) {

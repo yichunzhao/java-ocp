@@ -22,7 +22,6 @@ public class RotateMatrix {
 
   public static void main(String[] args) {
     System.out.println(Arrays.deepToString(getMatrix()));
-
     System.out.println(Arrays.deepToString(rotate(getMatrix())));
   }
 
@@ -32,6 +31,9 @@ public class RotateMatrix {
 
   private static int[][] rotate(int[][] matrix) {
     int[][] rotated = new int[rowNum][colNum];
+
+
+
 
     List<Integer> list = new ArrayList<>();
 
