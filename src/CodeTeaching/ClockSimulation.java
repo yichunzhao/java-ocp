@@ -22,10 +22,7 @@ class Clock {
     this.hour++;
     if (this.hour >= 24) {
       this.hour = 0;
-
     }
-
-
   }
 
   public int getMin() {
@@ -37,7 +34,6 @@ class Clock {
     if (this.min == 60) {
       this.min = 0;
       this.setHour();
-
     }
   }
 
@@ -50,7 +46,6 @@ class Clock {
     if (this.sec == 60) {
       this.sec = 0;
       this.setMin();
-
     }
   }
 }
@@ -59,7 +54,7 @@ public class ClockSimulation {
   public static void main(String[] args) {
     Clock clock = new Clock(0, 0, 0);
 
-    for (int i = 0; i < 3600; i++) {
+    for (int i = 0; i < 3650; i++) {
       clock.setSec();
     }
 

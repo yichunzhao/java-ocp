@@ -32,9 +32,6 @@ public class RotateMatrix {
   private static int[][] rotate(int[][] matrix) {
     int[][] rotated = new int[rowNum][colNum];
 
-
-
-
     List<Integer> list = new ArrayList<>();
 
     for (int col = 0; col < matrix[0].length; col++) {

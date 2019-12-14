@@ -18,6 +18,8 @@ public class HashMapUniqueKey {
     myMap.put("first", 12);
     myMap.put("first", 120);
 
-    System.out.println("" + myMap);
+    long count = myMap.keySet().stream().filter(x->x.equals("first")).count();
+    System.out.println("number the same key-value: " + count);
+
   }
 }
