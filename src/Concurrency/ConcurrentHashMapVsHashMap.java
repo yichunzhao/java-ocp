@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /** @author YNZ */
-public class ConcurrentHashMapVsHashmap {
+public class ConcurrentHashMapVsHashMap {
   private static ConcurrentMap<String, Number> myMap = new ConcurrentHashMap<>(5, 0.9f);
 
   public static void main(String... args) {
@@ -36,7 +36,7 @@ public class ConcurrentHashMapVsHashmap {
 
     // HashMap
     Map<String, String> myAnotherMap = new HashMap<>();
-    myAnotherMap.putIfAbsent("1", "one");
+    myAnotherMap.putIfAbsent("1", "one");//it is a shortcut method, but not atomic.
     myAnotherMap.put("1", "two");
     System.out.println("size: " + myAnotherMap.size());
 
