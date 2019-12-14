@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentMap;
 
 /** @author YNZ */
 public class ConcurrentHashMapVsHashMap {
-  private static ConcurrentMap<String, Number> myMap = new ConcurrentHashMap<>(5, 0.9f);
+  private static ConcurrentMap<String, Number> myMap = new ConcurrentHashMap<>(25, 0.9f, 5);
 
   public static void main(String... args) {
     // HashMap is not synchronized. if accessing a HashMap in multiple threads, then it needs to
