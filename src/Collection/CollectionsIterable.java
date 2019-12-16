@@ -32,10 +32,11 @@ public class CollectionsIterable {
     while (it.hasNext()) {
       System.out.println("" + it.next());
     }
+
     System.out.println("list hashcode: " + list.hashCode());
 
-    // lamda expression: a formal method method
-    // predict functional interace: receive a single type return boolean
+    // lamada expression: a formal method method
+    // predict functional interface: receive a single type return boolean
     boolean clist = list.removeIf(x -> x.compareTo(BigDecimal.valueOf(20)) > 0);
     System.out.println("clist : " + clist);
     System.out.println("list: " + list);

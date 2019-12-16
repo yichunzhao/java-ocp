@@ -11,15 +11,19 @@ import java.util.*;
 public class ListUsage {
 
   public static void main(String[] args) {
+
+    //can contain duplicated elements.
+    //arrayList is not thread safe.
+    //can hold null value
     List<Integer> list = new ArrayList<>(10);
     list.add(1);
     list.add(4);
     list.add(1);
-    list.add(4);
+    list.add(19);
     list.add(7);
     list.add(9);
     list.add(19);
-    list.add(29);
+    list.add(null);
 
     // list allow duplicated elements. the first occurrence will be obtained.
     System.out.println("" + list.indexOf(4));
