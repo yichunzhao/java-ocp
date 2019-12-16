@@ -20,6 +20,6 @@ public class UsingStack {
       System.out.println(myStack.pop());
     }
 
-    System.out.println("stack is empty? " + Boolean.valueOf(myStack.isEmpty()));
+    System.out.println("stack is empty? " + myStack.isEmpty());
   }
 }
