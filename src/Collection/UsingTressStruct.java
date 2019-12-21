@@ -13,7 +13,12 @@ import java.util.TreeSet;
 public class UsingTressStruct {
 
   public static void main(String[] args) {
-
+    //tree structure: tree set, tree map
+    //auto-sorted.
+    //Calculation Complexity
+    //Insertion
+    //Deletion
+    //Search
     TreeSet<Float> treeSet = new TreeSet<>();
     treeSet.add(1.22f);
 
