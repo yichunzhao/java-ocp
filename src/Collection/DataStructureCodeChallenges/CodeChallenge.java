@@ -1,4 +1,4 @@
-package Collection.JavaDataStructureCodeChallenges;
+package Collection.DataStructureCodeChallenges;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public class CodeChallenge {
     List<Item> moreItems = new ArrayList<>();
     moreItems.add(new Item("item3"));
 
-    // collection addAll
+    // collection addAll, insert one collection into another collection.
     // if the target collection being modified, return true; otherwise,false
     boolean result = grocery.addAll(moreItems);
 
