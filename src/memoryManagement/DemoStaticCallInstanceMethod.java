@@ -1,4 +1,4 @@
-package oters;
+package memoryManagement;
 
 public class DemoStaticCallInstanceMethod {
 

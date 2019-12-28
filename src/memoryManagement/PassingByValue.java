@@ -1,4 +1,4 @@
-package oters;
+package memoryManagement;
 
 class Customer {
   private String name;
