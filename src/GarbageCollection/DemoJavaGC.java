@@ -2,7 +2,15 @@ package GarbageCollection;
 
 import java.util.stream.IntStream;
 
-/** Demo Java Garbage collector(GC) */
+/**
+ * Demo Java Garbage collector(GC)
+ * stack: references
+ * heap: instances
+ *
+ * GC: mark instances that are referred, and put them close to each other in the heap ;
+ * and sweep out those not referred any more.
+ *
+ * */
 class Customer {
   private String name;
   private int id;
@@ -32,6 +40,7 @@ class Customer {
     this.id = id;
   }
 
+  //GC implements this method after GC operation
   public void finalize(){
     System.out.println("this object is being gc");
   }
