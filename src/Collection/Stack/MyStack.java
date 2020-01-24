@@ -1,4 +1,4 @@
-package Collection;
+package Collection.Stack;
 
 import java.util.LinkedList;
 
@@ -14,4 +14,5 @@ public class MyStack<E> implements Stack<E> {
   public E pop() {
     return myList.pop();
   }
+
 }

@@ -1,5 +1,7 @@
 package Collection;
 
+import Collection.Stack.MyStack;
+
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.stream.Stream;
@@ -33,10 +35,5 @@ public class UsingLinkedList {
     ListIterator<Integer> iterator = myLinkedList.listIterator(myLinkedList.size());
     while (iterator.hasPrevious()) System.out.println(iterator.previous());
 
-    Stack<Double> myStack = new MyStack<>();
-    myStack.push(Double.valueOf(2.3));
-    myStack.push(Double.valueOf(2.1));
-
-    System.out.println(myStack.pop());
   }
 }
