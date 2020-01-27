@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.toList;
 
 /** @author YNZ */
-public class CollectionMap {
+public class CollectionMatch {
 
   public static void main(String[] args) {
     Stream<Integer> numbers = Stream.of(1, 22, 33, 64);
