@@ -29,7 +29,7 @@ public class UsingHashMapDemo {
     System.out.println(dictionary.keySet());
     System.out.println(dictionary.values());
 
-    //HashMap doesn't keep insertion orders, due to its hashing nature.
+    // HashMap doesn't keep insertion orders, due to its hashing nature.
 
     Map<Person, Integer> personDic = new HashMap<>();
     personDic.put(new Person("what"), Integer.valueOf(100));
@@ -39,15 +39,18 @@ public class UsingHashMapDemo {
 
     System.out.println(personDic.keySet());
 
-    //if didn't define a proper hashCode function, it may generate duplicate keys.
+    // if didn't define a proper hashCode function, it may generate duplicate keys.
     Map<Person, Integer> personDicA = new HashMap<>();
-    personDicA.put(new Person("what"), Integer.valueOf(100));
-    personDicA.put(new Person("what"), Integer.valueOf(150));
+    Person p1 = new Person("what");
+    Person p2 = new Person("what");
+    personDicA.put(p1, Integer.valueOf(100));
+    personDicA.put(p2, Integer.valueOf(150));
     personDicA.put(new Person("are"), Integer.valueOf(200));
     personDicA.put(new Person("talking"), Integer.valueOf(21));
     personDicA.put(new Person("about"), Integer.valueOf(12));
 
     System.out.println(personDicA.keySet());
 
+    System.out.println(personDicA.get(p1));
   }
 }
