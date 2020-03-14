@@ -1,10 +1,10 @@
 package Collection.Map;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 class Person {
   private final String name;
@@ -57,8 +57,16 @@ public class HashMapHashCodeDemo {
 
     System.out.println(personDic.keySet());
 
-    //list allow duplicate elements
-    List<Integer> myList = Stream.of(new Integer(10), new Integer(10)).collect(Collectors.toList());
+    // list allow duplicate elements
+    List<Integer> myList = Stream.of(new Integer(10), new Integer(10)).collect(toList());
     System.out.println(myList.size());
+
+    // set allow null element, put at index[0]
+    Set<String> mySet = new HashSet<>();
+    mySet.add(null);
+    mySet.add(null);
+    mySet.add("what");
+    System.out.println(mySet);
+
   }
 }
