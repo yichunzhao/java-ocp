@@ -28,7 +28,7 @@ public enum Accessibility {
     return Stream.of(Accessibility.values())
         .filter(x -> x.text().equals(text))
         .findFirst()
-        .orElseThrow(() -> new Exception("Invalid Acessiblitity text ... "));
+        .orElseThrow(() -> new Exception("Invalid Accessibility text ... "));
   }
 
   public String text() {
