@@ -18,22 +18,13 @@ import java.util.Date;
  * z = time zone text (e.g.Pacific Standard Time...)
  * Z = time zone, time offset (e.g. -0800)
  */
-public class DemoStringToDate {
 
-  public static void main(String[] args) {
-    //
-    String dateStr = "Mon, 14 May 2001 17:18:42 -0700 (PDT)";
+public class ParsingDateNow {
 
-    DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z (z)");
-    try {
-      Date date = dateFormat.parse(dateStr);
-      System.out.println("date: " + date);
-    } catch (ParseException e) {
-      e.printStackTrace();
+    public static void main(String[] args) throws ParseException {
+        DateFormat format = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
+        Date now = new Date();
+        Date parsed = format.parse(now.toString());
+        System.out.printf("now : "+ parsed);
     }
-
-
-  }
-
-
 }
