@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class FormatDateNow {
     public static void main(String[] args) {
+
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date now = new Date();

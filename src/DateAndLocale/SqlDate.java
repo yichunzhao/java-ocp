@@ -6,6 +6,9 @@
 package DateAndLocale;
 
 import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -16,11 +19,27 @@ public class SqlDate {
 
   /** @param args the command line arguments */
   public static void main(String[] args) {
+    long currentTimeMillis = System.currentTimeMillis();
 
-    Date today = new Date(System.currentTimeMillis());
-    System.out.println("" + today);
+    /**
+     * java sql date yyyy-MM-dd
+     */
+    Date today = new Date(currentTimeMillis);
+    System.out.println("Sql Date: " + today);
 
-    // how to convert until date into sql date
+    /**
+     * java sql time  hh:mm:ss
+     */
+    Time sqlTime = new Time(currentTimeMillis);
+    System.out.println("Sql time: " + sqlTime);
+
+    /**
+     * java sql time stamp yyyy-MM-dd hh:mm:ss.ms
+     */
+    Timestamp timestamp = new Timestamp(currentTimeMillis);
+    System.out.println("Sql time stamp: " + timestamp);
+
+    // how to convert util date into sql date
     DateFormat df = new SimpleDateFormat("dd/MM/YYYY - hh:mm:ss");
     java.util.Date uDate = new Date(System.currentTimeMillis());
     System.out.println("uDate: " + df.format(uDate));
@@ -30,11 +49,6 @@ public class SqlDate {
     Date.valueOf(LocalDate.now());
 
     ZonedDateTime.now().toInstant();
-
-
-
-
-
   }
 
   public static java.sql.Date convert(java.util.Date uDate) {
