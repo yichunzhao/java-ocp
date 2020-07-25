@@ -13,17 +13,21 @@ class Base {
     public short getValue() {
         return 1;
     }
-
-    ;
 }
 
 class Base2 extends Base {
     public short getValue() {
         return 2;
     }
-
-    ;
 }
 
-public class OverridenReturnType {
+public class OverriddenReturnType {
+    static int x = 5;
+
+    public static void main(String[] args) {
+        //static variable is hidden by the local variable, if they have the same variable name.
+        int x = (x = 3) * 4;
+        System.out.println(x);
+    }
+
 }
