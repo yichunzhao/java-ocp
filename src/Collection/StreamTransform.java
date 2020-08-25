@@ -34,5 +34,6 @@ public class StreamTransform {
     Stream<Double> randoms = Stream.generate(Math::random).limit(100);
     List<Double> rs = randoms.map(x -> x * 100).collect(toList());
     System.out.println("rs : " + rs);
+
   }
 }
