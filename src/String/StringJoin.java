@@ -5,11 +5,19 @@
  */
 package String;
 
-/** @author YNZ */
+import java.util.Arrays;
+
+/**
+ * @author YNZ
+ */
 public class StringJoin {
 
-  public static void main(String[] args) {
-    String joinedString = String.join("--", "java", "world");
-    System.out.println("joined String : " + joinedString);
-  }
+    public static void main(String[] args) {
+        //join String variables together in a single String
+        String joinedString = String.join("--", "java", "world");
+        System.out.println("joined String : " + joinedString);
+
+        //join an iterable in to string with a conjunction String
+        System.out.println(String.join("+", Arrays.asList("what", "are", "you", "doing")));
+    }
 }

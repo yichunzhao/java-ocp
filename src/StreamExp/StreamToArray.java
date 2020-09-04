@@ -27,5 +27,9 @@ public class StreamToArray {
         //convert a string stream with a specific conjunction.
         String[] words = {"we", "found", "a", "truth"};
         System.out.println(Arrays.stream(words).collect(Collectors.joining("-")));
+
+        //
+
+
     }
 }

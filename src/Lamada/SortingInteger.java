@@ -8,43 +8,47 @@ package Lamada;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.BiFunction;
 
-/** @author YNZ */
+import static java.util.stream.Collectors.toList;
+
+/**
+ * @author YNZ
+ */
 public class SortingInteger {
+    public static int[] numbs = {1, 99, 1234, 34, 56, 89};
+    public static Integer[] numbInstances = {1, 99, 1234, 34, 56, 89};
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    List<Integer> nums = Arrays.asList(1, 99, 1234, 34, 56, 89);
-    System.out.println("before sorting: " + nums);
-    nums.sort(Integer::compareTo);
-    System.out.println("after sorting: " + nums);
+        //very easy to sort an array of number by Arrays helper class
+        int[] copyOfNumbs = Arrays.copyOf(numbs, numbs.length);
+        System.out.println("copyOfNumbs" + Arrays.toString(copyOfNumbs));
 
-    Comparable c =
-        (o) -> {
-          return 0;
-        };
+        Arrays.sort(numbs);
+        System.out.println("after sorting: " + Arrays.toString(numbs));
 
-    Comparator<String> comparator = String::compareTo;
+        //sorting by List and Comparator; it is verbose; actually underneath it uses Arrays.sort
+        int[] copyOfNumbs_ = Arrays.copyOf(numbs, numbs.length);
+        List<Integer> numList = Arrays.stream(copyOfNumbs_).mapToObj(i -> Integer.valueOf(i)).collect(toList());
+        numList.sort(Integer::compareTo);
+        System.out.println("after sorting: " + numList);
 
-    List<String> strs = Arrays.asList("Kd", "Whatever", "Goodbye");
-    strs.sort(comparator);
-    System.out.println("sorted : " + strs);
+        System.out.println("after sorting: ");
+        System.out.println(Arrays.stream(numbInstances).sorted().collect(toList()));
 
-    BiFunction<String, String, Boolean> bf =
-        (o1, o2) -> {
-          Boolean r = false;
-          if (o1.equals(o2)) {
-            r = true;
-          }
-          return r;
-        };
+        System.out.println("++++++++++++++++++++++++++++++++++++++");
+        Comparator<String> comparator = String::compareTo;
 
-    String testStr = "see you later on. ";
-    testStr.compareToIgnoreCase(testStr);
+        List<String> words = Arrays.asList("Kd", "Whatever", "Goodbye");
+        System.out.println("before sorting : " + words);
+        words.sort(comparator);
+        System.out.println("sorted : " + words);
 
-    List<String> strings = Arrays.asList("Kd", "Whatever", "Goodbye");
-    strings.sort(String::compareToIgnoreCase);
-    System.out.println("after sorting:  " + strings);
-  }
+        String testStr = "see you later on. ";
+        testStr.compareToIgnoreCase(testStr);
+
+        List<String> strings = Arrays.asList("Kd", "Whatever", "Goodbye");
+        strings.sort(String::compareToIgnoreCase);
+        System.out.println("after sorting:  " + strings);
+    }
 }
