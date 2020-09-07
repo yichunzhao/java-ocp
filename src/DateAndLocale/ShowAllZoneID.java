@@ -41,5 +41,11 @@ public class ShowAllZoneID {
                 System.out.println(zoneOffset + "\n" + zonedDateTimes.stream().map(z -> z.getZone().getId())
                         .collect(Collectors.joining(" & "))));
 
+        System.out.println("#################### ZoneOffSet map to its Count(ZoneIds) ######################");
+        ZoneId.getAvailableZoneIds().stream()
+                .map(s -> ZonedDateTime.now(ZoneId.of(s)))
+                .collect(Collectors.groupingBy(zonedDateTime -> zonedDateTime.getOffset(), Collectors.counting()))
+                .forEach((zoneOffset, count) -> System.out.println(zoneOffset + ": " + count));
+
     }
 }
