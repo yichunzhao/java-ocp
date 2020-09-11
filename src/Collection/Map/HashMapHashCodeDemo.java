@@ -29,10 +29,10 @@ public class HashMapHashCodeDemo {
         Person p2 = new Person("dish");
         System.out.println("p2 hashcode : " + p2.hashCode());
 
-        Integer i1 = Integer.valueOf(120);
+        Integer i1 = 120;
         System.out.println("i1 hashcode: " + i1.hashCode());
 
-        Integer i2 = Integer.valueOf(120);
+        Integer i2 = 120;
         System.out.println("i2 hashcode: " + i2.hashCode());
         System.out.println("i1 hashcode == i2 hashcode: " + (i2.hashCode() == i1.hashCode()));
 
@@ -41,9 +41,9 @@ public class HashMapHashCodeDemo {
         Map<Integer, Person> dictionary = new HashMap<>();
         dictionary.put(i1, p1);
         dictionary.put(i2, p2);
-        dictionary.put(Integer.valueOf(121), new Person("washer"));
-        dictionary.put(Integer.valueOf(122), new Person("weather"));
-        dictionary.put(Integer.valueOf(123), new Person("forecast"));
+        dictionary.put(121, new Person("washer"));
+        dictionary.put(122, new Person("weather"));
+        dictionary.put(123, new Person("forecast"));
         System.out.println("dictionary size: " + dictionary.size());
 
         // guess size of map
