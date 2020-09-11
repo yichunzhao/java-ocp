@@ -14,10 +14,10 @@ public class ImplementingQueue {
   public static void main(String[] args) {
 
     Queue<Double> q = new LinkedList<>();
-    q.offer(Double.valueOf(2.3D));
-    q.offer(Double.valueOf(1.7D));
-    q.offer(Double.valueOf(7.9D));
-    q.offer(Double.valueOf(8.2D));
+    q.offer(2.3D);
+    q.offer(1.7D);
+    q.offer(7.9D);
+    q.offer(8.2D);
 
     System.out.println("pull 1: " + q.poll());
     System.out.println("pull 2: " + q.poll());
