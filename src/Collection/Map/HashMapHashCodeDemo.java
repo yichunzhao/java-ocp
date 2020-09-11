@@ -1,72 +1,61 @@
 package Collection.Map;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.HashMap;
+import java.util.Map;
 
-import static java.util.stream.Collectors.toList;
-
+/**
+ * wrapper class has overwritten the hashcode function.
+ */
 class Person {
-  private final String name;
+    private final String name;
 
-  public Person(String name) {
-    this.name = name;
-  }
+    public Person(String name) {
+        this.name = name;
+    }
 
-  @Override
-  public String toString() {
-    return "Person{" + "name='" + name + '\'' + '}';
-  }
+    @Override
+    public String toString() {
+        return "Person{" + "name='" + name + '\'' + '}';
+    }
 }
 
 public class HashMapHashCodeDemo {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
+        //different objects have different hashcode
+        Person p1 = new Person("dish");
+        System.out.println("p1 hashcode : " + p1.hashCode());
 
-    // guess size of map, 4
-    // Integer class overrides the hashcode method.
-    Map<Integer, Person> dictionary = new HashMap<>();
-    dictionary.put(Integer.valueOf(120), new Person("dish"));
-    dictionary.put(Integer.valueOf(120), new Person("dish"));
-    dictionary.put(Integer.valueOf(121), new Person("washer"));
-    dictionary.put(Integer.valueOf(122), new Person("weather"));
-    dictionary.put(Integer.valueOf(123), new Person("forecast"));
-    System.out.println(dictionary.size());
+        Person p2 = new Person("dish");
+        System.out.println("p2 hashcode : " + p2.hashCode());
 
-    // if didn't define a proper hashCode function, it may generate duplicate keys.
-    // Guessing what the size of the map? =5
-    Map<Person, Integer> personDicA = new HashMap<>();
-    Person p1 = new Person("what");
-    Person p2 = new Person("what");
+        Integer i1 = Integer.valueOf(120);
+        System.out.println("i1 hashcode: " + i1.hashCode());
 
-    personDicA.put(p1, Integer.valueOf(100));
-    personDicA.put(p2, Integer.valueOf(150));
-    personDicA.put(new Person("are"), Integer.valueOf(200));
-    personDicA.put(new Person("talking"), Integer.valueOf(21));
-    personDicA.put(new Person("about"), Integer.valueOf(12));
+        Integer i2 = Integer.valueOf(120);
+        System.out.println("i2 hashcode: " + i2.hashCode());
+        System.out.println("i1 hashcode == i2 hashcode: " + (i2.hashCode() == i1.hashCode()));
 
-    // map contains 5 elements
-    System.out.println(personDicA.size());
+        // guess size of map
+        // Integer class overrides the hashcode method.
+        Map<Integer, Person> dictionary = new HashMap<>();
+        dictionary.put(i1, p1);
+        dictionary.put(i2, p2);
+        dictionary.put(Integer.valueOf(121), new Person("washer"));
+        dictionary.put(Integer.valueOf(122), new Person("weather"));
+        dictionary.put(Integer.valueOf(123), new Person("forecast"));
+        System.out.println("dictionary size: " + dictionary.size());
 
-    // HashMap doesn't keep insertion orders, due to its hashing nature.
-    Map<Person, Integer> personDic = new HashMap<>();
-    personDic.put(new Person("what"), Integer.valueOf(100));
-    personDic.put(new Person("are"), Integer.valueOf(200));
-    personDic.put(new Person("talking"), Integer.valueOf(21));
-    personDic.put(new Person("about"), Integer.valueOf(12));
+        // guess size of map
+        // Person hashcode inherited from the Object. Different instance have different hashcode
+        Map<Person, Integer> dictionary1 = new HashMap<>();
+        dictionary1.put(p1, 120);
+        dictionary1.put(p2, 120);
+        dictionary1.put(new Person("washer"), 121);
+        dictionary1.put(new Person("weather"), 122);
+        dictionary1.put(new Person("forecast"), 123);
+        System.out.println("dictionary1 size: " + dictionary1.size());
+        System.out.println("dictionary1 content: " + dictionary1);
 
-    System.out.println(personDic.keySet());
-
-    // list allow duplicate elements
-    List<Integer> myList = Stream.of(new Integer(10), new Integer(10)).collect(toList());
-    System.out.println(myList.size());
-
-    // set allow null element, put at index[0]
-    Set<String> mySet = new HashSet<>();
-    mySet.add(null);
-    mySet.add(null);
-    mySet.add("what");
-    System.out.println(mySet);
-
-  }
+    }
 }
