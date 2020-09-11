@@ -16,7 +16,6 @@ import static java.util.stream.Collectors.toMap;
  */
 public class UsingTreeMapDemo {
     public static void main(String[] args) {
-
         //collecting a Stream into a tree map
         Map<String, Integer> myTreeMap = Arrays.asList("we", "are", "humans", "living", "on", "earth")
                 .stream().collect(toMap(s -> s, s -> s.length(), (o1, o2) -> o1, TreeMap::new));
@@ -34,7 +33,6 @@ public class UsingTreeMapDemo {
         //So, key instance must implement Comparable interface
         Map<String, LocalDate> personTime2 = new TreeMap<>(personTime);
         System.out.println("injecting into tree map: " + personTime2);
-
 
         //tree map with a specific comparator that is applied on the key set
         //guessing what is the output?

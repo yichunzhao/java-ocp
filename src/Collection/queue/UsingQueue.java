@@ -6,12 +6,19 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
+ * <h1>
  * Queue
+ * </h1>
+ * <p>
+ * LinkedList implements Dequeue interface, which extends from Queue interface.
+ * So LinkedList is a Queue implementation
+ * </p>
  * <p>
  * add()-used to add elements to the end;
  * peek()-returns a copy of the first element;
  * remove()-removes the element: error if empty, throws NoSuchElementException.
  * poll()-removes from the top;
+ * </p>
  */
 
 public class UsingQueue {
