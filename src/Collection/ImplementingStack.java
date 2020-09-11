@@ -1,34 +1,36 @@
-/*
-  Using a stack to reverse a string.
- stack is represented by a Deque, implemented by a linkedList
-* push() insert element on the head, pop() remove element from the head.
-* add() to the tail.
-*/
 package Collection;
 
-import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Stack;
+import java.util.stream.IntStream;
 
-/** @author YNZ */
+/**
+ * Using Deque to interface a LinkedList, to carry out a stack, by which to reverse a String.
+ * <p>
+ * Deque offers stack related interface
+ * <p>
+ * E  pop()
+ * void push(E e)
+ *
+ * @author YNZ
+ */
 public class ImplementingStack {
 
-  public static void main(String[] args) {
-    String str = "I love Java.";
-    //Stack class
-    Stack<Person> personStack = new Stack<>();
-    personStack.push(new Person("name"));
-    personStack.peek();
+    public static void main(String[] args) {
+        //using a stack to reverse a String
+        String str = "I love Java";
+        System.out.println("before:" + str);
 
-    // Deque implemented by a LinkedList.
-    // deque is able to impl. both stack and queue.
-    Deque<Character> stack = new LinkedList<>();
-    str.chars().mapToObj(i -> (char) i).forEach(c -> stack.push(c));
+        // Deque implemented by a LinkedList.
+        // deque is able to impl. both stack and queue.
+        Deque<Character> stack = new LinkedList<>();
+        str.chars().mapToObj(i -> Character.valueOf((char) i)).forEach(character -> stack.push(character));
+        System.out.println("size of stack: " + stack.size());
 
-    Deque<Character> stack1 = new ArrayDeque<>();
+        System.out.print("reversed:");
+        IntStream.range(0, stack.size()).forEach(i -> System.out.print(stack.pop()));
+        System.out.println();
 
-
-    stack.stream().forEach(System.out::print);
-  }
+        System.out.println("size of stack: " + stack.size());
+    }
 }
