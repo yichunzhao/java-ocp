@@ -28,7 +28,7 @@ public class GenericTypePrimitive {
         Map<byte[], Integer> byteLengthMap = bytesList.stream().collect(Collectors.toMap(b -> b, b -> b.length));
 
         System.out.println("byteListLengthMap: ");
-        byteLengthMap.entrySet().forEach(x -> System.out.println(Arrays.toString(x.getKey()) + " " + x.getValue().toString()));
+        byteLengthMap.entrySet().forEach(x -> System.out.println(Arrays.toString(x.getKey()) + " " + x.getValue()));
     }
 
 }
