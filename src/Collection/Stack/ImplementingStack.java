@@ -8,9 +8,12 @@ import java.util.stream.IntStream;
  * Using Deque to interface a LinkedList, to carry out a stack, by which to reverse a String.
  * <p>
  * Deque offers stack related interface
- * <p>
+ *
+ * <pre>
  * E  pop()
  * void push(E e)
+ * </preZ>
+ * </p>
  *
  * @author YNZ
  */

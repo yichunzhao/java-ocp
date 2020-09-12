@@ -3,7 +3,7 @@
  *
  *
  */
-package Collection;
+package Collection.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;
