@@ -1,8 +1,12 @@
 package Collection.singlton;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.Period;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -29,5 +33,14 @@ public class CollectionSingle {
         } catch (UnsupportedOperationException e) {
             System.out.println(e.toString());
         }
+
+        Map<String, LocalDateTime> nameAppointMap = Collections.singletonMap(
+                "mike", LocalDateTime.of(LocalDate.of(2012, 3, 18), LocalTime.of(11, 30)));
+        try {
+            nameAppointMap.put("jack", LocalDateTime.of(LocalDate.of(2012, 3, 18), LocalTime.of(11, 30)));
+        } catch (UnsupportedOperationException e) {
+            System.out.println(e.toString());
+        }
+
     }
 }
