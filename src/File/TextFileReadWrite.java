@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /** @author YNZ */
+
 public class TextFileReadWrite {
 
   public static void main(String[] args) throws IOException {

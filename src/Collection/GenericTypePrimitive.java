@@ -1,43 +1,34 @@
-/*
- * Can byte[] being a genric type? byte array is a generic type, for array is
- * a object, not a primitive type.
- *
- */
 package Collection;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
-/** @author YNZ */
-class Book {
+import static java.util.stream.Collectors.toList;
 
-  private String title;
-
-  public Book(String title) {
-    this.title = title;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-}
+/**
+ * Can byte[] being a generic type? Instance type is a generic type; array is an instance type.
+ *
+ * @author YNZ
+ */
 
 public class GenericTypePrimitive {
+    public static void main(String[] args) {
 
-  public GenericTypePrimitive() {
+        String string = "Corona-virus: Oxford University to resume vaccine trial after pause";
+        List<String> words = Pattern.compile("[\\s:]").splitAsStream(string).collect(toList());
+        words.removeIf(String::isEmpty);
 
-    // this is a list to hold byte[] instances, so what can be added? only byte[]
-    List<byte[]> list = new ArrayList<>();
-    list.add(new byte[10]);
-    list.add(new byte[20]);
+        List<byte[]> bytesList = words.stream()
+                .map(String::getBytes)
+                .collect(toList());
 
-    // Generic variable, formal generic type; generic variable value
-    List<Book> books = new ArrayList<>();
-    books.add(new Book("java persistence with JPA"));
-    books.add(new Book("Java Generics and Collections"));
-  }
+        Map<byte[], Integer> byteLengthMap = bytesList.stream().collect(Collectors.toMap(b -> b, b -> b.length));
+
+        System.out.println("byteListLengthMap: ");
+        byteLengthMap.entrySet().forEach(x -> System.out.println(Arrays.toString(x.getKey()) + " " + x.getValue().toString()));
+    }
+
 }
