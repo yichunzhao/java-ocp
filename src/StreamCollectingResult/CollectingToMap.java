@@ -6,17 +6,24 @@
 package StreamCollectingResult;
 
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-/** @author YNZ */
+/**
+ * @author YNZ
+ */
 public class CollectingToMap {
 
-  public static void main(String[] args) {
-    Stream<String> words = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa");
-    Map<String, Integer> wordMap = words.collect(Collectors.toMap(w -> w, String::length));
+    public static void main(String[] args) {
 
-    System.out.println("" + wordMap.get("Java"));
-  }
+        Map<String, Integer> wordMap = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa")
+                .collect(Collectors.toMap(w -> w, String::length, (o1, o2) -> o2));
+
+        Map<String, Integer> wordMap1 = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa")
+                .collect(Collectors.toMap(w -> w, String::length, (o1, o2) -> o2, TreeMap::new));
+
+        System.out.println("in a HashMap: " + wordMap);
+        System.out.println("in a TreeMap: " + wordMap1);
+    }
 }
