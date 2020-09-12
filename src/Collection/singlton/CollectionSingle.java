@@ -12,12 +12,12 @@ import java.util.Set;
 /**
  * Collection.singleton return an immutable Set, which contains one element.
  * Collection.singletonList return an immutable List, which contains one element.
+ * Collection.singletonMap return an immutable Map, which contains one element.
  */
 public class CollectionSingle {
 
     public static void main(String[] args) {
         Set<String> xx = Collections.singleton("one");
-        System.out.println(xx instanceof Set);
 
         try {
             xx.add("two");
@@ -26,7 +26,6 @@ public class CollectionSingle {
         }
 
         List<Period> yy = Collections.singletonList(Period.of(2012, 3, 18));
-        System.out.println("yy is a List? " + (yy instanceof List));
 
         try {
             yy.add(Period.ofMonths(2));
