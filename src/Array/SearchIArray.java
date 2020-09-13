@@ -13,6 +13,10 @@ import java.util.stream.IntStream;
  * <p>
  * In order to become natural ordered, any other classes mush implement Comparable interface or provide external
  * Comparators.
+ *
+ * Binary search is only applied on the Array and List
+ *
+ * Binary search: O(log(n))
  */
 
 public class SearchIArray {
