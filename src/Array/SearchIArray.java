@@ -5,8 +5,14 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
- * array must be sorted first, otherwise the search result is undefined. and therefor, elements in the array must be
+ * array must be sorted first, otherwise the search result is undefined. and therefore, elements in the array must be
  * Comparable.
+ * <p>
+ * In java String, Wrapper, Dates and Times classes are natural ordered, meaning that they have implemented Comparable
+ * interfaces.
+ * <p>
+ * In order to become natural ordered, any other classes mush implement Comparable interface or provide external
+ * Comparators.
  */
 
 public class SearchIArray {
