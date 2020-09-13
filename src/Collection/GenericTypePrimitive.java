@@ -17,8 +17,9 @@ import static java.util.stream.Collectors.toList;
 public class GenericTypePrimitive {
     public static void main(String[] args) {
 
-        String string = "Corona-virus: Oxford University to resume vaccine trial after pause";
-        List<String> words = Pattern.compile("[\\s:]").splitAsStream(string).collect(toList());
+        String string = "Coronavirus: Oxford University to resume vaccine trial after pause";
+
+        List<String> words = Pattern.compile("[\\W]").splitAsStream(string).collect(toList());
         words.removeIf(String::isEmpty);
 
         List<byte[]> bytesList = words.stream()
