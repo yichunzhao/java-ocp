@@ -42,9 +42,12 @@ public class JavaTime {
         System.out.println(LocalTime.parse("06:30").plus(1, ChronoUnit.MINUTES).isAfter(LocalTime.parse("06:30")));
 
         System.out.println("same time pointing to the same instance?");
+        System.out.println(LocalTime.of(1, 0) == LocalTime.of(1, 0));
         System.out.println(LocalTime.of(12, 0) == LocalTime.of(12, 0));
         System.out.println(LocalTime.of(14, 50) == LocalTime.of(14, 50));
         System.out.println(LocalTime.of(13, 0) == LocalTime.of(13, 0));
+
+
 
         //create a local Time and format it.
         System.out.println("ISO Local Time: " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
