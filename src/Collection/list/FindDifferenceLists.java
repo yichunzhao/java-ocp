@@ -3,9 +3,11 @@ package Collection.list;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
- * if given two lists, how to find out the difference between them?
+ * if given two lists, how to find out how different listOne is different from listTwo?
+ * if given two lists, how to find out the joint of two lists?
  */
 
 public class FindDifferenceLists {
@@ -17,17 +19,22 @@ public class FindDifferenceLists {
 
         System.out.println("listOne equalTo listTwo? " + listOne.equals(listTwo));
 
-        List<String> diff = differenceTwoLists(listOne, listTwo);
-        System.out.println("difference between two list: " + diff);
+        System.out.println("difference listOne from listTwo: " + differenceTwoLists(listOne, listTwo));
+
+        System.out.println("difference listTwo from listOne: " + differenceTwoLists(listTwo, listOne));
+
+        System.out.println("joint listTwo and listOne: " + jointTwoLists(listOne, listTwo));
     }
 
     //find out difference between source and target
     private static <T> List<T> differenceTwoLists(List<T> source, List<T> target) {
-        List<T> diff = new ArrayList<>();
-        source.forEach(t -> {
-                    if (!target.contains(t)) diff.add(t);
-                }
-        );
-        return diff;
+        return source.stream().filter(t -> !target.contains(t)).collect(Collectors.toList());
+    }
+
+    //find out joint of two lists.
+    private static <T> List<T> jointTwoLists(List<T> source, List<T> target) {
+        List<T> copyOfSource = new ArrayList<>(source);
+        copyOfSource.retainAll(target);
+        return copyOfSource;
     }
 }
