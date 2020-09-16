@@ -14,7 +14,6 @@ public class RemoveDuplicated {
     public static final List<String> listOne = Arrays.asList("Jack", "Tom", "Sam", "John", "James", "Jack");
 
     public static void main(String[] args) {
-
         //using java 8 streaming
         List<String> listWithoutDuplicates = listOne.stream().distinct().collect(Collectors.toList());
         System.out.println("listOne without duplicates using Stream: " + listWithoutDuplicates);
