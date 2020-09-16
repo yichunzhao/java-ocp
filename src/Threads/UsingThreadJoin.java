@@ -6,73 +6,99 @@
 */
 package Threads;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-/** @author YNZ */
+/**
+ * Join() is used for inter-thread synchronization, just like notify(), notifyAll() and wait();
+ * Join() is defined on the Thread class;
+ *
+ * <code>
+ * public final void join() throws InterruptedException
+ * </code>
+ * <p>
+ * <p>
+ * When we invoking a thread join() method, the calling thread go into waiting state.
+ * <p>
+ * When a developer finishes a development, a tester may start to test it.
+ *
+ * @author YNZ
+ */
 class Tester extends Thread {
 
-  private Developer developer;
+    private Developer developer;
 
-  public Tester(Developer developer) {
-    this.developer = developer;
-  }
-
-  @Override
-  public void run() {
-    try {
-      this.developer.join();
-    } catch (InterruptedException ex) {
-      Logger.getLogger(Tester.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    for (int i = 0; i < 10; i++) {
-      System.out.println("testing " + i);
+    public Tester(Developer developer) {
+        this.developer = developer;
     }
 
-    System.out.println("testing done. ");
-  }
+    @Override
+    public void run() {
+        System.out.println("start testing ");
+
+        try {
+            //calling developer thread join method to make current thread wait until developer carrying out its task
+            //start to wait() for developer.
+            this.developer.join();
+
+            //simulate a test task that spends 1 sec.
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("testing done. ");
+    }
 }
 
 class Developer extends Thread {
 
-  @Override
-  public void run() {
-    for (int i = 0; i < 10; i++) {
-      System.out.println("developing");
+    @Override
+    public void run() {
+
+        System.out.println("start developing");
+
+        try {
+            //developing the system
+            sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(" development done! ");
     }
-    System.out.println(" development done! ");
-  }
 }
 
 class Delivery extends Thread {
-  private Tester tester;
+    private Tester tester;
 
-  public Delivery(Tester tester) {
-    this.tester = tester;
-  }
-
-  @Override
-  public void run() {
-    try {
-      tester.join();
-    } catch (InterruptedException ex) {
-      Logger.getLogger(Delivery.class.getName()).log(Level.SEVERE, null, ex);
+    public Delivery(Tester tester) {
+        this.tester = tester;
     }
 
-    System.out.println("Delivery department deliver the product ");
-  }
+    @Override
+    public void run() {
+        System.out.println("start to delivery ");
+
+        try {
+            tester.join();
+
+            sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Delivery department deliver the product ");
+    }
 }
 
 public class UsingThreadJoin {
 
-  public static void main(String[] args) {
-    Developer developer = new Developer();
-    developer.start();
+    public static void main(String[] args) {
+        Developer developer = new Developer();
+        developer.start();
 
-    Tester tester = new Tester(developer);
-    tester.start();
+        Tester tester = new Tester(developer);
+        tester.start();
 
-    Delivery delivery = new Delivery(tester);
-    delivery.start();
-  }
+        Delivery delivery = new Delivery(tester);
+        delivery.start();
+    }
 }
