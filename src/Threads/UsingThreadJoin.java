@@ -12,10 +12,12 @@ package Threads;
  *
  * <code>
  * public final void join() throws InterruptedException
+ * public final void join(long millis) throws InterruptedException
+ * public final void join(long millis,int nanos) throws InterruptedException
  * </code>
- * <p>
- * <p>
- * When we invoking a thread join() method, the calling thread go into waiting state.
+ *
+ * <strong>When we invoking a thread join() method, the calling thread go into waiting state. It remains waiting state
+ * until the referenced thread terminates.</strong>
  * <p>
  * When a developer finishes a development, a tester may start to test it.
  *
@@ -36,7 +38,7 @@ class Tester extends Thread {
         try {
             //calling developer thread join method to make current thread wait until developer carrying out its task
             //start to wait() for developer.
-            this.developer.join();
+            this.developer.join(3000);
 
             //simulate a test task that spends 1 sec.
             sleep(1000);
@@ -78,7 +80,7 @@ class Delivery extends Thread {
         System.out.println("start to delivery ");
 
         try {
-            tester.join();
+            tester.join(3000);
 
             sleep(1000);
         } catch (InterruptedException e) {
