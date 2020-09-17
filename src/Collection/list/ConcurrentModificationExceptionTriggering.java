@@ -3,11 +3,12 @@ package Collection.list;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * it is used to fail-fast when iterating a collection while it is modified, and solutions. 
+ * it is used to fail-fast when iterating a collection while it is modified, and solutions.
  */
 public class ConcurrentModificationExceptionTriggering {
     private static List<Integer> integers = new ArrayList<>(Arrays.asList(1, 2, 3));
@@ -52,6 +53,7 @@ public class ConcurrentModificationExceptionTriggering {
 
 
         //solution using removeIf, it won't be verbose
+        //internally removeIf is implemented using iterator
         List<Integer> integersCopy4 = new ArrayList<>(integers);
         try {
             integersCopy3.removeIf(integer -> integer == 2);
@@ -61,8 +63,19 @@ public class ConcurrentModificationExceptionTriggering {
 
         //using java 8 filter
         List<Integer> integersCopy6 = new ArrayList<>(integers);
-        List<Integer> removeOne = integersCopy6.stream().filter(integer -> integer!=1).collect(Collectors.toList());
+        List<Integer> removeOne = integersCopy6.stream().filter(integer -> integer != 1).collect(Collectors.toList());
         System.out.println(removeOne);
+
+        //using iterator
+        List<Integer> integersCopy7 = new ArrayList<>(integers);
+        Iterator<Integer> it = integersCopy7.iterator();
+        for (; it.hasNext(); ) {
+            if (it.next() == 1) {
+                it.remove();
+            }
+        }
+
+        System.out.println(integersCopy7);
 
     }
 }
