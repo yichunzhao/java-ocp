@@ -40,11 +40,14 @@ public class NavigableTreeMap {
         SortedMap<LocalDate, Meeting> myTailDateMeetingMap = myNavigableMap.tailMap(LocalDate.of(2014, 11, 10));
         myTailDateMeetingMap.entrySet().forEach(e -> System.out.println("date: " + e.getKey() + " meeting: " + e.getValue()));
 
-        //ceiling key; returns a least key-value entry; its key value is greater than or equal to the ceiling key.
-        Map.Entry<LocalDate, Meeting> ceilingEntries = myNavigableMap.ceilingEntry(LocalDate.of(2015, 01, 01));
-        System.out.println(ceilingEntries);
+        //ceiling key(tail direction); returns a least key-value entry; its key value is greater than or equal to the ceiling key.
+        Map.Entry<LocalDate, Meeting> ceilingEntry = myNavigableMap.ceilingEntry(LocalDate.of(2015, 01, 01));
+        System.out.println(ceilingEntry.getKey().equals(LocalDate.of(2015, 11, 10)));
 
         System.out.println("comparing the ceiling key and the least key: " + LocalDate.of(2015, 01, 01).compareTo(LocalDate.of(2015, 11, 10)));
 
+        //floor key(head direction); returns a least key-value entry; its key value is less than or equal to the floor key.
+        Map.Entry<LocalDate, Meeting> floorEntries = myNavigableMap.floorEntry(LocalDate.of(2015, 01, 01));
+        System.out.println(floorEntries.getKey().equals(LocalDate.of(2014, 11, 10)));
     }
 }
