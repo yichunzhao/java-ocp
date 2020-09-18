@@ -8,7 +8,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 /**
- * How to synchronize two group of threads to carry out task in a sequence.
+ * Demo to create a blocking Queue.
+ *
  * <p>
  * to access a protected resource, a thread need to achieve its monitor first.
  * <p>
