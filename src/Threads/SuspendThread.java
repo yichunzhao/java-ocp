@@ -35,7 +35,7 @@ class Event {
     }
 }
 
-class DataStore {
+class EventQueue {
     public static final int qSize = 20;
     private Queue<Event> q = new ArrayDeque<>(qSize);
 
@@ -55,10 +55,10 @@ class DataStore {
 }
 
 class Consumer implements Runnable {
-    private DataStore dataStore;
+    private EventQueue dataStore;
     private int sequence;
 
-    public Consumer(DataStore dataStore, int sequence) {
+    public Consumer(EventQueue dataStore, int sequence) {
         this.dataStore = dataStore;
         this.sequence = sequence;
     }
@@ -79,10 +79,10 @@ class Consumer implements Runnable {
 }
 
 class Producer implements Runnable {
-    private DataStore dataStore;
+    private EventQueue dataStore;
     private String title = "producer: ";
 
-    public Producer(DataStore dataStore, int sequence) {
+    public Producer(EventQueue dataStore, int sequence) {
         this.dataStore = dataStore;
         this.title += sequence;
     }
@@ -101,21 +101,23 @@ class Producer implements Runnable {
 public class SuspendThread {
 
     public static void main(String[] args) throws InterruptedException {
-        //simulating to suspend a thread.
-        DataStore dataStore = new DataStore();
+        //event queue
+        EventQueue queue = new EventQueue();
 
+        //a thread pool to carry out tasks
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
-        IntStream.rangeClosed(0, 12).forEach(i -> executorService.submit(new Producer(dataStore, i)));
+        //commit producer tasks into queue
+        IntStream.rangeClosed(0, 12).forEach(i -> executorService.submit(new Producer(queue, i)));
 
+        //commit consumer tasks into queue
+        IntStream.range(0, 4).forEach(i -> executorService.submit(new Consumer(queue, i)));
 
-        IntStream.range(0, 4).forEach(i -> executorService.submit(new Consumer(dataStore, i)));
-
+        //wait executor until it shuts down
         executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
-
         executorService.shutdown();
         System.out.println("executor service shut down? " + executorService.isShutdown());
-
+        //quit from system
         System.exit(1);
     }
 
