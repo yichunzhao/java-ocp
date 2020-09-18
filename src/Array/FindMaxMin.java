@@ -27,6 +27,14 @@ public class FindMaxMin {
         Arrays.stream(ints).average().ifPresent(v -> System.out.println("average: " + v));
 
         System.out.println("sum: " + Arrays.stream(ints).sum());
+
+        //using sorting function
+        int[] copy = Arrays.copyOf(ints, ints.length);
+        Arrays.sort(copy);
+
+        System.out.println("max_ :" + copy[copy.length - 1]);
+        System.out.println("min_ :" + copy[0]);
+
     }
 
 }
