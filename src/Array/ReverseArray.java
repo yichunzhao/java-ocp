@@ -1,5 +1,6 @@
 package Array;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 /**
- * how to reverse an array of instances?
+ * reverse an array of instances to array of instances; Using Collections.reverse
  */
 public class ReverseArray {
 
@@ -20,6 +21,7 @@ public class ReverseArray {
         Integer[] reversed = integerList.stream().toArray(Integer[]::new);
 
         System.out.println("reversed:" + Arrays.toString(reversed));
+
     }
 
     private static <T> List<T> arrayToList(T[] ts) {
