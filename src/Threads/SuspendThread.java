@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 /**
- * Demo to create a blocking Queue.
+ * Demo to create a blocking Queue using implicit lock.
  *
  * <p>
  * to access a protected resource, a thread need to achieve its monitor first.
@@ -36,20 +36,37 @@ class Event {
 }
 
 class EventQueue {
-    public static final int qSize = 20;
-    private Queue<Event> q = new ArrayDeque<>(qSize);
+    public static final int QUEUE_SIZE_LIMIT = 20;
+    private Queue<Event> q = new ArrayDeque<>();
+    private Object objectRead = new Object();
+    private Object objectWrite = new Object();
 
-    synchronized public void insert(Event e) throws InterruptedException {
-        //if the queue has a certain amount of elements, then allowing threads to achieve the monitor.
-        while (q.size() > 20) wait();
-        q.offer(e);
+    public void enqueue(Event event) throws InterruptedException {
+        if (event == null) throw new NullPointerException("event cannot be null");
+
+        while (q.size() > QUEUE_SIZE_LIMIT) {
+            objectWrite.wait();
+            objectRead.notifyAll();
+        }
+
+        synchronized (objectWrite) {
+            q.offer(event);
+
+        }
+
     }
 
-    synchronized public Event fetch() throws InterruptedException {
-        //if queue is empty, threads waiting
-        while (q.isEmpty()) notifyAll();
+    public Event dequeue() throws InterruptedException {
+        //if the queue is empty, all threads are waiting...
+        while (q.isEmpty()) {
+            objectRead.wait();
+            objectWrite.notifyAll();
+        }
 
-        return q.poll();
+        synchronized (objectRead) {
+            return q.poll();
+        }
+
     }
 
 }
@@ -68,12 +85,11 @@ class Consumer implements Runnable {
         while (true) {
             Event x = null;
             try {
-                x = dataStore.fetch();
+                x = dataStore.dequeue();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("Consumer " + " i :" + Thread.currentThread().getName() + " event: " + x);
-
+            System.out.println("Consumer: " + sequence + " " + Thread.currentThread().getName() + " event: " + x);
         }
     }
 }
@@ -87,11 +103,10 @@ class Producer implements Runnable {
         this.title += sequence;
     }
 
-
     @Override
     public void run() {
         try {
-            dataStore.insert(new Event(this.title));
+            dataStore.enqueue(new Event(this.title));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -108,13 +123,13 @@ public class SuspendThread {
         ExecutorService executorService = Executors.newFixedThreadPool(4);
 
         //commit producer tasks into queue
-        IntStream.rangeClosed(0, 12).forEach(i -> executorService.submit(new Producer(queue, i)));
+        IntStream.range(0, 1400).forEach(i -> executorService.submit(new Producer(queue, i)));
 
         //commit consumer tasks into queue
         IntStream.range(0, 4).forEach(i -> executorService.submit(new Consumer(queue, i)));
 
         //wait executor until it shuts down
-        executorService.awaitTermination(1000, TimeUnit.MILLISECONDS);
+        executorService.awaitTermination(2000, TimeUnit.MILLISECONDS);
         executorService.shutdown();
         System.out.println("executor service shut down? " + executorService.isShutdown());
         //quit from system
