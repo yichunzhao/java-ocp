@@ -1,9 +1,9 @@
 /*
  * Comparable interface; compareTo method
  * return int
- * <0 a<b
- * =0 a=b
- * >0 a>b
+ * <0 a<b incremental
+ * =0 a=b equal
+ * >0 a>b decremental
  */
 package OneDimArray;
 
@@ -56,7 +56,13 @@ public class ArySorting {
         System.out.println("" + Arrays.toString(persons));
 
         System.out.println("then sorting by name: ");
+
+        //ordered by name
         Arrays.sort(persons, Comparator.comparing(person -> person.getName()));
         System.out.println("after sorting by name: " + Arrays.toString(persons));
+
+        Arrays.sort(persons, Comparator.comparing(person -> person.getName(),Comparator.reverseOrder()));
+        System.out.println("sorting by name and reversed: " + Arrays.toString(persons));
+
     }
 }
