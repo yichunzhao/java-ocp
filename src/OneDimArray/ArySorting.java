@@ -1,9 +1,4 @@
 /*
- * Comparable interface; compareTo method
- * return int
- * <0 a<b incremental
- * =0 a=b equal
- * >0 a>b decremental
  */
 package OneDimArray;
 
@@ -11,7 +6,15 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * Natural ordering
+ * Natural ordering: ordered by the implemented Comparable interface.
+ * Comparator provides external comparing.  
+ *
+ * <p>
+ * Comparable interface; compareTo method
+ * return int
+ * <0 a<b incremental
+ * =0 a=b equal
+ * >0 a>b decremental
  *
  * @author YNZ
  */
@@ -58,10 +61,10 @@ public class ArySorting {
         System.out.println("then sorting by name: ");
 
         //ordered by name
-        Arrays.sort(persons, Comparator.comparing(person -> person.getName()));
+        Arrays.sort(persons, Comparator.comparing(Person::getName));
         System.out.println("after sorting by name: " + Arrays.toString(persons));
 
-        Arrays.sort(persons, Comparator.comparing(person -> person.getName(),Comparator.reverseOrder()));
+        Arrays.sort(persons, Comparator.comparing(Person::getName, Comparator.reverseOrder()));
         System.out.println("sorting by name and reversed: " + Arrays.toString(persons));
 
     }
