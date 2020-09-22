@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 /**
  * Natural ordering: ordered by the implemented Comparable interface.
- * Comparator provides external comparing.  
+ * Comparator provides external comparing.
  *
  * <p>
  * Comparable interface; compareTo method
