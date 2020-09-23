@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * given int x and y, finding out times x over y and x reminder x over y
+ * given int x and y, finding out times x over y and reminder x over y
  */
 public class UsingModulus {
 
