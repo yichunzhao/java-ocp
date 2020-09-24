@@ -29,5 +29,11 @@ public class FindKeyNotExistedInMap {
             System.out.println(e);
         }
 
+        int y = 0;
+        if (wordLengthMap.containsKey("xxx")) {
+            y = wordLengthMap.get("xxx");
+        }
+        System.out.println("y=" + y);
+
     }
 }
