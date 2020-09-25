@@ -14,6 +14,7 @@ import java.util.stream.IntStream;
 public class ReverseList {
     public static final List<String> listOne = new ArrayList<>(Arrays.asList("Jack", "Tom", "Sam", "John", "James", "Jack"));
     public static final List<String> listTwo = new ArrayList<>(Arrays.asList("Jack", "Daniel", "Sam", "Alan", "James", "George"));
+    public static final List<Integer> listThree = new ArrayList<>(Arrays.asList(3, 5, 7, 9, 10));
 
     public static void main(String[] args) {
         //using a stack
@@ -35,4 +36,6 @@ public class ReverseList {
         IntStream.range(0, stack.size()).forEach(i -> original.add(stack.pop()));
         return original;
     }
+
+
 }
