@@ -1,4 +1,4 @@
-package Collection.Map;
+package Collection.Map.sorted.navigable;
 
 import java.util.Arrays;
 import java.util.NavigableMap;
@@ -17,6 +17,5 @@ public class MapDescendingOrder {
                 .collect(Collectors.toMap(s -> s, s -> s.length(), (s1, s2) -> s2, TreeMap::new));
         System.out.println("original order:" + stringLengthMap);
         System.out.println("descending order:" + stringLengthMap.descendingMap());
-
     }
 }

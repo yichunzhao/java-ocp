@@ -6,10 +6,10 @@
 package Generics;
 
 /**
+ * Class generics
+ *
  * @author YNZ
  */
-// base class is a generic class
-// T: formal type parameter; class level generic type
 class Parcel<T> {
 
     private T component;
