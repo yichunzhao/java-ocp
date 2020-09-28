@@ -8,8 +8,8 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
- * Opposed to a LinkedList or ArrayQueue, elements in a priority queue opposed to Queue is sorted by its natural ordering
- * or by a custom comparator. The purpose of it is for 'priority-in, priority out'.
+ * Opposed to a LinkedList or ArrayQueue, elements in a priority queue opposed to Queue is sorted by its natural
+ * ordering or by a custom comparator. The purpose of it is for 'priority-in, priority out'.
  */
 public class NaturalOrderPriorityQueue {
     private static final int[] nums = new int[20];
