@@ -22,8 +22,8 @@ public class SuperTypeArrayAndSubTypes {
         //the following doesn't work! compiling error.
         //inputNumbers(numbs);//method argument:  List<Number> numbers
         System.out.println(inputNumbers(Arrays.asList(1, 2, 3)));
-        //this is a generic method; the type is influenced from
-        //the return type, namely Number; that is why it works. 
+        //this is a generic method; the type is inferred from
+        //the return type, namely Number; that is why it works.
     }
 
     private static Number[] inputNumbers(Number[] numbers) {
