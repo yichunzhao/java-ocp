@@ -7,26 +7,28 @@ package OneDimArray;
 
 import java.util.Arrays;
 
-/** @author YNZ */
+/**
+ * Arrays.binarySearch(array, key)
+ * index of the search key, if it is contained in the array; otherwise, (-(insertion point) - 1).
+ *
+ * @author YNZ
+ */
 public class BiSearchInAry {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    int[] myAry = {12, 24, -1, 2, 23, 22};
+        int[] myAry = {12, 24, -1, 2, 23, 22};
+        System.out.println("original array: " + Arrays.toString(myAry));
 
-    Arrays.sort(myAry);
-    System.out.println(Arrays.toString(myAry));
-    int result = Arrays.binarySearch(myAry, 2);
-    System.out.println("re = " + result);
+        Arrays.sort(myAry);
+        System.out.println("sorting array first:" + Arrays.toString(myAry));
 
-    int[] intArray = {20, 14, 4, 10, 5, 3};
-    Arrays.sort(intArray, 1, 5);
-    System.out.println(Arrays.toString(intArray));
+        int result = Arrays.binarySearch(myAry, 2);
+        System.out.println("target index = " + result);
 
-    String[] strArray = {"ocP", "oCP", "OcP", "OCp", "Ocp"};
+        //if not existed
+        System.out.println("if not found? " + Arrays.binarySearch(myAry, 100));
+        System.out.println("if not found? " + Arrays.binarySearch(myAry, 250));
 
-    // "ocP", "oCP", "Ocp" "OcP", "OCp",
-    Arrays.sort(strArray);
-    System.out.println(Arrays.toString(strArray));
-  }
+    }
 }
