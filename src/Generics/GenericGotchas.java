@@ -4,13 +4,14 @@ import models.Animal;
 import models.Cat;
 import models.Dog;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- *  <H1>Polymorphism and Generics</H1>
- *
+ * <H1>Polymorphism and Generics</H1>
+ * <p>
  * One of Generic rule:
  * reference generic type must be identical to the object generic type, i.e.
  * List<Animal> animals = new ArrayList<Animal>()
@@ -34,6 +35,10 @@ public class GenericGotchas {
         AnimalDoctor animalDoctor = new AnimalDoctor();
         animalDoctor.checkAnimals(dogs);
         animalDoctor.checkAnimals(cats);
+
+        List<?> list = new ArrayList<Dog>();
+        List<? extends Animal> list1 = new ArrayList<Dog>();
+        List<? super Dog> list2 = new ArrayList<Animal>();
 
     }
 
