@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * <strong>When using a wildcard List<? extends Number>, the collection can be accessed but not modified</strong>
+ *
  * A Generic type provides a strong-type safety of a collection. That is the reason why the reference generic
  * type must be identical to the instance generic type.
  * <p>

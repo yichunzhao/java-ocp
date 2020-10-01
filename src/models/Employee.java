@@ -13,6 +13,11 @@ public class Employee extends AbstractPerson {
     private String department;
     private AbstractPerson manager;
 
+    @Override
+    protected void speak() {
+        System.out.println("person speak out");
+    }
+
     public Employee(String firstName, String lastName) {
         super(firstName, lastName);
     }

@@ -2,8 +2,10 @@ package models;
 
 
 public abstract class AbstractPerson {
-    private String firstName;
-    private String lastName;
+    protected String firstName;
+    protected String lastName;
+
+    protected abstract void speak();
 
     public AbstractPerson(String firstName, String lastName) {
         this.firstName = firstName;
