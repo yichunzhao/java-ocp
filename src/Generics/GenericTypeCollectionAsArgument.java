@@ -5,24 +5,22 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Generic type argument, Compiling failure case.
+ * A Generic type provides a strong-type safety of a collection. That is the reason why the reference generic
+ * type must be identical to the instance generic type.
  * <p>
- * Reference variable generic type and instance generic type must be identical.
- * <p>
- * so we define a generic collection as a method argument, and assign it with a collection of subtypes
- * <p>
- * this generates a compiling error
+ * For this method argument generic type, it requires subtypes of a Number, but it triggers compiling check when
+ * you intend to modify it. When you add a new element in the method body, it will generates a specific compiling error,
+ * i.e. "capture of ? extends Number". That is how the Java try to keep the type safety in a collection.
  */
 public class GenericTypeCollectionAsArgument {
 
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 6, 9));
-        //this gives a compiling error
-        System.out.println(inputNumbers(numbers));
+        System.out.println(inputNumbers(new ArrayList<>(Arrays.asList(1, 2, 3))));
     }
 
-    public static List<Number> inputNumbers(List<Number> numbers) {
-        numbers.add(1L);
+    private static List<? extends Number> inputNumbers(List<? extends Number> numbers) {
+        //numbers.add(1);  if so you cannot add another element in this list.
+        //numbers.add(2);
         return numbers;
     }
 }
