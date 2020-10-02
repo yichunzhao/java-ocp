@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
  * Thread.yield() is a static method of the thread, it is used to handle all threads having the same priorities.
  * It makes currently running thread head back to runnable.
  * <p>
- * yield() is often used to make running running thread give up its slot to another runnable thread of the same
+ * yield() is often used to make running thread give up its slot to another runnable thread having the same
  * priority, there is no guarantee.
  */
 
