@@ -16,7 +16,7 @@ public class GenericWildCard {
         List<?> stuffs = Arrays.asList(1, LocalDate.now());
         System.out.println("stuffs:" + stuffs);
         //once the List is assigned elements, it cannot be modified later on. Somehow, like having applied a final
-        //keyword. 
+        //keyword.
         //the following gives an compiling error.
         //stuffs.add(LocalDate.of(2020,10,1));
         input(stuffs);
