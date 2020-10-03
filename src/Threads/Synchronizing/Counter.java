@@ -38,7 +38,7 @@ public class Counter {
             }
         });
 
-        System.out.println("count is supposed to be 4? " + Counter.getCount());
+        System.out.println("count is supposed to be 5? " + Counter.getCount());
 
     }
 }
