@@ -1,5 +1,7 @@
 package models;
 
+import java.time.LocalDate;
+
 /**
  * IS-A describes an inheritance relationship; Has-A describes an association relationship;
  * <p>
@@ -12,6 +14,8 @@ public class Employee extends AbstractPerson {
     private Integer id;
     private String department;
     private AbstractPerson manager;
+    private LocalDate startDate;
+
 
     @Override
     protected void speak() {
