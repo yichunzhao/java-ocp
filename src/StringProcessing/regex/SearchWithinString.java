@@ -1,6 +1,9 @@
 package StringProcessing.regex;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 /**
  * using Regular expression to parse a String
@@ -17,5 +20,21 @@ public class SearchWithinString {
 
         String[] words = withoutDigits.split("[\\s]+");
         System.out.println("words: " + Arrays.asList(words));
+
+        String another = "I am fine to dine at nine";
+        Matcher matcher = Pattern.compile("[fdn]ine").matcher(another);
+        while (matcher.find()) {
+            System.out.println("group: " + matcher.group() + " start: " + matcher.start() + " end: " + matcher.end() +
+                    "substring matched pattern: " + another.substring(matcher.start(), matcher.end()));
+        }
+
+        //invalid pattern; throw PatternSyntaxException
+        try {
+            Matcher matcherInValid = Pattern.compile("{}").matcher(another);
+            matcherInValid.find();
+        } catch (PatternSyntaxException e) {
+            System.out.println(e);
+        }
+
     }
 }
