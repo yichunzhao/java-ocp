@@ -1,4 +1,4 @@
-package regx;
+package StringProcessing.regex;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package regx;
+package StringProcessing.regex;
 
 /**
  * Valid email address format
@@ -25,11 +25,12 @@ import java.util.regex.Pattern;
 public class ParsingEmailUsingRegularExpression {
 
     public static void main(String[] args) {
-        String pattern = "[a-z0-9_.-]+@([a-zA-Z0-9-]+\\.)+[a-z]{2}";
+        String pattern = "[a-z0-9_.-]+@([a-z0-9-]+\\.)+[a-z]{2}";
 
         Pattern expectedEmailPattern = Pattern.compile(pattern);
 
-        Arrays.asList("yn.z@hotmail.com", "ynz@hotmail.", "@ynz", "mike.what@google.c").forEach(s -> {
+        Arrays.asList("yn.z@hotmail.com", "ynz@hotmail.", "@ynz", "mike.what@google.c", "mike_what@google.cc",
+                "_mikewhat@google.cc", "yn.z@hotmail","yn.z@hit.edu.cn").forEach(s -> {
                     System.out.println("is " + s + " a valid email? " + expectedEmailPattern.matcher(s).find());
                 }
         );
