@@ -6,7 +6,10 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
- * using Regular expression to parse a String
+ * using Regular expression to parse a String;
+ * <p>
+ * Pattern doesn't have a public constructor, but it offers a static factory method to create a Pattern instance
+ * from a RegEx string; Pattern instance to create a Matcher from a static instance factory method.
  */
 public class SearchWithinString {
 
