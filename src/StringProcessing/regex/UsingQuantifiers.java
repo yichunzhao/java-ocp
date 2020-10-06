@@ -19,14 +19,21 @@ public class UsingQuantifiers {
         Matcher matcher = Pattern.compile("[a-zA-Z]\\d+[a-zA-Z]").matcher(target);
 
         while (matcher.find()) {
-            System.out.println("matcher group: " + matcher.group() + " start: " + matcher.start() + " end: " + matcher.end()
-                    + " " + target.substring(matcher.start(), matcher.end()));
+            System.out.println("matcher group: " + matcher.group() + " start: " + matcher.start() + " end: "
+                    + matcher.end() + " " + target.substring(matcher.start(), matcher.end()));
         }
 
         Matcher matcher1 = Pattern.compile("[a-zA-Z]\\d*[a-zA-Z]").matcher(target);
         while (matcher1.find()) {
-            System.out.println("matcher1 group: " + matcher1.group() + " start: " + matcher1.start() + " end: " + matcher1.end()
-                    + " " + target.substring(matcher1.start(), matcher1.end()));
+            System.out.println("matcher1 group: " + matcher1.group() + " start: " + matcher1.start() + " end: "
+                    + matcher1.end() + " " + target.substring(matcher1.start(), matcher1.end()));
+        }
+
+
+        Matcher matcher2 = Pattern.compile("[a-zA-Z]\\d?[a-zA-Z]").matcher(target);
+        while (matcher2.find()) {
+            System.out.println("matcher2 group: " + matcher2.group() + " start: " + matcher2.start() + " end: "
+                    + matcher2.end() + " " + target.substring(matcher2.start(), matcher2.end()));
         }
 
     }
