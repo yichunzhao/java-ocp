@@ -5,8 +5,8 @@ package StringProcessing;
  * <p>
  * indexOf searching in an forward direction; lastIndexOf searching in a backward direction.
  * <p>
- * indexOf('t', index) searching substring from index to the end
- * lastIndexOf('t',index) searching substring from 0 to the index
+ * indexOf('t', index) searching substring from index to the end forward direction
+ * lastIndexOf('t',index) searching substring from 0 to the index in a backward direction.
  */
 public class IndexOfAndLastIndexOf {
     private static String target = "paint the cup and the plate";
@@ -31,6 +31,7 @@ public class IndexOfAndLastIndexOf {
         System.out.println("index of 'the': " + target.lastIndexOf("the", 15));
 
         //index starting -100; subString from -100 to the end; meaning that the entire String.
+        System.out.println("index of 'a': " + target.indexOf("a", 0));
         System.out.println("index of 'a': " + target.indexOf("a", -100));
 
         //lastIndex -100; from 0 to -100; it should return -1; not found
