@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * subString return String
  * subSequence return CharSequence
  *
- * Throw runtime exception when index beyond the scope.  
+ * Throw runtime exception when index beyond the scope.
  */
 public class StringSubString {
     private static String target = "Method subSequence() simply calls method substring()";
@@ -26,7 +26,6 @@ public class StringSubString {
 
         //forward direction
         System.out.printf("subString from index start+1: %s \n", target.substring(start + 1));
-
 
     }
 
