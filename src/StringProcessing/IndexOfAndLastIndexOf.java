@@ -5,8 +5,8 @@ package StringProcessing;
  * <p>
  * indexOf searching in an forward direction; lastIndexOf searching in a backward direction.
  * <p>
- * indexOf('t', index) searching substring from index to the end forward direction
- * lastIndexOf('t',index) searching substring from 0 to the index in a backward direction.
+ * indexOf('t', index) searching substring from index(initial point) to the end forward direction
+ * lastIndexOf('t',index) searching substring from 0 to the index(ending point) in a backward direction.
  */
 public class IndexOfAndLastIndexOf {
     private static String target = "paint the cup and the plate";
