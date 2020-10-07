@@ -7,7 +7,9 @@ import java.util.List;
 /**
  * List<Object> object means only hold Object; it is different from List<?>, it holds any type.
  * <p>
- * List<Object> can be accessed and modified.
+ * List<Object> can be accessed and modified. So it doesn't give any type safety.
+ * Therefore it is good to use generic type with a boundary. It allows more than one type of class, meanwhile it may
+ * keep collection type safe.
  */
 public class GenericTypeObjectVsWildCard {
 
