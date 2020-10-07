@@ -15,10 +15,20 @@ import java.util.stream.Stream;
  * One of Generic rule:
  * reference generic type must be identical to the object generic type, i.e.
  * List<Animal> animals = new ArrayList<Animal>()
+ * List<Object> objects = new ArrayList<Object>()
+ * <p>
+ * List<Animal> animals = new ArrayList<Dog>() //Compilation error
+ * List<Object> objects = new ArrayList<Dog>() //Compilation error
+ * List<?> anything = new ArrayList<Dog>() //only wildcard allowing any type of instance type.
+ * List<?> list = new ArrayList<Dog>();
+ * List<? extends Animal> list1 = new ArrayList<Dog>();
+ * List<? super Dog> list2 = new ArrayList<Animal>();
  * <p>
  * if you define method Argument List<Animal>, then you cannot assign List<Dog> to it. It causes a compilation error.
+ * * It is a java generic gotchas.
  * <p>
- * The way to solve it, using the Generic boundary.
+ * The way to solve it, using the Generic boundary. By this way, the generic types are constrained in a scope, and
+ * allowing its subtypes.
  */
 
 class AnimalDoctor {
