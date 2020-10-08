@@ -20,11 +20,13 @@ public class StringOtherMethods {
         System.out.println(str.startsWith("Start", 1));//false
         System.out.println(str.startsWith("start", 0));//false
         System.out.println(str.startsWith("start", -1));//false
-
         System.out.println(a.compareTo(bigA));//>0
+
         System.out.println(bigA.compareTo(a));//<0
         System.out.println(bigA.compareToIgnoreCase(a));//=0
+        System.out.println(str.substring(0, 1).compareTo(str.substring(6, 7)));//<0
 
-        System.out.println(str.substring(0,1).compareTo(str.substring(6,7)));//<0
+        System.out.println(a.equals(bigA));//false
+        System.out.println(a.equalsIgnoreCase(bigA));//true
     }
 }
