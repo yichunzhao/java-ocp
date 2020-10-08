@@ -16,7 +16,7 @@ public class HasNextNotAdvance {
         int total = 0;
         while (scanner.hasNext()) {
             if (scanner.hasNextInt()) {
-                total += scanner.nextInt();//when int scanner advance, but not a string. so it will stuck. 
+                total += scanner.nextInt();//when int scanner advance, but not a string. so it will stuck.
             }
         }
         System.out.println("total: " + total);
