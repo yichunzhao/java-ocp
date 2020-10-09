@@ -14,8 +14,11 @@ package StringProcessing.formating;
  * conversion_char: required.  The conversion characters on the exam are %b, %c, %d, %f ,and %s
  * A character indicating how the argument should be formatted. The set of valid conversions
  * for a given argument depends on the argument's data type.
+ *
+ * You can pass any type of primitive variable or object reference
+ * to %b.
  */
-public class DefineFormatStrings {
+public class DefineBooleanFormatParameter {
 
     public static void main(String[] args) {
         //%b defines how to format boolean or Boolean:
@@ -37,6 +40,11 @@ public class DefineFormatStrings {
         } catch (Exception e) {
             System.out.println(e);
         }
+
+        //%[arg_index$][flags][width][.precision]conversion_char; the following demo [width]
+        System.out.format("\nName defined %10b", name);
+        System.out.format("\nName defined %5b", name);
+        System.out.format("\nName defined %b", name);
 
     }
 }
