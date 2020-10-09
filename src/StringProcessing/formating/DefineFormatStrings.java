@@ -26,7 +26,8 @@ public class DefineFormatStrings {
         boolean isShort = true;
         System.out.format("Name %b, age %b, isShort %b", name, age, isShort);
 
-        //a mismatch in the number of arguments passed to method format() and
+        //a mismatch in the number of arguments passed to method format() and printf()
+        //if passed arguments are more than formatting parameters, the extras are ignored.
         System.out.printf("Name %b", name, age, isShort);
 
         //formatting parameters is more than the arguments passed to methods format() or printf(),
