@@ -19,5 +19,11 @@ public class WordBoundary {
         System.out.printf("replace the first letter with A: %s \n", target.replaceAll("\\b\\w", "A"));
         //replace(charSequence literal, CharSequence literal)
         System.out.printf("replace the first letter with A: %s \n", target.replace("\\b\\w", "A"));
+
+        System.out.format("%s %b %d", ("Hello"), "FALSE", new Integer(123456));
+        System.out.println("(\"Hello\") is Object? " + (("Hello") instanceof Object));
+        System.out.println("(\"Hello\") is String? " + (("Hello") instanceof String));
+
+        System.out.printf(" %b \n  ", "e Java Guru".matches("[\\w\\s]+"));
     }
 }
