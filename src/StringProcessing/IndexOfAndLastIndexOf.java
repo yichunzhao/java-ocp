@@ -15,6 +15,9 @@ public class IndexOfAndLastIndexOf {
         //4
         System.out.println("index of 't': " + target.indexOf("t"));
 
+        //-1 if the char is not existed in the String
+        System.out.println("index of 'z': " + target.indexOf("z"));
+
         //6
         System.out.println("index of 'the': " + target.indexOf("the"));
 

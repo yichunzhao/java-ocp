@@ -41,6 +41,11 @@ public class StringSubString {
         System.out.println(eJava.replace(
                 eJava.subSequence(3, 4), eJava.substring(11)));
 
+        try {
+            eJava.substring(3, 13);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
 }
