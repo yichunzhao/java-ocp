@@ -10,10 +10,18 @@ import java.util.TreeSet;
  * Navigable provides searching APIs.
  * <p>
  * The main features of Navigable interface:
- * ceiling() and floor()
- * higher() and lower()
- * subSet(key1, b*, key2,b*)
- * headSet(key, b*) and tailSet(key,b*)
+ * ceiling(key):  find the least key >= key
+ * floor(key): find the least key <=key
+ *
+ * <p>
+ * higher(key) find the least key > key
+ * lower(key) find the least key < key
+ *
+ * <p>
+ * subSet(key1, b*, key2,b*): find elements between two keys, b* inclusive boolean.
+ * headSet(key, b*): find elements that < key, b* inclusive boolean
+ * tailSet(key,b*): find elements that > key, b* inclusive boolean
+ * </p>
  */
 public class NavigableSetSearch {
 
@@ -40,20 +48,24 @@ public class NavigableSetSearch {
         System.out.println("higher date: " + dates.higher(LocalDate.of(2020, 10, 4)));
 
         //the least date < key
-        System.out.println("lower date: " + dates.higher(LocalDate.of(2020, 10, 4)));
+        System.out.println("lower date: " + dates.lower(LocalDate.of(2020, 10, 4)));
 
         //reversed set
         System.out.println("reversed order: " + dates.descendingSet());
 
-        //finding elements that less than the key.
-        System.out.println("head set: " + dates.headSet(LocalDate.of(2020, 10, 6), false));
+        //finding elements < the key, inclusive: boolean
+        System.out.println("head set exclusive: " + dates.headSet(LocalDate.of(2020, 10, 6), false));
+        System.out.println("head set inclusive: " + dates.headSet(LocalDate.of(2020, 10, 6), true));
 
-        //finding elements that greater than the key
-        System.out.println("head set: " + dates.tailSet(LocalDate.of(2020, 10, 6), false));
+        //finding elements > the key
+        System.out.println("tail set exclusive: " + dates.tailSet(LocalDate.of(2020, 10, 6), false));
+        System.out.println("tail set inclusive: " + dates.tailSet(LocalDate.of(2020, 10, 6), true));
 
         //finding a span of elements in the collection, excluding both keys.
         System.out.println("sub set: " + dates.subSet(
                 LocalDate.of(2020, 10, 3), false, LocalDate.of(2020, 10, 6), false));
-
+        System.out.println("sub set: " + dates.subSet(
+                LocalDate.of(2020, 10, 3), true, LocalDate.of(2020, 10, 6), true));
     }
+
 }
