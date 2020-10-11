@@ -1,14 +1,19 @@
 package models;
 
 public class Cat extends Animal {
+    protected static String food;
 
-    public Cat(String food, double avgLife, double weight) {
-        super(food, avgLife, weight);
+    static {
+        food = "cat food";
+    }
+
+    public Cat(double age, double weight) {
+        super(age, weight);
     }
 
     @Override
     void eat() {
-        System.out.printf("eating %s \n", this.food);
+        System.out.printf("eating %s \n", food);
     }
 
     @Override
@@ -16,4 +21,13 @@ public class Cat extends Animal {
         if (!(o instanceof Cat)) throw new IllegalArgumentException("require Cat class type");
         return Double.compare(this.weight, ((Cat) o).weight);
     }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "age=" + age +
+                ", weight=" + weight +
+                '}';
+    }
+
 }

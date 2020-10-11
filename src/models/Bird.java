@@ -1,9 +1,14 @@
 package models;
 
 public class Bird extends Animal {
+    protected static String food;
 
-    public Bird(String food, double avgLife, double weight) {
-        super(food, avgLife, weight);
+    static {
+        food = "bird food";
+    }
+
+    public Bird(double age, double weight) {
+        super(age, weight);
     }
 
     @Override
@@ -14,7 +19,15 @@ public class Bird extends Animal {
 
     @Override
     void eat() {
-        System.out.printf("eating %s \n", this.food);
+        System.out.printf("eating %s \n", food);
+    }
+
+    @Override
+    public String toString() {
+        return "Bird{" +
+                "age=" + age +
+                ", weight=" + weight +
+                '}';
     }
 
 }

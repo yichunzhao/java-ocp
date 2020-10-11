@@ -2,19 +2,11 @@ package models;
 
 public abstract class Animal implements Comparable {
 
-    protected String food;
-    protected double avgLife;
-
+    protected double age;
     protected double weight;
 
-    public Animal(String food, double avgLife) {
-        this.food = food;
-        this.avgLife = avgLife;
-    }
-
-    public Animal(String food, double avgLife, double weight) {
-        this.food = food;
-        this.avgLife = avgLife;
+    public Animal(double age, double weight) {
+        this.age = age;
         this.weight = weight;
     }
 
@@ -24,27 +16,20 @@ public abstract class Animal implements Comparable {
         System.out.printf("living forest");
     }
 
-    public String getFood() {
-        return food;
-    }
-
-    public double getAvgLife() {
-        return avgLife;
+    public double getAge() {
+        return age;
     }
 
     public double getWeight() {
         return weight;
     }
 
-    public void setFood(String food) {
-        this.food = food;
-    }
-
-    public void setAvgLife(double avgLife) {
-        this.avgLife = avgLife;
+    public void setAge(double age) {
+        this.age = age;
     }
 
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
 }

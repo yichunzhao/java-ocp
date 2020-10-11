@@ -39,8 +39,8 @@ class AnimalDoctor {
 
 public class GenericGotchas {
     public static void main(String[] args) {
-        List<Dog> dogs = Stream.of(new Dog(), new Dog(), new Dog()).collect(Collectors.toList());
-        List<Cat> cats = Stream.of(new Cat(), new Cat(), new Cat()).collect(Collectors.toList());
+        List<Dog> dogs = Stream.of(new Dog(1, 1.2), new Dog(2, 2.3), new Dog(2, 3.4)).collect(Collectors.toList());
+        List<Cat> cats = Stream.of(new Cat(2, 0.7), new Cat(2, 3.4), new Cat(3, 4.4)).collect(Collectors.toList());
 
         AnimalDoctor animalDoctor = new AnimalDoctor();
         animalDoctor.checkAnimals(dogs);
@@ -49,8 +49,6 @@ public class GenericGotchas {
         List<?> list = new ArrayList<Dog>();
         List<? extends Animal> list1 = new ArrayList<Dog>();
         List<? super Dog> list2 = new ArrayList<Animal>();
-
     }
-
 
 }
