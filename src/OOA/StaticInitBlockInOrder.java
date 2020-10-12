@@ -7,6 +7,15 @@ package OOA;
  * referencing.
  * <p>
  * Static method and var are loaded when the Class is loaded in memory, which happens before creations of instances.
+ * <p>
+ * Always referring a static var by its Class name, but not instances; for it confusing readers to think of it as a
+ * instance var.
+ * <p>
+ * Static method is used to manipulate only static variables or to define utility methods.
+ * <p>
+ * static block allows conditional assignment, and handling exceptions as achieving values for the static variables.
+ * For instance, values may be read from a file, and this process may throw a checked exception, so it has to be
+ * handled.
  */
 public class StaticInitBlockInOrder {
     static int var = 10;
