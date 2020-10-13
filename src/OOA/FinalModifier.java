@@ -70,7 +70,7 @@ public class FinalModifier {
         //referenced object itself still can be modified.
         sb.append("another");
         //however its instance reference cannot be modified, meaning that you can point it to another instance.
-        //the following you will get a compilation error; you cannot re-assign a final reference var. 
+        //the following you will get a compilation error; you cannot re-assign a final reference var.
         //sb = new StringBuilder();
     }
 }
