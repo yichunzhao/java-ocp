@@ -1,6 +1,8 @@
 package OOA;
 
 /**
+ * a static block is executed once the class is loaded in memory, before any instance construction.
+ *
  * a class may define several static init. block, they are executed in the order of their appearance in a class.
  * static var and static init they are executed in the order of their appearance in a class; so static var. declaration
  * should stand before static init block; otherwise, it gives a compilation error. It doesn't support forward
@@ -25,11 +27,16 @@ public class StaticInitBlockInOrder {
     }
 
     static {
-        System.out.println("second init" + var++);
+        System.out.println("second init " + var++);
+    }
+
+    public StaticInitBlockInOrder() {
+        System.out.printf("constructor: ");
     }
 
     public static void main(String[] args) {
-        System.out.println(var);
+
+        new StaticInitBlockInOrder();
 
     }
 }
