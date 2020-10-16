@@ -1,4 +1,4 @@
-package OOA;
+package OOD;
 
 /**
  * The final keyword is a non-access modifier, it can modify classes, methods and variables; the semantics of final

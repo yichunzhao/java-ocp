@@ -1,4 +1,4 @@
-package OOA;
+package OOD;
 
 /**
  * Static class and interface:
