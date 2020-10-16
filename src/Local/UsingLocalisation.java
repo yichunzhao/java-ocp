@@ -14,10 +14,10 @@ public class UsingLocalisation {
   public static void main(String[] args) {
 
     Locale[] locals = Locale.getAvailableLocales();
-    System.out.println("lcals " + Arrays.toString(locals));
+    System.out.println("locals " + Arrays.toString(locals));
 
-    System.out.println("defaut local : " + Locale.getDefault());
-    System.out.println("defaut local : " + Locale.getDefault().getDisplayCountry());
+    System.out.println("default local : " + Locale.getDefault());
+    System.out.println("default local : " + Locale.getDefault().getDisplayCountry());
 
     msg(Locale.CHINA.getCountry());
     msg(Locale.CHINA.getDisplayCountry());
