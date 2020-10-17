@@ -1,4 +1,4 @@
-package OOD.nestedclass;
+package AdvancedClassDesign.nestedclass;
 
 /**
  * nested class: static nested class or inner class(non-static)

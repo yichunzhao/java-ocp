@@ -1,4 +1,4 @@
-package OOD;
+package AdvancedClassDesign;
 
 /**
  * Static class and interface:

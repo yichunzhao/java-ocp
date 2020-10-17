@@ -1,4 +1,4 @@
-package OOD;
+package AdvancedClassDesign;
 
 /**
  * a static block is executed once the class is loaded in memory, before any instance construction.

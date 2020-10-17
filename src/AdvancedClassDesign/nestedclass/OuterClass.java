@@ -1,4 +1,4 @@
-package OOD.nestedclass;
+package AdvancedClassDesign.nestedclass;
 
 /**
  * A class is defined within a class. It is referred as inner class.
