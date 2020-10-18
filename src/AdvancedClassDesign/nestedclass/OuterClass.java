@@ -10,17 +10,23 @@ package AdvancedClassDesign.nestedclass;
  * <p>
  * An inner class instance must live within a life cycle of its outer class; without its outer class instance, it
  * won't have a chance to be real. Please imagine the universe and its galaxy.
- *
+ * <p>
  * object.new inner
- *
+ * <p>
  * Inner class allows only static final variables; Static methods and non-final static variables are not allowed.
  * or by one line code
  * Inner innerObj = new Outer().new Inner();
- * You see two new operator in one line. 
- *
+ * You see two new operator in one line.
+ * <p>
+ * inner class in a part of outerClass so it can access all methods and attributes of it.
+ * <p>
+ * An inner class uses outerClassName.this to refer the instance of outer class.
+ * Within the inner class, this refers to Inner class instance itself.
  */
 public class OuterClass {
     Inner inner;
+
+    private int sameName = 20;
 
 
     public OuterClass() {
@@ -40,6 +46,8 @@ public class OuterClass {
 
     private class Inner {
         static final int constant = 1000;
+
+        private int sameName = OuterClass.this.sameName;
         //static int =2000;
         //static void staticMethod(){)
         //static final void staticFinalMethod(){}
