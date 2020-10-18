@@ -12,6 +12,12 @@ package AdvancedClassDesign.nestedclass;
  * won't have a chance to be real. Please imagine the universe and its galaxy.
  *
  * object.new inner
+ *
+ * Inner class allows only static final variables; Static methods and non-final static variables are not allowed.
+ * or by one line code
+ * Inner innerObj = new Outer().new Inner();
+ * You see two new operator in one line. 
+ *
  */
 public class OuterClass {
     Inner inner;
