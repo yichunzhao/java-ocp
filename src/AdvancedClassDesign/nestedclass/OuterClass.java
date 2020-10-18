@@ -10,6 +10,8 @@ package AdvancedClassDesign.nestedclass;
  * <p>
  * An inner class instance must live within a life cycle of its outer class; without its outer class instance, it
  * won't have a chance to be real. Please imagine the universe and its galaxy.
+ *
+ * object.new inner
  */
 public class OuterClass {
     Inner inner;
@@ -26,11 +28,9 @@ public class OuterClass {
         inner.innerClassDoSomething();
     }
 
-
     public void outerDoUsingInner() {
         inner.innerClassDoSomething();
     }
-
 
     private class Inner {
         static final int constant = 1000;
@@ -45,8 +45,6 @@ public class OuterClass {
         void innerClassDoSomething() {
             System.out.println("inner class instance do method is called");
         }
-
-
     }
 
     public class PublicInner {
