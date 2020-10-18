@@ -7,6 +7,9 @@ package AdvancedClassDesign.nestedclass;
  * without the instance of outer class, it can not be accessed.
  * <p>
  * it needs a outer class instance first, so as to create an inner class instance.
+ * <p>
+ * An inner class instance must live within a life cycle of its outer class; without its outer class instance, it
+ * won't have a chance to be real. Please imagine the universe and its galaxy.
  */
 public class OuterClass {
     Inner inner;
@@ -16,9 +19,18 @@ public class OuterClass {
         inner = new Inner();
     }
 
+    public static void staticMethod() {
+        //how a static method refer to an inner class; firstly you have to create an instance of outer class
+        OuterClass outerClass = new OuterClass();
+        Inner inner = outerClass.new Inner();
+        inner.innerClassDoSomething();
+    }
+
+
     public void outerDoUsingInner() {
         inner.innerClassDoSomething();
     }
+
 
     private class Inner {
         static final int constant = 1000;
@@ -48,5 +60,9 @@ public class OuterClass {
         //how to create an inner class instance
         Inner inner = usingInnerClass.new Inner();
         inner.innerClassDoSomething();
+
+        //invoking a static method from the outer class
+        System.out.println("invoking a static method from the outer class");
+        OuterClass.staticMethod();
     }
 }
