@@ -1,4 +1,4 @@
-package AdvancedClassDesign;
+package AdvancedClassDesign.Enum;
 
 import java.util.Arrays;
 

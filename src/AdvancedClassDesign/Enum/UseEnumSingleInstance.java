@@ -1,4 +1,4 @@
-package AdvancedClassDesign;
+package AdvancedClassDesign.Enum;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
