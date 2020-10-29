@@ -19,11 +19,9 @@ public class PrintRepeatedNumWithFreq {
         Map<Integer, Integer> numberFreqMap = new TreeMap<>();
 
         for (int num : ints) {
-            if (numberFreqMap.containsKey(num)) {
-                int count = numberFreqMap.get(num);
-                count++;
-                numberFreqMap.put(num, count);
-
+            Integer count = numberFreqMap.get(num);
+            if (count!=null) {
+                numberFreqMap.put(num, ++count);
             } else {
                 numberFreqMap.put(num, 1);
             }
@@ -31,6 +29,5 @@ public class PrintRepeatedNumWithFreq {
 
         System.out.println("number-freq: " + numberFreqMap);
         System.out.println("final array: " + numberFreqMap.keySet());
-
     }
 }
