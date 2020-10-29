@@ -17,15 +17,15 @@ public class PrintRepeatedNumWithFreq {
 
     public static void main(String[] args) {
         Map<Integer, Integer> numberFreqMap = new TreeMap<>();
-        
-        for (int i = 0; i < ints.length; i++) {
-            if (numberFreqMap.keySet().contains(ints[i])) {
-                int count = numberFreqMap.get(ints[i]);
+
+        for (int num : ints) {
+            if (numberFreqMap.containsKey(num)) {
+                int count = numberFreqMap.get(num);
                 count++;
-                numberFreqMap.put(ints[i], count);
+                numberFreqMap.put(num, count);
 
             } else {
-                numberFreqMap.put(ints[i], 1);
+                numberFreqMap.put(num, 1);
             }
         }
 
