@@ -15,12 +15,11 @@ import java.util.LinkedList;
  */
 public class CalcParentheses {
 
-    private static String target = "()())()";
-    private static String target1 = ")(";
+    private static final String target = "()())()";
+    private static final String target1 = ")(";
 
     public static void main(String[] args) {
-        int notMatched = validate(target.toCharArray());
-        System.out.println(target + " : " + notMatched);
+        System.out.println(target + " : " + validate(target.toCharArray()));
 
         System.out.println(target1 + " : " + validate(target1.toCharArray()));
     }
@@ -28,13 +27,13 @@ public class CalcParentheses {
     public static int validate(char[] chars) {
         Deque<Character> stack = new LinkedList<>();
 
-        for (int i = 0; i < chars.length; i++) {
+        for (char aChar : chars) {
             if (stack.isEmpty()) {
-                stack.push(chars[i]);
+                stack.push(aChar);
                 continue;
             }
-            if (chars[i] == ')' && stack.peek() == '(') stack.pop();
-            else stack.push(chars[i]);
+            if (aChar == ')' && stack.peek() == '(') stack.pop();
+            else stack.push(aChar);
         }
 
         return stack.size();
