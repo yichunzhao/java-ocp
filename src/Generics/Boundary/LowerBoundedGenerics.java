@@ -25,7 +25,7 @@ class Watch extends Gift {
 class Phone extends Gift {
 }
 
-public class UpperBoundedGenerics {
+public class LowerBoundedGenerics {
     public static void main(String[] args) {
         //a list accept super type of Gift; then why it doesn't accept Object instance.
         List<? super Gift> gifts = new ArrayList<>();
@@ -44,7 +44,7 @@ public class UpperBoundedGenerics {
 
     static void wrapGift(List<?> gifts) {
         gifts.forEach(System.out::println);
-        //A collection of wildcard, cannot accept any instance in the method; this is a protection.
+        //A collection of wildcard, cannot add any instance in the method; this is a protection.
         //gifts.add(new Gift());
 
     }

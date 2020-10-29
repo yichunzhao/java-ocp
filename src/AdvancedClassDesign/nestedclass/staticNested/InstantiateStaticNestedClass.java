@@ -3,13 +3,11 @@ package AdvancedClassDesign.nestedclass.staticNested;
 /**
  * Instantiate static nested class and an inner class(instance)
  * <p>
- * you can refer an inner class type via a class name directly, but you have to instantiate an inner class instance
+ * you can refer an inner class type via a class name directly, but you have to instantiate an inner class
  * via its outer class instance.
  *
  * <code>
- * <pre>
- *           Outer.InstanceInner instanceInner = new Outer().new InstanceInner();
- *       </pre>
+ * <pre> Outer.InstanceInner instanceInner = new Outer().new InstanceInner(); </pre>
  * </code>
  */
 class Outer {
