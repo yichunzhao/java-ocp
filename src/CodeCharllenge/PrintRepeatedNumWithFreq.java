@@ -20,7 +20,7 @@ public class PrintRepeatedNumWithFreq {
 
         for (int num : ints) {
             Integer count = numberFreqMap.get(num);
-            if (count!=null) {
+            if (count != null) {
                 numberFreqMap.put(num, ++count);
             } else {
                 numberFreqMap.put(num, 1);
