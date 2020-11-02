@@ -1,6 +1,7 @@
 package Generics;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,6 +21,13 @@ public class GenericWildCard {
         //the following gives an compiling error.
         //stuffs.add(LocalDate.of(2020,10,1));
         input(stuffs);
+
+        //add objects to a wildcard defined collection
+        List<?> times = new ArrayList<LocalDate>();
+        //times.add(LocalDate.now());
+
+        List<?> dates = new ArrayList<>();
+        //dates.add(LocalDate.now());
     }
 
     public static void input(List<?> anyStuffs) {

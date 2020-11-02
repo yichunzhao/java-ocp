@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Lower bounded
- * T super Gift (class, interface or enum)
+ * Lower bounded wildcard <? super Type>
  * <p>
- * including boundary type.
+ * T super Gift (class, interface or enum); restrict a unknown type to be a specific type or a super type of that type.
  * <p>
- * T extend Gift
- * excluding boundary type.
+ *
+ * <p>
+ * List<? super Number> list = new ArrayList<>();
+ * Read as object and add as boundary type and its subtype.
  */
 
 class Gift {
@@ -27,7 +28,7 @@ class Phone extends Gift {
 
 public class LowerBoundedGenerics {
     public static void main(String[] args) {
-        //a list accept super type of Gift; then why it doesn't accept Object instance.
+        //A list with a lower bound, Gift,
         List<? super Gift> gifts = new ArrayList<>();
         gifts.add(new Gift());
         gifts.add(new Book());
@@ -35,17 +36,34 @@ public class LowerBoundedGenerics {
         gifts.add(new Phone());
 //        gifts.add(new Object());
 
-        List<? extends Gift> gifts1 = new ArrayList<Gift>();
+        for (Object g : gifts) {
+            System.out.println(g);
+        }
 
+        //you cannot add element upper bounded wildcard
+        List<? extends Gift> gifts1 = new ArrayList<Gift>();
         //gifts1.add(new Book()); //a compilation error
 
         wrapGift(gifts);
+
+        List<Object> books = new ArrayList<>();
+        books.add(new Book());
+
+        wrapGift(books);
     }
 
-    static void wrapGift(List<?> gifts) {
-        gifts.forEach(System.out::println);
-        //A collection of wildcard, cannot add any instance in the method; this is a protection.
-        //gifts.add(new Gift());
+    //lower-bounded wildcard accept boundary type and its subtype;
+    //it can add and read
+    static void wrapGift(List<? super Gift> gifts) {
+        for (Object gift : gifts) {
+            System.out.println((Gift) gift);
+        }
 
+        gifts.add(new Gift());
+        gifts.add(new Book());
+        //gifts.add(new Object());
+
+        gifts.forEach(System.out::print);
+        System.out.println();
     }
 }
