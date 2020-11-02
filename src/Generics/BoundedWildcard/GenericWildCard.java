@@ -1,4 +1,4 @@
-package Generics;
+package Generics.BoundedWildcard;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

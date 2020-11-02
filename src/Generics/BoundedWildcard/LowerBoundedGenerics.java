@@ -1,4 +1,4 @@
-package Generics.Boundary;
+package Generics.BoundedWildcard;
 
 import java.util.ArrayList;
 import java.util.List;
