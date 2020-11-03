@@ -19,7 +19,7 @@ public class UsingLinkedHashMap {
         map.put("are", 30);
         map.put("doing", 40);
         map.put("now", 50);
-        map.entrySet().stream().forEach(entry -> System.out.printf(" %s -> %d \n", entry.getKey(), entry.getValue()));
+        map.forEach((k, v) -> System.out.printf(" %s -> %d \n", k, v));
 
 
         Map<String, Integer> anotherMap = new LinkedHashMap<>(4, 0.75f, true);
@@ -29,9 +29,9 @@ public class UsingLinkedHashMap {
         anotherMap.put("doing", 40);
         anotherMap.put("now", 50);
 
-        anotherMap.entrySet().stream().forEach(e -> System.out.printf(" %s -> %d \n", e.getKey(), e.getValue()));
+        anotherMap.forEach((k, v) -> System.out.printf(" %s -> %d \n", k, v));
 
         System.out.printf("I access key 'what' %d \n", anotherMap.get("what"));
-        anotherMap.entrySet().stream().forEach(e -> System.out.printf(" %s -> %d \n", e.getKey(), e.getValue()));
+        anotherMap.forEach((k, v) -> System.out.printf(" %s -> %d \n", k, v));
     }
 }
