@@ -4,8 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * LinkedHasMap keeps the insertion order.
- *
+ * LinkedHasMap keeps insertion order or access order
+ * <p>
  * the 3rd argument: boolean ordering mode.
  * false: using insertion order
  * true: using access order instead: if one key has been accessed, then it will be put at the bottom.
@@ -19,7 +19,8 @@ public class UsingLinkedHashMap {
         map.put("are", 30);
         map.put("doing", 40);
         map.put("now", 50);
-        System.out.println("linked map insertion order:  " + map);
+        map.entrySet().stream().forEach(entry -> System.out.printf(" %s -> %d \n", entry.getKey(), entry.getValue()));
+
 
         Map<String, Integer> anotherMap = new LinkedHashMap<>(4, 0.75f, true);
         anotherMap.put("what", 10);
@@ -28,8 +29,9 @@ public class UsingLinkedHashMap {
         anotherMap.put("doing", 40);
         anotherMap.put("now", 50);
 
-        System.out.println(anotherMap.get("what"));
-        System.out.println("linked map access order:  " + anotherMap);
+        anotherMap.entrySet().stream().forEach(e -> System.out.printf(" %s -> %d \n", e.getKey(), e.getValue()));
 
+        System.out.printf("I access key 'what' %d \n", anotherMap.get("what"));
+        anotherMap.entrySet().stream().forEach(e -> System.out.printf(" %s -> %d \n", e.getKey(), e.getValue()));
     }
 }
