@@ -1,4 +1,4 @@
-package Enum;
+package AdvancedClassDesign.Enum;
 
 import java.util.Arrays;
 
@@ -12,13 +12,14 @@ import java.util.Arrays;
  * <p>
  * enum is allowed to have private or default access level constructors.
  */
-enum Level {
-    LOW,
-    MEDIUM,
-    HIGH
-}
 
 public class EnumNullValue {
+
+    enum Level {
+        LOW,
+        MEDIUM,
+        HIGH
+    }
 
     public static void main(String[] args) {
 
@@ -40,6 +41,5 @@ public class EnumNullValue {
         //sequence.
         Arrays.stream(Level.values())
                 .forEach(level -> System.out.printf("name: %s and ordinal %d \n ", level.name(), level.ordinal()));
-
     }
 }
