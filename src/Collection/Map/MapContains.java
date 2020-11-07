@@ -22,8 +22,8 @@ class Emp {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof String)) return false;
-        return name.equals((String) o);
+        if (!(o instanceof Emp)) return false;
+        return name.equals(((Emp) o).name);
     }
 }
 
