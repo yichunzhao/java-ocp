@@ -2,6 +2,9 @@ package Collection.Map;
 
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
@@ -34,6 +37,11 @@ public class FindKeyNotExistedInMap {
             y = wordLengthMap.get("xxx");
         }
         System.out.println("y=" + y);
+
+        //remove(key) returns null if a matching key is not present in HashMap.
+        Integer z = wordLengthMap.remove("xxx");
+        System.out.println("remove a key not existed: " + z);
+
 
     }
 }
