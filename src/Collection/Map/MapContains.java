@@ -23,7 +23,8 @@ class Emp {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Emp)) return false;
-        return name.equals(((Emp) o).name);
+        return name.equals(((Emp) o).name
+        );
     }
 }
 
@@ -41,10 +42,9 @@ public class MapContains {
 
         Map<Emp, Emp> empEmpMap = new HashMap<>();
         empEmpMap.put(new Emp("mike"), new Emp("shara"));
-        //You find the original emp mike, for the hashcode decide the bucket index
+        //You cannot find the original emp mike, for the hashcode decide the bucket index
         System.out.println(empEmpMap.containsKey(new Emp("mike")));
         //You can find this shara
         System.out.println(empEmpMap.containsValue(new Emp("shara")));
-
     }
 }
