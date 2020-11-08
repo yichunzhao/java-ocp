@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 /**
  * Object[] stores different type of instances; what is the search result?
- *
+ * <p>
  * sorting or searching both up to impl of Comparable or Comparator, which compares A and B.
- *
+ * <p>
  * the following code it throws
  * java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
  */
