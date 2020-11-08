@@ -40,7 +40,8 @@ public class SearchList {
     public static void main(String[] args) {
         //
         List<Person> persons = Stream.of(new Person("Mia", 12), new Person("Mike", 23),
-                new Person("Tom", 2), new Person("Jerry", 5), new Person("Rose", 12)).collect(toList());
+                new Person("Tom", 2), new Person("Jerry", 5), new Person("Rose", 12))
+                .collect(toList());
         System.out.println("unsorted: " + persons);
 
         //sorting it in A-dir
@@ -53,5 +54,16 @@ public class SearchList {
         System.out.println(r);
         System.out.println(persons.get(r));
 
+        //List of items implements Comparable interface
+        List<Integer> integers = Stream.of(9999, 33, 45, 68).collect(toList());
+        System.out.println("un-sorted: " + integers);
+        //sort to A-dir
+        Collections.sort(integers);
+        System.out.println("sorted : " + integers);
+        //bi-search
+        int z = Collections.binarySearch(integers, 45);
+        if (z > 0 && z < integers.size()) {
+            System.out.println(integers.get(z));
+        }
     }
 }
