@@ -23,7 +23,9 @@ import java.util.logging.Logger;
  *  it doesn't affect the instance thread; the sleep() is a static method of the Thread, and it is only used to make
  *  current thread return to a Runnable state.
  *
- * @author YNZ */
+ * @author YNZ
+ *
+ * */
 class Sing implements Runnable {
 
   @Override
@@ -44,11 +46,16 @@ class Eat extends Thread {
 
   @Override
   public void run() {
+    try {
+      sleep(1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     System.out.println("eat .....");
   }
 }
 
-public class ThreadIsRunnable {
+public class SleepIsStaticThreadMethod {
 
   public static void main(String[] args) {
 

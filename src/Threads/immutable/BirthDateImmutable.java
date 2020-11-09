@@ -11,34 +11,34 @@ package Threads.immutable;
 
 import java.util.Date;
 
-final class BirthDate {
-    private final Date birth;
-
-    public BirthDate(Date birth) {
-        this.birth = birth;
-    }
-
-    public final Date getBirthDate() {
-        return (Date) birth.clone();
-    }
-
-    public boolean isOlder(Date other) {
-        boolean isOlder = birth.before(other);
-        return isOlder;
-    }
-
-}
 
 public class BirthDateImmutable {
+    final static class BirthDate {
+        private final Date birth;
+
+        public BirthDate(Date birth) {
+            this.birth = birth;
+        }
+
+        public final Date getBirthDate() {
+            return (Date) birth.clone();
+        }
+
+        public boolean isOlder(Date other) {
+            boolean isOlder = birth.before(other);
+            return isOlder;
+        }
+
+    }
 
     public static void main(String[] args) {
         BirthDate birthDate = new BirthDate(new Date());
         System.out.println("original date: " + birthDate.getBirthDate());
 
         Date another = birthDate.getBirthDate();
-        System.out.println("another: "+ another);
+        System.out.println("another: " + another);
         another.setTime(2001);
-        System.out.println("modifying another: "+ another);
+        System.out.println("modifying another: " + another);
         System.out.println("birth-date after modification: " + birthDate.getBirthDate());
 
     }
