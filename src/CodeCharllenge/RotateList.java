@@ -61,8 +61,7 @@ public class RotateList {
         result.addAll(list.subList(newHead, l));
 
         //new tail part.
-        result.addAll(result.size(), list.subList(0, newHead));
-
+        result.addAll(list.subList(0, newHead));
         return result;
     }
 }
