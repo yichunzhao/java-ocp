@@ -27,7 +27,7 @@ public class MapPutIfAbsent {
     }
 
     public static void main(String[] args) {
-        //if key is existed, and associated with a non-null value.
+        //if key is existed, and associated with a value; no action applied.
         Integer r = dateNumberMap.putIfAbsent(key, 200);
         System.out.printf("%s \n", dateNumberMap.toString());
         //it doesn't apply 'put', and return the current value.
