@@ -15,7 +15,8 @@ import java.util.stream.IntStream;
  * Parallel uses 43 ms
  * Normal uses 94 ms
  * <p>
- * parallel is good at handling a big data set;
+ * parallel is good at handling a big data set(> 8000 items); as handling a small data set, actually it is slower
+ * than the normal sort method.
  */
 public class ParallelSorting {
     static long n = 10;
