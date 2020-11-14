@@ -27,10 +27,21 @@ public class ParallelSorting {
         IntStream.range(0, size).forEach(i -> target[i] = r.nextInt(size));
     }
 
-    static class TimeSummer {
+    static private class TimeSummer {
         private long total;
+        private long periodStart;
+        private long periodEnd;
 
-        void plus(long period) {
+        void setPeriodStart(long start) {
+            this.periodStart = start;
+        }
+
+        void setPeriodEnd(long end) {
+            this.periodEnd = end;
+            plus(periodEnd - periodStart);
+        }
+
+        private void plus(long period) {
             total += period;
         }
 
@@ -44,11 +55,10 @@ public class ParallelSorting {
         TimeSummer timeSummer = new TimeSummer();
 
         for (int i = 0; i < n; i++) {
-            long start = System.currentTimeMillis();
+            timeSummer.setPeriodStart(System.currentTimeMillis());
             int[] cloned = Arrays.copyOf(target, size);
             Arrays.parallelSort(cloned);
-            long end = System.currentTimeMillis();
-            timeSummer.plus(end - start);
+            timeSummer.setPeriodEnd(System.currentTimeMillis());
         }
 
         System.out.println("average parallel sort time cost: " + (timeSummer.total / n) + " ms");
@@ -56,11 +66,10 @@ public class ParallelSorting {
         TimeSummer timeSummer1 = new TimeSummer();
 
         for (int i = 0; i < n; i++) {
-            long start = System.currentTimeMillis();
+            timeSummer1.setPeriodStart(System.currentTimeMillis());
             int[] cloned = Arrays.copyOf(target, size);
             Arrays.sort(cloned);
-            long end = System.currentTimeMillis();
-            timeSummer1.plus(end - start);
+            timeSummer1.setPeriodEnd(System.currentTimeMillis());
         }
 
         System.out.println("average sort time cost: " + (timeSummer1.total / n) + " ms");
