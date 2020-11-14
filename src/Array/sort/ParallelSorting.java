@@ -48,6 +48,11 @@ public class ParallelSorting {
         long total() {
             return total;
         }
+
+        long average(long n) {
+            if (n <= 0L) throw new IllegalArgumentException("n must be an integer and bigger than zero");
+            return total / n;
+        }
     }
 
     public static void main(String[] args) {
@@ -61,7 +66,7 @@ public class ParallelSorting {
             timeSummer.setPeriodEnd(System.currentTimeMillis());
         }
 
-        System.out.println("average parallel sort time cost: " + (timeSummer.total / n) + " ms");
+        System.out.println("average parallel sort time cost: " + (timeSummer.average(n)) + " ms");
 
         TimeSummer timeSummer1 = new TimeSummer();
 
@@ -72,6 +77,6 @@ public class ParallelSorting {
             timeSummer1.setPeriodEnd(System.currentTimeMillis());
         }
 
-        System.out.println("average sort time cost: " + (timeSummer1.total / n) + " ms");
+        System.out.println("average sort time cost: " + (timeSummer1.average(n)) + " ms");
     }
 }
