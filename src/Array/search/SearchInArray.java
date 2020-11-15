@@ -1,8 +1,6 @@
-package Array;
+package Array.search;
 
 import java.util.Arrays;
-import java.util.Random;
-import java.util.stream.IntStream;
 
 /**
  * array must be sorted first, otherwise the search result is undefined. and therefore, elements in the array must be
@@ -13,25 +11,23 @@ import java.util.stream.IntStream;
  * <p>
  * In order to become natural ordered, any other classes mush implement Comparable interface or provide external
  * Comparators.
- *
+ * <p>
  * Binary search is only applied on the Array and List
- *
+ * <p>
  * Binary search: O(log(n))
  */
 
-public class SearchIArray {
-    private static int[] numbers = new int[100];
-    private static Random random;
-
-    static {
-        random = new Random();
-        IntStream.range(0, 100).forEach(i -> numbers[i] = random.nextInt(100));
-        Arrays.sort(numbers);
-    }
+public class SearchInArray {
+    private static int[] numbers = {12, 34, 56, 13, 14, 22, 77, 20};
 
     public static void main(String[] args) {
         System.out.println("numbers : " + Arrays.toString(numbers));
+
+        Arrays.sort(numbers);
+        System.out.println("sorted : " + Arrays.toString(numbers));
         System.out.println("index of the num: " + Arrays.binarySearch(numbers, 20));
+
+        System.out.println("if a num is not found: " + Arrays.binarySearch(numbers, 100));
     }
 
 }
