@@ -1,19 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package StringProcessing;
 
 import java.util.Arrays;
 
 /**
- * @author YNZ
+ * String static join method
+ * <p>
+ * public static String join(CharSequence var0, CharSequence... var1)
+ * public static String join(CharSequence var0, Iterable<? extends CharSequence> var1)
  */
 public class StringJoin {
 
     public static void main(String[] args) {
-        //join String variables together in a single String
+        //join strings with a conjunction.
         String joinedString = String.join("--", "java", "world");
         System.out.println("joined String : " + joinedString);
 

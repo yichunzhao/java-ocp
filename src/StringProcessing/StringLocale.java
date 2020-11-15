@@ -6,7 +6,8 @@ import java.util.Locale;
  * String and Locale: How Locale impacts the String
  */
 public class StringLocale {
-    private static final String str = "President Trump is treated with the steroid dexamethasone after oxygen level drops on Friday and Saturday, his doctor says";
+    private static final String str = "President Trump is treated with the steroid dexamethasone after oxygen level " +
+            "drops on Friday and Saturday, his doctor says";
 
     public static void main(String[] args) {
 
