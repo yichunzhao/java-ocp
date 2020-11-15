@@ -1,4 +1,4 @@
-package String;
+package StringProcessing;
 
 import java.util.Locale;
 
