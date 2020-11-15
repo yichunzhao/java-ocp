@@ -4,9 +4,9 @@ package AdvancedClassDesign.Overloading;
  * Does a return type plays a role in the overloading?
  * <p>
  * The purpose of overloading is to reuse the method signature. The overloading uses different parameter list to
- * distinguish from each others, nothing else.
+ * distinguish from each others, nothing else. However, you can use different parameter sequences combinations.
  * <p>
- * So, you cannot use a return type as a marker to distinguish another overloading.
+ * So, you cannot use a return type as a marker to defer another overloading.
  */
 
 public class OverLoadingReturnType {
