@@ -13,11 +13,11 @@ import java.util.Date;
 
 
 public class BirthDateImmutable {
-    final static class BirthDate {
+    final class BirthDate {
         private final Date birth;
 
         public BirthDate(Date birth) {
-            this.birth = birth;
+            this.birth = (Date) birth.clone();
         }
 
         public final Date getBirthDate() {
@@ -32,7 +32,7 @@ public class BirthDateImmutable {
     }
 
     public static void main(String[] args) {
-        BirthDate birthDate = new BirthDate(new Date());
+        BirthDate birthDate = new BirthDateImmutable().new BirthDate(new Date());
         System.out.println("original date: " + birthDate.getBirthDate());
 
         Date another = birthDate.getBirthDate();
