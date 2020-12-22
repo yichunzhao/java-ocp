@@ -6,7 +6,7 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 /**
- * TreeSet<E> IA-A sorted set, subSet(E fromElement, E toElement); fromElement is inclusive; and toElement(exclusive)
+ * TreeSet<E> IS-A sorted set, subSet(E fromElement, E toElement); fromElement is inclusive; and toElement(exclusive)
  * tailSet(E fromElement) >= fromElement
  * headSet(E toElement) < toElement
  */
