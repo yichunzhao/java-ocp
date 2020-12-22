@@ -1,4 +1,4 @@
-package Map.TreeMap;
+package Collection.Map.TreeMap;
 
 import models.Meeting;
 
