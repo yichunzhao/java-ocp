@@ -59,7 +59,5 @@ public class MatchingWordBoundary {
         while (matcher5.find()) {
             System.out.printf("group: %s, start: %s, end: %s \n", matcher5.group(), matcher5.start(), matcher5.end());
         }
-
-
     }
 }
