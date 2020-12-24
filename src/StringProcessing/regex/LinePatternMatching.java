@@ -11,25 +11,38 @@ public class LinePatternMatching {
 
     private static final String specificTarget = "9/10/2020 Sell 8473 JP $2,655.98 $2,613.00 $2,685.00 $2,685.00 $2,685.00";
 
-    private static final String tPattern = "[0-9A_Z]{1,4}\\s[A-Z]{2}";
     private static final String dPattern = "\\d{1,2}/\\d{1,2}/\\d{4}";
+    private static final String cPattern = "[$][,\\d]+.\\d{2}";
+    private static final String c1Pattern = "[$][\\d]+.\\d{2}";
 
     private static final String pattern = "^\\d{1,2}/\\d{1,2}/\\d{4}\\s+(Sell|Buy).+[$]\\d+.\\d{2}$";
-
 
     public static void main(String[] args) {
         for (String target : targets) {
             System.out.println(target.matches(pattern));
         }
 
-        Matcher matcher = Pattern.compile(tPattern).matcher(specificTarget);
-        while (matcher.find()) {
-            System.out.printf("matched: %s \n ", specificTarget.subSequence(matcher.start(), matcher.end()));
-        }
-
         Matcher matcherD = Pattern.compile(dPattern).matcher(specificTarget);
         while (matcherD.find()) {
             System.out.printf("start: %s end: %s matched: %s \n ", matcherD.start(), matcherD.end(), specificTarget.subSequence(matcherD.start(), matcherD.end()));
+        }
+
+        System.out.println("");
+        Matcher matcherC = Pattern.compile(cPattern).matcher(specificTarget);
+        while (matcherC.find()) {
+            System.out.printf("\n c group: %s start: %s end: %s matched: %s", matcherC.group(), matcherC.start(), matcherC.end(), specificTarget.subSequence(matcherC.start(), matcherC.end()));
+        }
+
+        System.out.println("");
+        Matcher matcherC1 = Pattern.compile(c1Pattern).matcher(targets[0]);
+        while (matcherC1.find()) {
+            System.out.printf("\n c1 group: %s start: %s end: %s matched: %s", matcherC1.group(), matcherC1.start(), matcherC1.end(), targets[0].subSequence(matcherC1.start(), matcherC1.end()));
+        }
+
+        System.out.println("");
+        Matcher matcherC2 = Pattern.compile(cPattern).matcher(targets[0]);
+        while (matcherC2.find()) {
+            System.out.printf("\n c2 group: %s start: %s end: %s matched: %s", matcherC2.group(), matcherC2.start(), matcherC2.end(), targets[0].subSequence(matcherC2.start(), matcherC2.end()));
         }
 
     }
