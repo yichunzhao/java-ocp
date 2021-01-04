@@ -42,6 +42,7 @@ public class UsingCharacterClasses {
             System.out.println("pattern2 Group " + matcher2.group() + " start: " + matcher2.start() + " emd: " + matcher2.end());
         }
 
-
+        System.out.println("matching Buy: " + "Buy".matches("Buy|Sell"));
+        System.out.println("matching Buy: " + "Sell".matches("Buy|Sell"));
     }
 }
