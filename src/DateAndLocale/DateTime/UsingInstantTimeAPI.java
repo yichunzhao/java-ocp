@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DateTime;
+package DateAndLocale.DateTime;
 
 import java.time.*;
 
@@ -19,7 +19,7 @@ public class UsingInstantTimeAPI {
     System.out.println("Duration = " + d.toString());
     System.out.println("Duration in ms = " + d.toMillis());
 
-    System.out.println("Local date now : " + LocalDate.now());
+    System.out.println("DateAndLocale.Local date now : " + LocalDate.now());
 
     LocalDate ofDate = LocalDate.of(1965, Month.MARCH, 12);
     System.out.println("" + ofDate);

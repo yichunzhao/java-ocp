@@ -50,7 +50,7 @@ public class JavaTime {
 
 
         //create a local Time and format it.
-        System.out.println("ISO Local Time: " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
+        System.out.println("ISO DateAndLocale.Local Time: " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
         System.out.println("ISO Time: " + LocalTime.now().format(DateTimeFormatter.ISO_TIME));
 
         //Duration Class for dealing with Time between Two Times; only support SECONDS and NANO
