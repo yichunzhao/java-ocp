@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 
 /**
  * appending content to an existing file.
@@ -14,28 +15,23 @@ import java.nio.file.Paths;
  */
 public class AppendToExistingFile {
     private static final String fileName = "myAppendedFile.txt";
+    private static final String fileDir = "myDirectory";
 
     public static void main(String[] args) {
+        //target path(file) to create:
+        Path myPath = Paths.get(fileDir, fileName);
 
-        //target file to create:
-        Path myPath = Paths.get("myDirectory", fileName);
-
-        try {
-            if (Files.notExists(myPath)) {
+        if (Files.notExists(myPath)) {
+            try {
                 Files.createFile(myPath);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-            PrintWriter pw = new PrintWriter(new FileWriter(myPath.toFile(), true));
-            pw.println("first line text:: ....... ");
-            pw.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
-        try {
-            PrintWriter pw1 = new PrintWriter(new FileWriter(myPath.toFile(), true));
-            pw1.println("writing another line .....");
-            pw1.flush();
+        try (PrintWriter pw = new PrintWriter(new FileWriter(myPath.toFile(), true))) {
+            pw.println(LocalDateTime.now());
+            pw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
