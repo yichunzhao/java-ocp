@@ -5,7 +5,9 @@ import models.Meeting;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -34,5 +36,10 @@ public class TreeMapSorting {
 
         myTreeMap.entrySet().forEach(entry -> System.out.println("date: " + entry.getKey() + " " + entry.getValue()));
 
+        //get keyValues from a treeMap, is it still sorted? yes.
+        List<Date> keys = new ArrayList(myTreeMap.keySet());
+        System.out.println("get keys from treeMap: " + keys);
+
+        System.out.println("keySet: " + myTreeMap.keySet());
     }
 }
