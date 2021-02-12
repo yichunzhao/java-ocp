@@ -1,4 +1,4 @@
-package Collection.Set;
+package Collection.Set.sorted;
 
 import java.util.Comparator;
 import java.util.HashSet;

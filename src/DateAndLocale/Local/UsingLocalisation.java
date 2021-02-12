@@ -8,35 +8,40 @@ package DateAndLocale.Local;
 import java.util.Arrays;
 import java.util.Locale;
 
-/** @author YNZ */
+/**
+ * @author YNZ
+ */
 public class UsingLocalisation {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Locale[] locals = Locale.getAvailableLocales();
-    System.out.println("locals " + Arrays.toString(locals));
+        Locale[] locals = Locale.getAvailableLocales();
+        System.out.println("locals " + Arrays.toString(locals));
 
-    System.out.println("default local : " + Locale.getDefault());
-    System.out.println("default local : " + Locale.getDefault().getDisplayCountry());
+        System.out.println("default local : " + Locale.getDefault());
+        System.out.println("default local : " + Locale.getDefault().getDisplayCountry());
 
-    msg(Locale.CHINA.getCountry());
-    msg(Locale.CHINA.getDisplayCountry());
-    msg(Locale.CHINA.getLanguage());
-    msg(Locale.CHINA.getDisplayLanguage());
-    msg(Locale.PRC.getCountry());
-    msg(Locale.PRC.getDisplayCountry());
+        msg(Locale.CHINA.getCountry());
+        msg(Locale.CHINA.getDisplayCountry());
+        msg(Locale.CHINA.getLanguage());
+        msg(Locale.CHINA.getDisplayLanguage());
+        msg(Locale.PRC.getCountry());
+        msg(Locale.PRC.getDisplayCountry());
 
-    Locale denmark = new Locale("dk");
+        Locale denmark = new Locale("dk");
 
-    Locale canada = Locale.CANADA;
-    Locale canada1 = new Locale("ca");
-    msg("are they equal ? " + canada.equals(canada1));
+        Locale canada = Locale.CANADA;
+        Locale canada1 = new Locale("ca");
+        msg("are they equal ? " + canada.equals(canada1));
 
-    msg(Locale.FRANCE.toString());
-    msg(Locale.FRENCH.toString());
-  }
+        msg(Locale.FRANCE.toString());
+        msg(Locale.FRENCH.toString());
 
-  public static void msg(String str) {
-    System.out.println(str);
-  }
+        Locale defaultLocale = Locale.getDefault();
+        System.out.println("current default local: " + defaultLocale);
+    }
+
+    public static void msg(String str) {
+        System.out.println(str);
+    }
 }

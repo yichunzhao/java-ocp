@@ -1,4 +1,4 @@
-package Collection.Set;
+package Collection.Set.sorted;
 
 import java.util.NavigableSet;
 import java.util.Random;

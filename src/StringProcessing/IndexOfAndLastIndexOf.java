@@ -40,5 +40,12 @@ public class IndexOfAndLastIndexOf {
         //lastIndex -100; from 0 to -100; it should return -1; not found
         System.out.println("index of 'a': " + target.lastIndexOf("a", -100));
 
+        String n = "00000111111";
+        int indexOfFirstOne = n.indexOf("1");
+        System.out.println("index of first one: " + indexOfFirstOne);
+
+        int indexOfLastOne = n.lastIndexOf("1");
+        System.out.println("index of last one: " + indexOfLastOne);
+
     }
 }

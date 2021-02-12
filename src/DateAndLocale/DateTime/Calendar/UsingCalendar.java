@@ -32,5 +32,10 @@ public class UsingCalendar {
         calendar.add(Calendar.YEAR, 1);
         System.out.println("one year later" + calendar.getTime());
 
+        //create a Calendar on a specific date
+        Calendar cal = Calendar.getInstance();
+        cal.set(2021, 1, 9);
+        System.out.println("Calendar to time: " + cal.getTime());
+
     }
 }
