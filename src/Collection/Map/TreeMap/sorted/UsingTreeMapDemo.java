@@ -1,4 +1,4 @@
-package Collection.Map.sorted;
+package Collection.Map.TreeMap.sorted;
 
 import java.time.LocalDate;
 import java.util.Arrays;

@@ -22,7 +22,7 @@ public class LocaleDateJava8 {
     System.out.println("current date-time: " + currentDateTime);
 
     ZonedDateTime zonedDateTime = ZonedDateTime.now();
-    System.out.println("cururent zone date-time: " + zonedDateTime);
+    System.out.println("current zone date-time: " + zonedDateTime);
 
     LocalDate createdLocalDate = LocalDate.of(2018, Month.MARCH, 12);
     System.out.println("created local date: " + createdLocalDate);

@@ -47,8 +47,6 @@ public class JavaTime {
         System.out.println(LocalTime.of(14, 50) == LocalTime.of(14, 50));
         System.out.println(LocalTime.of(13, 0) == LocalTime.of(13, 0));
 
-
-
         //create a local Time and format it.
         System.out.println("ISO DateAndLocale.Local Time: " + LocalTime.now().format(DateTimeFormatter.ISO_LOCAL_TIME));
         System.out.println("ISO Time: " + LocalTime.now().format(DateTimeFormatter.ISO_TIME));
@@ -64,7 +62,6 @@ public class JavaTime {
 
         Temporal end = Instant.now();
         System.out.println("time used: " + Duration.between(start, end).toMillis());
-
     }
 
 }

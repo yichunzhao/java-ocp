@@ -9,7 +9,9 @@ import java.util.List;
  * wildcard type ? means could be any type of data. However, the compiler setup a protection here; you cannot
  * aad an element inside the list instance, because it is not sure what you will put inside it.
  * <p>
- * if you try to modify a List<?>, you will get an error: "capture of ?"
+ * you can read from a List<?>, however if you try to modify a List<?>, you will get an error: "capture of ?"
+ * <p>
+ * so, List<?> is readable but not writable.
  *
  * <p>
  * Then why designing this mechanism, I think it is only for transferring different
@@ -22,15 +24,12 @@ public class WildCardGenericType {
          * you cannot modify the list content.
          */
         List<?> numbers = new ArrayList<>();
-        /**
-         * you cannot modify the list<?> content.
-         */
         //numbers.add(Integer.valueOf(2));
 
-        List<?> number1 = new ArrayList<Integer>();
         /**
          * you cannot modify the list<?> content.
          */
+        List<?> number1 = new ArrayList<Integer>();
         //number1.add(Integer.valueOf(1));
 
         List<Integer> ints = Arrays.asList(1, 2, 3, 4, 5);
@@ -38,6 +37,14 @@ public class WildCardGenericType {
 
         List<String> strings = Arrays.asList("what", "the purpose", "of this design");
         receiveDiverseItems(strings);
+
+        /**
+         * you may limit wildcard generic with a boundary;
+         */
+        List<Double> doubles = Arrays.asList(12.00, 23.00, 45.56);
+
+        receiveAllNumbers(ints);
+        receiveAllNumbers(doubles);
     }
 
     public static List<?> receiveDiverseItems(List<?> items) {
@@ -49,5 +56,13 @@ public class WildCardGenericType {
         //items.add(Integer.valueOf(230));
 
         return items;
+    }
+
+    public static List<? extends Number> receiveAllNumbers(List<? extends Number> numbers) {
+        /**
+         * wildcard generic type with a boundary.
+         */
+        System.out.println(numbers);
+        return numbers;
     }
 }
