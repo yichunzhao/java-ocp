@@ -8,6 +8,9 @@ import java.util.Map;
  * The Console has no public constructor, can be only obtained from the System.
  * <p>
  * Console cannot be achieved in a IDE, but only from a commandline.
+ *
+ * javac xxx.java
+ * java xxx
  */
 public class FileIOConsole {
     public static Map<String, String> userPwdMap = new HashMap<>();
@@ -42,5 +45,5 @@ public class FileIOConsole {
             System.out.println("sorry! you are wrong guy.");
         }
     }
-    
+
 }
