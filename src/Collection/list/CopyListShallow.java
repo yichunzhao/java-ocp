@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toList;
  * meanwhile, addAll method is the same as the constructor method, copy of list and list both hold the same references
  * to the element instances. if you change on one side, another side is also changed.
  */
-public class CopyList {
+public class CopyListShallow {
 
     public static void main(String[] args) {
         Name name = Name.of("Kathy", "Sierra");
