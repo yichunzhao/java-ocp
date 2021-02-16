@@ -3,6 +3,7 @@ package Collection.list;
 import models.Name;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -18,7 +19,7 @@ import static java.util.stream.Collectors.toList;
  * meanwhile, addAll method is the same as the constructor method, copy of list and list both hold the same references
  * to the element instances. if you change on one side, another side is also changed.
  */
-public class CopyListShallow {
+public class CopyListShallowOrDeep {
 
     public static void main(String[] args) {
         Name name = Name.of("Kathy", "Sierra");
@@ -32,10 +33,23 @@ public class CopyListShallow {
         //make a change on the copy
         copyOfNames.get(0).setFirstName("Mike");
 
+        //both list having been modified
         System.out.println("modified copy: " + copyOfNames);
         System.out.println("original names: " + copyOfNames);
 
         //watch out here:
         System.out.println("copy contains original? " + copyOfNames.containsAll(names));
+
+        /**
+         * deep copy of a list
+         */
+        //source size should <= dest size; otherwise it throws exception
+        //so simple way to construct a shallow copy.
+        List<Name> dest = new ArrayList<>(names);
+        //then making a deep copy, using Collections static method
+        Collections.copy(dest, names);
+
+        //now, dest List should contain different Name instances from the Original one.
+        System.out.println("dest contains all of names? " + dest.contains(names));
     }
 }
