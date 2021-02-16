@@ -14,6 +14,9 @@ import static java.util.stream.Collectors.toList;
  * question: is this a shallow copy or a deep copy?
  * <p>
  * it is a shallow copy. two List share the same element references
+ * <p>
+ * meanwhile, addAll method is the same as the constructor method, copy of list and list both hold the same references
+ * to the element instances. if you change on one side, another side is also changed.
  */
 public class CopyList {
 
