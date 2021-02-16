@@ -10,7 +10,7 @@ import java.util.List;
  * <p>
  * if the dest.size is bigger than source.size, a partial dest will be overwritten by the source.
  * <p>
- * it is a shallow copy too. so maybe it is a good way to make element class to immutable.
+ * it is a shallow copy too. so maybe it is a good way to make element class immutable.
  */
 public class CollectionsCopy {
 
