@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 
 /**
  * how to remove duplicated elements in a list.
+ *
+ * an easy way to put a list into a set via its constructor.
  */
 public class RemoveDuplicated {
 
@@ -22,4 +24,5 @@ public class RemoveDuplicated {
         List<String> listWithoutDuplicates1 = new ArrayList<>(new HashSet<>(listOne));
         System.out.println("listOne without duplicates using Set: " + listWithoutDuplicates1);
     }
+    
 }
