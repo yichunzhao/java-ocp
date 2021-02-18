@@ -24,5 +24,5 @@ public class RemoveDuplicated {
         List<String> listWithoutDuplicates1 = new ArrayList<>(new HashSet<>(listOne));
         System.out.println("listOne without duplicates using Set: " + listWithoutDuplicates1);
     }
-    
+
 }

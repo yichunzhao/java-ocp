@@ -7,9 +7,9 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * Path implements comparable interface;
+ * Path implements comparable<Path> interface;
  *
- * path instances sorted by its natural order. what i can see it is compared by a string.
+ * path instances sorted by its natural order, lexicographically.
  */
 public class SortingPath {
 
