@@ -4,7 +4,12 @@ import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
 /**
- * Path: consisting of root, pathName, pathName ..., fileName
+ * Path: consisting of root, pathName, pathName ..., fileName, and separated by OS-specific delimiters
+ * <p>
+ * getParent(): root, name, name, name(absolute path); name, ... (relative path)
+ * <p>
+ * getFileName(): excluding the parentPath.
+ * getRoot(): for win os C:\ for unix: \home
  */
 public class AccessingPathComponents {
 
@@ -29,4 +34,5 @@ public class AccessingPathComponents {
         //getFileName returns a Path instance; fileName is the last component.
         System.out.println("file Name: " + p.getFileName());
     }
+
 }
