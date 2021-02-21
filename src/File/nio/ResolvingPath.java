@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Resolving path: joining two path path together
+ * Resolving path: joining two path together
  * <p>
  * p.resolve(p1), it read as path p resolve path p1 within the path context of p.
  * it means path p join path p1 based on its path.

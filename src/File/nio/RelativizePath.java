@@ -4,6 +4,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
+ * Relativize path: an opposite operation ref. to path resolve;
+ * <p>
+ * finding out the path difference between two path; path1 relativize path2, it is read as given path1, how you can
+ * find the path to path2.
+ * <p>
  * It is used construct a relative path between two relative paths or two absolute paths.
  */
 public class RelativizePath {
@@ -12,17 +17,8 @@ public class RelativizePath {
         Path dir = Paths.get("code");
         Path file = Paths.get("code/java/IO.java");
 
-        //file relative to dir;
-        System.out.println("relativize file ref. to dir: " + file.relativize(dir));
-        System.out.println("relativize dir ref. to file: " + dir.relativize(file));
-
-        Path p1 = Paths.get("/code");
-        Path p2 = Paths.get("/java/IO.java");
-        System.out.println("p1:" + p1.toAbsolutePath());
-        System.out.println("p2:" + p2.toAbsolutePath());
-
-        System.out.println("relativize p2 ref to p1: " + p1.relativize(p2));
-        System.out.println("relativize p1 ref to p2: " + p2.relativize(p1));
+        System.out.println("given path dir, how can find the path dir to the file path");
+        System.out.println(dir.relativize(file));
     }
 
 }
