@@ -69,7 +69,7 @@ public class AccessingFileAttributes {
         System.out.printf("After modification; is readable?  %b \n", Files.isReadable(path));
 
         //another way to read all attributes
-        Map<String, Object> attributesMap = Files.readAttributes(path, "dos:*");
+        Map<String, Object> attributesMap = Files.readAttributes(path, "*");
         System.out.println("attributeMap: " + attributesMap);
 
         DosFileAttributes dosFileAttributes = Files.readAttributes(path, DosFileAttributes.class);
