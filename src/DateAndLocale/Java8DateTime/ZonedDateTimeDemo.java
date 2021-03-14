@@ -1,4 +1,4 @@
-package DateAndLocale;
+package DateAndLocale.Java8DateTime;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
