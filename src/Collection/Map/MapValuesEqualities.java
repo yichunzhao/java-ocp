@@ -66,5 +66,5 @@ public class MapValuesEqualities {
         System.out.println("putting values in the set...");
         System.out.printf("values1 equals values2 ? %b \n", (new HashSet<>(values1).equals(new HashSet<>(values2))));
     }
-    
+
 }
