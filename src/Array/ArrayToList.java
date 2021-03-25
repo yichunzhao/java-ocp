@@ -23,6 +23,6 @@ public class ArrayToList {
         //After changing one element of Array,
         b.set(1, BigDecimal.valueOf(3));
         System.out.println("Array after updating List element:" + Arrays.toString(a));
-
     }
+
 }

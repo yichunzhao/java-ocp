@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Collection.list;
 
 import java.util.ArrayList;
@@ -29,7 +24,13 @@ public class EmptyList {
         //adding will cause java.lang.UnsupportedOperationException
         //myList.add(1D);
 
-        System.out.println(myList.toString());
+        try {
+            myList.add(12.3D);
+        } catch (UnsupportedOperationException e) {
+            System.out.println(e);
+        } finally {
+            System.out.println(myList.toString());
+        }
     }
 
 }
