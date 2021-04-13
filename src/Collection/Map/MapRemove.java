@@ -5,12 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * map remove a specific k-v pair or a pair ref. to a key.
+ *
  * map.remove(object key, object value): removing a specific key-value pair
  * map.remove(object key): removing a key, and its associated value.
  */
 public class MapRemove {
     static Map<LocalDate, Integer> dateNumMap = new HashMap<>();
-    static LocalDate date = (LocalDate.of(2020, 10, 12));
+    static LocalDate date = LocalDate.of(2020, 10, 12);
     static Integer value = 23;
 
     static {
@@ -19,6 +21,7 @@ public class MapRemove {
 
     public static void main(String[] args) {
         System.out.println("origin : " + dateNumMap);
+
         //removing a data-value pair.
         dateNumMap.remove(date, 12);
         System.out.println("remove a k-v pair : " + dateNumMap);
@@ -27,4 +30,5 @@ public class MapRemove {
         dateNumMap.remove(date);
         System.out.println("remove a k :" + dateNumMap);
     }
+
 }

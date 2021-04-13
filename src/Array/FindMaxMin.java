@@ -34,7 +34,6 @@ public class FindMaxMin {
 
         System.out.println("max_ :" + copy[copy.length - 1]);
         System.out.println("min_ :" + copy[0]);
-
     }
 
 }

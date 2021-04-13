@@ -23,7 +23,7 @@ public class ZonedDateTimeDemo {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy - HH:mm:ss Z X ");
 
         ZonedDateTime copenhagenTime = ZonedDateTime.now();
-        System.out.println("without format:" +copenhagenTime);
+        System.out.println("without format:" + copenhagenTime);
 
         System.out.println("formatted: " + formatter.format(copenhagenTime));
 
@@ -52,5 +52,8 @@ public class ZonedDateTimeDemo {
         ZonedDateTime zonedLocalDateTime = LocalDateTime.parse("2008-11-01T10:29:20").atZone(ZoneId.systemDefault());
         System.out.println("Zoned local datetime: " + zonedLocalDateTime.format(DateTimeFormatter.ISO_OFFSET_TIME));
 
+        System.out.println("current default zoned date-time: " + ZonedDateTime.now());
+        System.out.println("current Asia/Shanghai date-time: " + ZonedDateTime.of(LocalDateTime.now(), ZoneId.of("Asia/Shanghai")));
     }
+
 }

@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * map.replace(key, newValue);
- * map.replace(key,oldValue,newValue);
+ * map.replace(key, oldValue, newValue);
  */
 public class MapReplace {
     static Map<LocalDate, Integer> dateIntegerMap = new HashMap<>();
@@ -27,6 +27,6 @@ public class MapReplace {
         Integer r = dateIntegerMap.replace(LocalDate.of(2000, 10, 10), 10);
         System.out.println("as key is not exist: " + r);
         System.out.println("updated: " + dateIntegerMap);
-
     }
+
 }

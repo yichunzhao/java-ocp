@@ -21,5 +21,4 @@ public class CopyArray {
         System.out.println("copy and original equal? " + (Arrays.equals(copy, array)));
     }
 
-
 }

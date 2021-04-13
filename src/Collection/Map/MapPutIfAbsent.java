@@ -27,6 +27,8 @@ public class MapPutIfAbsent {
     }
 
     public static void main(String[] args) {
+        System.out.printf("original map: %s \n", dateNumberMap);
+
         //if key is existed, and associated with a value; no action applied.
         Integer r = dateNumberMap.putIfAbsent(key, 200);
         System.out.printf("%s \n", dateNumberMap.toString());
@@ -43,6 +45,6 @@ public class MapPutIfAbsent {
         //if key is not existed, put the key-value
         dateNumberMap.putIfAbsent(key2, 800);
         System.out.printf("%s \n", dateNumberMap.toString());
-
     }
+
 }

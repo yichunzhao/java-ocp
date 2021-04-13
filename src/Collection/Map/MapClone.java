@@ -23,6 +23,6 @@ public class MapClone {
 
         TreeMap<LocalTime, Integer> copy = (TreeMap<LocalTime, Integer>) timeIntegerMap.clone();
         System.out.printf("clone: %s \n ", copy.toString());
-
     }
+
 }
