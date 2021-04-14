@@ -56,9 +56,6 @@ public class HashMapSorting {
         Map<String, Integer> sortedByTreeReversed = new TreeMap<>(Comparator.reverseOrder());
         sortedByTreeReversed.putAll(map);
         System.out.println("sorted by key via Tree in a reversed direction: " + sortedByTreeReversed);
-
-
     }
-
 
 }
