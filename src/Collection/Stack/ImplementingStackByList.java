@@ -16,7 +16,7 @@ public class ImplementingStackByList {
     public static void main(String[] args) {
         //using a stack to reverse a String
         String str = "I love Java";
-        System.out.println("original:" + str);
+        System.out.printf("original: %s \n", str);
 
         // Deque implemented by a LinkedList.
         // deque is able to impl. both stack and queue.
