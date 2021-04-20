@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Hashmap doesn't allow duplicated key-value; because the same key generates the same hashcode, and it is mapped
+ * HashMap doesn't allow duplicated key-value; because the same key generates the same hashcode, and it is mapped
  * to the same bucket.
  */
 public class HashMapUniqueKey {
@@ -30,6 +30,6 @@ public class HashMapUniqueKey {
         //if I query a key it is not exited, what will happen.
         //it will return a null.
         System.out.println(myMap.get("some"));
-
     }
+
 }
