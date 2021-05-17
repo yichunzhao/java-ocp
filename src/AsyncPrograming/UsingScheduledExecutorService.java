@@ -15,7 +15,6 @@ public class UsingScheduledExecutorService {
 
         //show down the executor after 20 sec.
         scheduledExecutorService.schedule(() -> scheduledExecutorService.shutdown(), 20, TimeUnit.SECONDS);
-
     }
 
 }
