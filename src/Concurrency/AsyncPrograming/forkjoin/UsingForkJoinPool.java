@@ -1,4 +1,4 @@
-package AsyncPrograming.forkjoin;
+package Concurrency.AsyncPrograming.forkjoin;
 
 import java.util.Arrays;
 import java.util.Random;

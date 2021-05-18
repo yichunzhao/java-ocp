@@ -1,4 +1,4 @@
-package AsyncPrograming;
+package Concurrency.AsyncPrograming;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
