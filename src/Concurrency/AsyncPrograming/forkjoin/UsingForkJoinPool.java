@@ -7,11 +7,11 @@ import java.util.concurrent.RecursiveTask;
 import java.util.stream.IntStream;
 
 /**
- * A ForkJoinPool takes use of the strategy of divide-and-conquer.
+ * A ForkJoinPool uses the strategy of divide-and-conquer.
  * <p>
- * a big task is divide into small enough to handle and assemble results afterwards.
+ * A big task is divided into tasks small enough to handle and assemble results afterwards.
  * <p>
- * A ForkJoinPool only consume ForkJoinTask, which is an Abstract class. it has two sub-class, i.e. RecursiveTask
+ * A ForkJoinPool consume a ForkJoinTask, which is an Abstract class. It has two sub-classes, i.e. RecursiveTask
  * and RecursiveAction.
  * <p>
  * A ForkJoinPool extends ExecutorService interface, so it follows Executor design concept, consisting of a task
@@ -77,9 +77,12 @@ public class UsingForkJoinPool {
         populateNumbers(numbers);
         System.out.println("numbers: " + Arrays.toString(numbers));
 
-        //creating fork-join pool
-        ForkJoinPool forkJoinPool = new ForkJoinPool();
+        //using a fork-join pool common to each ForkJoinTask
+        ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+
+        //initial recursive task
         CalculationTask calculationTask = new CalculationTask(numbers);
+
         Integer result = forkJoinPool.invoke(calculationTask);
         System.out.printf("final result: %d \n", result);
     }
