@@ -1,4 +1,4 @@
-package Quiz;
+package others.Quiz;
 
 /**
  * about overriding: return types should follow the co-variant principle.

@@ -1,4 +1,4 @@
-package Quiz;
+package others.Quiz;
 
 public class DisplayResult {
     private boolean flag;

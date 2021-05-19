@@ -1,4 +1,4 @@
-package MemoryLeak;
+package others.MemoryLeak;
 
 public class UnOverWrittenEqualTo {
 

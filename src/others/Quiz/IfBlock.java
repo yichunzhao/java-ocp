@@ -1,4 +1,4 @@
-package Quiz;
+package others.Quiz;
 
 /**
  * What is print out?

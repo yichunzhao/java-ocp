@@ -1,4 +1,4 @@
-package memoryManagement;
+package others.memoryManagement;
 
 import java.util.HashMap;
 import java.util.HashSet;

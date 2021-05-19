@@ -1,4 +1,4 @@
-package JavaFX;
+package others.JavaFX;
 
 import javafx.application.Application;
 import javafx.geometry.Side;

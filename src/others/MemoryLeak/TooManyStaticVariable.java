@@ -1,4 +1,4 @@
-package MemoryLeak;
+package others.MemoryLeak;
 
 import java.util.ArrayList;
 import java.util.List;
