@@ -3,7 +3,7 @@ package AdvancedClassDesign.nestedclass;
 /**
  * A class is defined within a class. It is referred as inner class.
  * <p>
- * It is used to encapsulate partial functionalities of the outer class. It depends on the instance of the outer class.
+ * It is used to encapsulate partial functionality of the outer class. It depends on the instance of the outer class.
  * without the instance of outer class, it can not be accessed.
  * <p>
  * it needs a outer class instance first, so as to create an inner class instance.
