@@ -1,4 +1,4 @@
-package Lamada.collector;
+package functionalProgramming.Lamada.collector;
 
 import java.util.IntSummaryStatistics;
 import java.util.stream.Collectors;

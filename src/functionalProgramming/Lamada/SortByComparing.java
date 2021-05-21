@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Lamada;
+package functionalProgramming.Lamada;
 
 import java.util.ArrayList;
 import java.util.Collections;

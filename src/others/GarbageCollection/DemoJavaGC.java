@@ -1,4 +1,4 @@
-package GarbageCollection;
+package others.GarbageCollection;
 
 import java.util.stream.IntStream;
 

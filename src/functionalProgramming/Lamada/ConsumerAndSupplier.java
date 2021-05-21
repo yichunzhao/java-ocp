@@ -1,4 +1,4 @@
-package Lamada;
+package functionalProgramming.Lamada;
 
 import java.time.LocalDate;
 import java.util.TreeSet;
