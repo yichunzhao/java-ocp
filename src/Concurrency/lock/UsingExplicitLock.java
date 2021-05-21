@@ -21,6 +21,7 @@ import java.util.stream.IntStream;
 public class UsingExplicitLock {
     public static final int DATA_SIZE = 100;
     public static final int VISITOR_SIZE = 2;
+    public static final int WORKER_SIZE = 2;
 
     static class DataStore {
 
@@ -56,7 +57,7 @@ public class UsingExplicitLock {
             IntStream.range(0, DATA_SIZE).forEach(x -> dataStore.addInteger(x));
         };
 
-        ExecutorService service = Executors.newFixedThreadPool(2);
+        ExecutorService service = Executors.newFixedThreadPool(WORKER_SIZE);
 
         IntStream.range(0, VISITOR_SIZE).forEach(x -> service.submit(populatingTask));
 
