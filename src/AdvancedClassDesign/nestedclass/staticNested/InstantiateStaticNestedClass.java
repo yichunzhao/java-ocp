@@ -30,13 +30,11 @@ class Outer {
 
         void instanceMethod() {
         }
-
     }
 
 }
 
 public class InstantiateStaticNestedClass {
-
 
     public static void main(String[] args) {
         //how to instantiate a static nested class, it can be
@@ -44,6 +42,6 @@ public class InstantiateStaticNestedClass {
 
         //how to instantiate inner class; it must depend on an outer instance
         Outer.InstanceInner instanceInner = new Outer().new InstanceInner();
-
     }
+
 }
