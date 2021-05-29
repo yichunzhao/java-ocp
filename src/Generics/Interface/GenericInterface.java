@@ -1,4 +1,4 @@
-package Concurrency.lock;
+package Generics.Interface;
 
 /**
  * A Generic interface
