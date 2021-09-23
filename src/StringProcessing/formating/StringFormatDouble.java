@@ -1,6 +1,7 @@
 package StringProcessing.formating;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class StringFormatDouble {
 
@@ -13,7 +14,7 @@ public class StringFormatDouble {
         String formattedFloat = String.format("%.1f", m);
         System.out.println("formatted float: " + formattedFloat);
 
-        double tmp = BigDecimal.valueOf(n).setScale(1, BigDecimal.ROUND_HALF_UP).doubleValue();
+        double tmp = BigDecimal.valueOf(n).setScale(1, RoundingMode.HALF_UP).doubleValue();
         System.out.println("after round up: " + tmp);
     }
 }
