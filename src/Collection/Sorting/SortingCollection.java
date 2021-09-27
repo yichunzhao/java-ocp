@@ -19,58 +19,60 @@ import static java.util.stream.Collectors.toList;
  * @author YNZ
  */
 class Apple {
-    private double weight;
+  private double weight;
 
-    public Apple(double weight) {
-        this.weight = weight;
-    }
+  public Apple(double weight) {
+    this.weight = weight;
+  }
 
-    public double getWeight() {
-        return weight;
-    }
+  public static Apple of(double weight) {
+    return new Apple(weight);
+  }
 
-    public static Apple of(double weight) {
-        return new Apple(weight);
-    }
+  public double getWeight() {
+    return weight;
+  }
 
-    @Override
-    public String toString() {
-        return "Apple{" +
-                "weight=" + weight +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Apple{" + "weight=" + weight + '}';
+  }
 }
 
 public class SortingCollection {
-    public static List<Apple> apples;
+  public static List<Apple> apples;
 
-    static {
-        apples =
-                Stream.of(Apple.of(12.3D), Apple.of(23.0D), Apple.of(34.9D), Apple.of(44.56D)).collect(toList());
-    }
+  static {
+    apples =
+        Stream.of(Apple.of(12.3D), Apple.of(23.0D), Apple.of(34.9D), Apple.of(44.56D))
+            .collect(toList());
+  }
 
-    public static void main(String[] args) {
-        Collections.shuffle(apples);
-        //converting a Collection into a String; Using Arrays helper class and add a custom toString method
-        System.out.println(apples.toString());
+  public static void main(String[] args) {
+    Collections.shuffle(apples);
+    // converting a Collection into a String; Using Arrays helper class and add a custom toString
+    // method
+    System.out.println(apples.toString());
 
-        //sorting a List
-        apples.sort(Comparator.comparingDouble(Apple::getWeight));
-        System.out.println("after sorting: +++++");
-        System.out.println(apples.toString());
+    // sorting a List
+    apples.sort(Comparator.comparingDouble(Apple::getWeight));
+    System.out.println("after sorting: +++++");
+    System.out.println(apples.toString());
 
-        Collections.shuffle(apples);
-        //find max weight
-        apples.stream().max(Comparator.comparingDouble(Apple::getWeight))
-                .ifPresent(apple -> System.out.println("max weight apple: " + apple));
+    Collections.shuffle(apples);
+    // find max weight
+    apples.stream()
+        .max(Comparator.comparingDouble(Apple::getWeight))
+        .ifPresent(apple -> System.out.println("max weight apple: " + apple));
 
-        Collections.shuffle(apples);
-        //find min weight
-        apples.stream().min(Comparator.comparingDouble(Apple::getWeight))
-                .ifPresent(apple -> System.out.println("min weight apple: " + apple));
+    Collections.shuffle(apples);
+    // find min weight
+    apples.stream()
+        .min(Comparator.comparingDouble(Apple::getWeight))
+        .ifPresent(apple -> System.out.println("min weight apple: " + apple));
 
-        //counting elements in a stream
-        System.out.println("how many apples: " + apples.stream().count());
-        System.out.println("how many apples: " + apples.stream().collect(Collectors.counting()));
-    }
+    // counting elements in a stream
+    System.out.println("how many apples: " + apples.stream().count());
+    System.out.println("how many apples: " + apples.stream().collect(Collectors.counting()));
+  }
 }

@@ -18,6 +18,5 @@ public class SortListByStream {
 
     List<String> strList = Stream.of("ab", "xy", "cd").sorted().collect(toList());
     System.out.println("strList: " + strList);
-
   }
 }

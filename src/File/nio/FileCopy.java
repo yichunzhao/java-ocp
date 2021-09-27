@@ -7,23 +7,22 @@ import java.nio.file.Paths;
 
 /**
  * Files offers path operations.
- * <p>
- * if target file is already existed, throw exception FileAlreadyExistedException
- * <p>
- * if source file is not existed in the file system, it throws NoSuchFileException
+ *
+ * <p>if target file is already existed, throw exception FileAlreadyExistedException
+ *
+ * <p>if source file is not existed in the file system, it throws NoSuchFileException
  */
 public class FileCopy {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Path source = Paths.get("myTest.txt");
-        Path target = Paths.get("myDirectory", "myTestCopy.txt");
+    Path source = Paths.get("myTest.txt");
+    Path target = Paths.get("myDirectory", "myTestCopy.txt");
 
-        try {
-            Files.copy(source, target);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+    try {
+      Files.copy(source, target);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+  }
 }

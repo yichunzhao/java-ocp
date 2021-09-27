@@ -3,14 +3,11 @@ package others.GarbageCollection;
 import java.util.stream.IntStream;
 
 /**
- * Demo Java Garbage collector(GC)
- * stack: references
- * heap: instances
+ * Demo Java Garbage collector(GC) stack: references heap: instances
  *
- * GC: mark instances that are referred, and put them close to each other in the heap ;
- * and sweep out those not referred any more.
- *
- * */
+ * <p>GC: mark instances that are referred, and put them close to each other in the heap ; and sweep
+ * out those not referred any more.
+ */
 class Customer {
   private String name;
   private int id;
@@ -40,8 +37,8 @@ class Customer {
     this.id = id;
   }
 
-  //GC implements this method after GC operation
-  public void finalize(){
+  // GC implements this method after GC operation
+  public void finalize() {
     System.out.println("this object is being gc");
   }
 }
@@ -60,9 +57,8 @@ public class DemoJavaGC {
 
     currentFreeMemory();
 
-    System
-        .gc(); // gc() is not guaranteed  when it is carried out. gc will stop all threads
-               // temporarily.
+    System.gc(); // gc() is not guaranteed  when it is carried out. gc will stop all threads
+    // temporarily.
 
     currentFreeMemory();
   }

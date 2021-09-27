@@ -11,28 +11,28 @@ import java.util.List;
 
 /**
  * AclFileAttributeView is only for windows;
- * <p>
- * AclFileAttributeView extends FileOwnerAttributeView
- * <p>
- * we can set a List of AclEntry here.
+ *
+ * <p>AclFileAttributeView extends FileOwnerAttributeView
+ *
+ * <p>we can set a List of AclEntry here.
  */
 public class UsingAclFileAttributeView {
 
-    public static void main(String[] args) {
-        Path path = Paths.get("mytest.txt");
+  public static void main(String[] args) {
+    Path path = Paths.get("mytest.txt");
 
-        //get view instance from Files for the path
-        AclFileAttributeView aclFileAttributeView = Files.getFileAttributeView(path, AclFileAttributeView.class);
+    // get view instance from Files for the path
+    AclFileAttributeView aclFileAttributeView =
+        Files.getFileAttributeView(path, AclFileAttributeView.class);
 
-        try {
-            List<AclEntry> entries = aclFileAttributeView.getAcl();
-            System.out.printf("AclEntry list: %s \n ", entries);
+    try {
+      List<AclEntry> entries = aclFileAttributeView.getAcl();
+      System.out.printf("AclEntry list: %s \n ", entries);
 
-            UserPrincipal userPrincipal = aclFileAttributeView.getOwner();
-            System.out.printf("user principal: %s \n ", userPrincipal);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+      UserPrincipal userPrincipal = aclFileAttributeView.getOwner();
+      System.out.printf("user principal: %s \n ", userPrincipal);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-
+  }
 }
