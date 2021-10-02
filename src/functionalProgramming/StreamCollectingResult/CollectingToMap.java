@@ -10,20 +10,22 @@ import java.util.TreeMap;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-/**
- * @author YNZ
- */
+/** @author YNZ */
 public class CollectingToMap {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Map<String, Integer> wordMap = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa")
-                .collect(Collectors.toMap(w -> w, String::length, (o1, o2) -> o2));
+    Map<String, Integer> wordMap =
+        Pattern.compile("[\\s]")
+            .splitAsStream("Java persistence with jpa")
+            .collect(Collectors.toMap(w -> w, String::length, (o1, o2) -> o2));
 
-        Map<String, Integer> wordMap1 = Pattern.compile("[\\s]").splitAsStream("Java persistence with jpa")
-                .collect(Collectors.toMap(w -> w, String::length, (o1, o2) -> o2, TreeMap::new));
+    Map<String, Integer> wordMap1 =
+        Pattern.compile("[\\s]")
+            .splitAsStream("Java persistence with jpa")
+            .collect(Collectors.toMap(w -> w, String::length, (o1, o2) -> o2, TreeMap::new));
 
-        System.out.println("in a HashMap: " + wordMap);
-        System.out.println("in a TreeMap: " + wordMap1);
-    }
+    System.out.println("in a HashMap: " + wordMap);
+    System.out.println("in a TreeMap: " + wordMap1);
+  }
 }

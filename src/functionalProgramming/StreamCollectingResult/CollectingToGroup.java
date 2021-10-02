@@ -8,14 +8,21 @@ import java.util.stream.Stream;
 
 public class CollectingToGroup {
 
-    public static void main(String[] args) {
-        //group by displayCountry
-        Map<String, List<Locale>> countryLocaleMap = Stream.of(Locale.getAvailableLocales())
-                .collect(Collectors.groupingBy(Locale::getDisplayCountry));
+  public static void main(String[] args) {
+    // group by displayCountry
+    Map<String, List<Locale>> countryLocaleMap =
+        Stream.of(Locale.getAvailableLocales())
+            .collect(Collectors.groupingBy(Locale::getDisplayCountry));
 
-        countryLocaleMap.entrySet()
-                .forEach(stringListEntry -> System.out.println(stringListEntry.getKey() + " "
-                        + stringListEntry.getValue().stream().map(locale -> locale.getDisplayLanguage())
-                        .collect(Collectors.joining(" :", "++", "-"))));
-    }
+    countryLocaleMap
+        .entrySet()
+        .forEach(
+            stringListEntry ->
+                System.out.println(
+                    stringListEntry.getKey()
+                        + " "
+                        + stringListEntry.getValue().stream()
+                            .map(locale -> locale.getDisplayLanguage())
+                            .collect(Collectors.joining(" :", "++", "-"))));
+  }
 }

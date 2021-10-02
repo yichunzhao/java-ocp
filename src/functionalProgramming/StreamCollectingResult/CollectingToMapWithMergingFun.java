@@ -10,15 +10,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * @author YNZ
- */
+/** @author YNZ */
 public class CollectingToMapWithMergingFun {
 
-    public static void main(String[] args) {
-        Map<String, String> languages = Stream.of(Locale.getAvailableLocales())
-                .collect(Collectors.toMap(Locale::getDisplayCountry, Locale::getDisplayLanguage, (x, y) -> y));
-        System.out.println("" + languages);
-
-    }
+  public static void main(String[] args) {
+    Map<String, String> languages =
+        Stream.of(Locale.getAvailableLocales())
+            .collect(
+                Collectors.toMap(
+                    Locale::getDisplayCountry, Locale::getDisplayLanguage, (x, y) -> y));
+    System.out.println("" + languages);
+  }
 }

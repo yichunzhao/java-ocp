@@ -18,21 +18,20 @@ import static java.util.stream.Collectors.joining;
  * @author YNZ
  */
 public class CollectorJoining {
-    public static String[] strings = {"Introduction", "to", "Java", "Programming"};
+  public static String[] strings = {"Introduction", "to", "Java", "Programming"};
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        //limiting the elements in a stream and find out different ones
-        Stream<String> nums = Stream.of("13", "2", "26", "9", "0").limit(3).distinct().sorted();
+    // limiting the elements in a stream and find out different ones
+    Stream<String> nums = Stream.of("13", "2", "26", "9", "0").limit(3).distinct().sorted();
 
-        //join elements in a stream
-        System.out.println(Stream.of(strings).sorted().collect(joining(" ", "+", "-")));
+    // join elements in a stream
+    System.out.println(Stream.of(strings).sorted().collect(joining(" ", "+", "-")));
 
-        Stream.of(
-                LocalDate.of(2020, Month.AUGUST, 10).toString(),
-                LocalDate.of(2020, Month.APRIL, 19).toString(),
-                LocalDate.of(2020, Month.SEPTEMBER, 9).toString()
-        ).collect(Collectors.joining(" +++ "));
-
-    }
+    Stream.of(
+            LocalDate.of(2020, Month.AUGUST, 10).toString(),
+            LocalDate.of(2020, Month.APRIL, 19).toString(),
+            LocalDate.of(2020, Month.SEPTEMBER, 9).toString())
+        .collect(Collectors.joining(" +++ "));
+  }
 }
