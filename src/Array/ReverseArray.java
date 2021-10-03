@@ -1,31 +1,26 @@
 package Array;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-/**
- * reverse an array of instances to array of instances; Using Collections.reverse
- */
+/** reverse an array of instances to array of instances; Using Collections.reverse */
 public class ReverseArray {
 
-    public static void main(String[] args) {
-        Integer[] integers = {1, 2, 3, 4, 5};
-        System.out.println("original: " + Arrays.toString(integers));
+  public static void main(String[] args) {
+    Integer[] integers = {1, 2, 3, 4, 5};
+    System.out.println("original: " + Arrays.toString(integers));
 
-        List<Integer> integerList = arrayToList(integers);
-        Collections.reverse(integerList);
-        Integer[] reversed = integerList.stream().toArray(Integer[]::new);
+    List<Integer> integerList = arrayToList(integers);
+    Collections.reverse(integerList);
+    Integer[] reversed = integerList.stream().toArray(Integer[]::new);
 
-        System.out.println("reversed:" + Arrays.toString(reversed));
+    System.out.println("reversed:" + Arrays.toString(reversed));
+  }
 
-    }
-
-    private static <T> List<T> arrayToList(T[] ts) {
-        return Arrays.stream(ts).collect(toList());
-    }
-
+  private static <T> List<T> arrayToList(T[] ts) {
+    return Arrays.stream(ts).collect(toList());
+  }
 }

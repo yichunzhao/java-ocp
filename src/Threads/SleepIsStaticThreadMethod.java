@@ -17,15 +17,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *  Don't be fooled into thinking that one thread can put another thread to sleep.
+ * Don't be fooled into thinking that one thread can put another thread to sleep.
  *
- *  sleep() is a static method of Thread class. you have to be cautious here. It can be invoked from an instance, but
- *  it doesn't affect the instance thread; the sleep() is a static method of the Thread, and it is only used to make
- *  current thread return to a Runnable state.
+ * <p>sleep() is a static method of Thread class. you have to be cautious here. It can be invoked
+ * from an instance, but it doesn't affect the instance thread; the sleep() is a static method of
+ * the Thread, and it is only used to make current thread return to a Runnable state.
  *
  * @author YNZ
- *
- * */
+ */
 class Sing implements Runnable {
 
   @Override

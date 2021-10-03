@@ -1,36 +1,38 @@
 package Collection.list;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.IntStream;
 
 /**
- * converting List to array
+ * Converting a List of Integer to an array, fx: Integer[] or int[]
+ *
+ * <p><T> T[] List.toArray(T[] array)
  */
 public class ListToArray {
 
-    public static void main(String[] args) {
-        Random r = new Random();
-        List<Integer> ints = new ArrayList<>();
-        IntStream.range(0, 20).forEach(i -> ints.add(r.nextInt(100)));
-        System.out.println(ints);
+  public static void main(String[] args) {
+    List<Integer> integerList = Arrays.asList(1, 3, 5, 7, 9);
 
-        //convert to Object[]
-        Object[] converted = ints.toArray();
+    // to Object[]
+    Integer[] objectArray = (Integer[]) integerList.toArray();
+    System.out.println("objectArray: " + Arrays.toString(objectArray));
 
-        //via List generic method; parameterised type array T[].
-        Integer[] integerArray = new Integer[ints.size()];
-        ints.toArray(integerArray);
+    // generic method to instance type array
+    Integer[] integerArray = integerList.toArray(new Integer[0]);
+    System.out.println("integerArray: " + Arrays.toString(integerArray));
 
-        //via an accumulation type
-        //<A> A[] toArray(IntFunction<A[]> var1);
-        //the concrete type inferred from method return type
-        printInts(ints.stream().toArray(Integer[]::new));
-    }
+    // converting Integer list to Integer[]
+    // java 8, streaming <A> A[] toArray(IntFunction<A[]> var1)
+    Integer[] another = integerList.stream().toArray((Integer[]::new));
+    System.out.println("anotherArray: " + Arrays.toString(another));
 
-    private static void printInts(Integer[] integers) {
-        System.out.println("integer array to string" + Arrays.toString(integers));
-    }
+    // Arrays.asList(T... e) watch out here type param. T
+    List<Integer> listsIntegers = Arrays.asList(another);
+    System.out.println("integer list: " + listsIntegers);
+
+    // map each Integer to int
+    // Integer stream to int[];   ToIntFunction<? super T> var1
+    int[] intNumbs = integerList.stream().mapToInt(x -> x).toArray();
+    System.out.println("converting Integer list to int[] : " + Arrays.toString(intNumbs));
+  }
 }

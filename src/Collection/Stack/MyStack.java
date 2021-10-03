@@ -14,5 +14,4 @@ public class MyStack<E> implements Stack<E> {
   public E pop() {
     return myList.pop();
   }
-
 }

@@ -16,30 +16,30 @@ import java.util.Set;
  */
 public class CollectionSingle {
 
-    public static void main(String[] args) {
-        Set<String> xx = Collections.singleton("one");
+  public static void main(String[] args) {
+    Set<String> xx = Collections.singleton("one");
 
-        try {
-            xx.add("two");
-        } catch (UnsupportedOperationException e) {
-            System.out.println(e.toString());
-        }
-
-        List<Period> yy = Collections.singletonList(Period.of(2012, 3, 18));
-
-        try {
-            yy.add(Period.ofMonths(2));
-        } catch (UnsupportedOperationException e) {
-            System.out.println(e.toString());
-        }
-
-        Map<String, LocalDateTime> nameAppointMap = Collections.singletonMap(
-                "mike", LocalDateTime.of(LocalDate.of(2012, 3, 18), LocalTime.of(11, 30)));
-        try {
-            nameAppointMap.put("jack", LocalDateTime.of(LocalDate.of(2012, 3, 18), LocalTime.of(11, 30)));
-        } catch (UnsupportedOperationException e) {
-            System.out.println(e.toString());
-        }
-
+    try {
+      xx.add("two");
+    } catch (UnsupportedOperationException e) {
+      System.out.println(e.toString());
     }
+
+    List<Period> yy = Collections.singletonList(Period.of(2012, 3, 18));
+
+    try {
+      yy.add(Period.ofMonths(2));
+    } catch (UnsupportedOperationException e) {
+      System.out.println(e.toString());
+    }
+
+    Map<String, LocalDateTime> nameAppointMap =
+        Collections.singletonMap(
+            "mike", LocalDateTime.of(LocalDate.of(2012, 3, 18), LocalTime.of(11, 30)));
+    try {
+      nameAppointMap.put("jack", LocalDateTime.of(LocalDate.of(2012, 3, 18), LocalTime.of(11, 30)));
+    } catch (UnsupportedOperationException e) {
+      System.out.println(e.toString());
+    }
+  }
 }

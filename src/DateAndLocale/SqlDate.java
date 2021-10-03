@@ -25,6 +25,7 @@ public class SqlDate {
   public static void main(String[] args) {
     long currentTimeMillis = System.currentTimeMillis();
 
+    /** java sql date yyyy-MM-dd */
     Date today = new Date(currentTimeMillis);
     System.out.println("Sql Date: " + today);
 

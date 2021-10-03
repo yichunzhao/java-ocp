@@ -1,30 +1,36 @@
 package models;
 
 public class Name {
-    private String firstName;
-    private String middleName;
-    private String lastName;
+  private String firstName;
+  private String lastName;
 
-    private Name(String firstName, String middleName, String lastName) {
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-    }
+  private Name(String firstName, String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
-    public static Name of(String firstName, String middleName, String lastName) {
-        return new Name(firstName, middleName, lastName);
-    }
+  public static Name of(String firstName, String lastName) {
+    return new Name(firstName, lastName);
+  }
 
-    public String getFirstName() {
-        return firstName;
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public String getMiddleName() {
-        return middleName;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public String getLastName() {
-        return lastName;
-    }
+  public String getLastName() {
+    return lastName;
+  }
 
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  @Override
+  public String toString() {
+    return "Name{" + "firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + '}';
+  }
 }

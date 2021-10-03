@@ -5,7 +5,7 @@
  */
 package DateAndLocale;
 
-        import java.util.Locale;
+import java.util.Locale;
 
 /** @author YNZ */
 public class UtilDateToLocalDate {
@@ -16,7 +16,7 @@ public class UtilDateToLocalDate {
 
     System.out.println("get current default local in jvm:  " + Locale.getDefault().getCountry());
     System.out.println(
-            "get current default local in jvm:  " + Locale.getDefault().getDisplayCountry());
+        "get current default local in jvm:  " + Locale.getDefault().getDisplayCountry());
     Locale.getDefault();
   }
 }

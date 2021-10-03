@@ -36,7 +36,7 @@ public class ConcurrentHashMapVsHashMap {
 
     // HashMap
     Map<String, String> myAnotherMap = new HashMap<>();
-    myAnotherMap.putIfAbsent("1", "one");//it is a shortcut method, but not atomic.
+    myAnotherMap.putIfAbsent("1", "one"); // it is a shortcut method, but not atomic.
     myAnotherMap.put("1", "two");
     System.out.println("size: " + myAnotherMap.size());
 
@@ -60,6 +60,6 @@ public class ConcurrentHashMapVsHashMap {
 
   private static Number manipulateCurrentHashMapUsingReplace(String key, Number value) {
     // the replace do the dame as the above, as well as it is atomic.
-    return myMap.replace(key, value);  //replace is atomic.
+    return myMap.replace(key, value); // replace is atomic.
   }
 }

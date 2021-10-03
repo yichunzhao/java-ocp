@@ -16,6 +16,6 @@ public class ParsingDateNow {
     DateFormat format = new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy");
     Date now = new Date();
     Date parsed = format.parse(now.toString());
-    System.out.printf("now :%s \n ", parsed);
+    System.out.printf("now : " + parsed);
   }
 }

@@ -7,10 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 /**
- * here I want to simulate many threads concurrently click a counter; without using synchronised method, we use
- * an atomic integer. atomic something aims to solve concurrent issue.
+ * here I want to simulate many threads concurrently click a counter; without using synchronised
+ * method, we use an atomic integer. atomic something aims to solve concurrent issue.
  */
-
 class SharedCounter {
   private AtomicInteger counter = new AtomicInteger();
 
