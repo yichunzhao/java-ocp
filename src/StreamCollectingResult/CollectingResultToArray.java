@@ -1,5 +1,5 @@
 /*
- * When you are done with a stream and intermideate operations, you may
+ * When you are done with a stream and intermediate operations, you may
  * want to put them in an Array[]
  *
  */
