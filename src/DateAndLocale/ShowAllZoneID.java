@@ -33,7 +33,7 @@ public class ShowAllZoneID {
 
         Map<ZoneOffset, List<ZonedDateTime>> zoneOffsetListMap = ZoneId.getAvailableZoneIds().stream()
                 .map(s -> ZonedDateTime.now(ZoneId.of(s)))
-                .collect(Collectors.groupingBy(zonedDateTime -> zonedDateTime.getOffset()));
+                .collect(Collectors.groupingBy(ZonedDateTime::getOffset));
 
         System.out.println("#################### ZoneOffSet map to its ZoneIds ######################");
 
@@ -44,7 +44,7 @@ public class ShowAllZoneID {
         System.out.println("#################### ZoneOffSet map to its Count(ZoneIds) ######################");
         ZoneId.getAvailableZoneIds().stream()
                 .map(s -> ZonedDateTime.now(ZoneId.of(s)))
-                .collect(Collectors.groupingBy(zonedDateTime -> zonedDateTime.getOffset(), Collectors.counting()))
+                .collect(Collectors.groupingBy(ZonedDateTime::getOffset, Collectors.counting()))
                 .forEach((zoneOffset, count) -> System.out.println(zoneOffset + ": " + count));
 
     }
