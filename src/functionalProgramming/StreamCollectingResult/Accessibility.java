@@ -7,31 +7,33 @@ package functionalProgramming.StreamCollectingResult;
 
 import java.util.stream.Stream;
 
-/** @author YNZ */
+/**
+ * @author YNZ
+ */
 public enum Accessibility {
-  ANY_TIME("Anytime"),
-  FEW_TIME_WEEK("A few times a week"),
-  ONCE_WEEK("Once a week");
+    ANY_TIME("Anytime"),
+    FEW_TIME_WEEK("A few times a week"),
+    ONCE_WEEK("Once a week");
 
-  private String text;
+    private final String text;
 
-  Accessibility(String text) {
-    this.text = text;
-  }
+    Accessibility(String text) {
+        this.text = text;
+    }
 
-  public static Stream<String> getCollection() {
-    return Stream.of(Accessibility.values()).map(x -> x.text());
-  }
+    public static Stream<String> getCollection() {
+        return Stream.of(Accessibility.values()).map(Accessibility::text);
+    }
 
-  public static Accessibility retrieve(String text) throws Exception {
+    public static Accessibility retrieve(String text) throws Exception {
 
-    return Stream.of(Accessibility.values())
-        .filter(x -> x.text().equals(text))
-        .findFirst()
-        .orElseThrow(() -> new Exception("Invalid Accessibility text ... "));
-  }
+        return Stream.of(Accessibility.values())
+                .filter(x -> x.text().equals(text))
+                .findFirst()
+                .orElseThrow(() -> new Exception("Invalid Accessibility text ... "));
+    }
 
-  public String text() {
-    return this.text;
-  }
+    public String text() {
+        return this.text;
+    }
 }
