@@ -9,7 +9,7 @@ public class StreamMaxMin {
 
   public static void main(String[] args) {
 
-    Random random = new Random(10);
+    Random random = new Random();
     //
     List<Integer> numberList = new ArrayList<>();
     IntStream.range(0, 10).forEach(i -> numberList.add(random.nextInt(10)));
