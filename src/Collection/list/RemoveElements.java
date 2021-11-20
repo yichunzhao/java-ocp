@@ -8,11 +8,17 @@ import java.util.List;
  */
 public class RemoveElements {
     public static void main(String[] args) {
-        List<String> fields = new ArrayList<>(List.of("id", "comment", "answers", "submittedAt"));
-        List<String> marked = List.of("id", "comment", "unknown");
+        var origin = List.of("id", "comment", "answers", "submittedAt");
+        var fields = new ArrayList<>(origin);
+        var marked = List.of("id", "comment", "unknown");
 
         //removing elements that are marked.
         fields.removeAll(marked);
         System.out.println("not marked: " + fields);
+
+        //keeping all elements that are in another collection.
+        var myFields = new ArrayList<>(origin);
+        myFields.retainAll(marked);
+        System.out.println("retained: " + myFields);
     }
 }
