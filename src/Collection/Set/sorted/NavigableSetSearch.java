@@ -1,7 +1,7 @@
 package Collection.Set.sorted;
 
 import java.time.LocalDate;
-import java.util.NavigableSet;
+import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -23,36 +23,40 @@ public class NavigableSetSearch {
   public static void main(String[] args) {
 
     // TreeSet is-a NavigableSet
-    NavigableSet<LocalDate> dates = new TreeSet<>();
-    dates.add(LocalDate.of(2020, 10, 1));
-    dates.add(LocalDate.of(2020, 10, 2));
-    dates.add(LocalDate.of(2020, 10, 3));
-    dates.add(LocalDate.of(2020, 10, 5));
-    dates.add(LocalDate.of(2020, 10, 6));
-    dates.add(LocalDate.of(2020, 10, 7));
-    dates.add(LocalDate.of(2020, 10, 8));
+
+    var dates =
+        new TreeSet<>(
+            List.of(
+                LocalDate.of(2020, 10, 1),
+                LocalDate.of(2020, 10, 2),
+                LocalDate.of(2020, 10, 3),
+                LocalDate.of(2020, 10, 5),
+                LocalDate.of(2020, 10, 6),
+                LocalDate.of(2020, 10, 7),
+                LocalDate.of(2020, 10, 8)));
+
     System.out.println(dates);
 
-    // the least date >= key: it must be LocalDate.of(2020, 10, 6)
+    // ceiling means that the least date >= key: it must be LocalDate.of(2020, 10, 6)
     System.out.println("celling date: " + dates.ceiling(LocalDate.of(2020, 10, 6)));
 
-    // the least date <= key:
+    // floor means that: the least date <= the specified key: 2020-10-4, in this list
     System.out.println("floor date: " + dates.floor(LocalDate.of(2020, 10, 4)));
 
-    // the least date > key
+    // higher means that the least date > key.
     System.out.println("higher date: " + dates.higher(LocalDate.of(2020, 10, 4)));
 
-    // the least date < key
+    // lower means that the least date < key.
     System.out.println("lower date: " + dates.lower(LocalDate.of(2020, 10, 4)));
 
     // reversed set
     System.out.println("reversed order: " + dates.descendingSet());
 
-    // finding elements < the key, inclusive: boolean
+    // finding all elements < the key, inclusive: boolean
     System.out.println("head set exclusive: " + dates.headSet(LocalDate.of(2020, 10, 6), false));
     System.out.println("head set inclusive: " + dates.headSet(LocalDate.of(2020, 10, 6), true));
 
-    // finding elements > the key
+    // finding all elements that > the , inclusive: boolean
     System.out.println("tail set exclusive: " + dates.tailSet(LocalDate.of(2020, 10, 6), false));
     System.out.println("tail set inclusive: " + dates.tailSet(LocalDate.of(2020, 10, 6), true));
 
