@@ -1,5 +1,8 @@
 package StringProcessing.newFeatures;
 
+/**
+ * String indent since java 12
+ */
 public class StringIndentation {
 
   public static void main(String[] args) {
